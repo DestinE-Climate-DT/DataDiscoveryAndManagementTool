@@ -1,0 +1,17 @@
+description: 'Catalog for files generated from ICON GSV.  '
+sources:
+  netcdf:
+    description: netcdf files data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/netcdf/netcdf.yaml'
+  image:
+    description: image files data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/image/image.yaml'
+  text:
+    description: text files data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/text/text.yaml'

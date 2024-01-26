@@ -1,0 +1,12 @@
+description: HydroMet application data catalog
+sources:
+  ICON:
+    description: ' ''ICON GSV data catalog '' '
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/ICON/ICON.yaml'
+  IFS:
+    description: ' ''IFS GSV data catalog '' '
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/IFS/IFS.yaml'

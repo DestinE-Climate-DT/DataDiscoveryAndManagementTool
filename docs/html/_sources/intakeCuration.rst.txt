@@ -1,0 +1,7 @@
+intakeCuration module
+=====================
+
+.. automodule:: intakeCuration
+   :members:
+   :undoc-members:
+   :show-inheritance:

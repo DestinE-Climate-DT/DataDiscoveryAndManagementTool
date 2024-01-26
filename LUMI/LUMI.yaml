@@ -1,0 +1,32 @@
+description: 'Catalog for application data produced by the desitnation earth twin engine simulations performed on LUMI.'
+sources:
+  Aqua:
+    description: Aqua application data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/Aqua/Aqua.yaml'
+  Energy:
+    description: Energy application data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/Energy/Energy.yaml'
+  HydroMet:
+    description: HydroMet application data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/HydroMet/HydroMet.yaml'
+  HydroRiver:
+    description: HydroRiver application data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/HydroRiver/HydroRiver.yaml'
+  Urban:
+    description: Urban application data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/Urban/Urban.yaml'
+  Wildfires:
+    description: Wildfires application data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/Wildfires/Wildfires.yaml'

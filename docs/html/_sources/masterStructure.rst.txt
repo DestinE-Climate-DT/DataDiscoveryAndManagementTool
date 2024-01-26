@@ -1,0 +1,7 @@
+masterStructure module
+======================
+
+.. automodule:: masterStructure
+   :members:
+   :undoc-members:
+   :show-inheritance:

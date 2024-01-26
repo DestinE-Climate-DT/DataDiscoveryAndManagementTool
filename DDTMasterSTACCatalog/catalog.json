@@ -1,0 +1,25 @@
+{
+  "type": "Catalog",
+  "id": "DDTMasterSTACCatalog",
+  "stac_version": "1.0.0",
+  "description": "DestinE data discovery tool master STAC catalog for the data produced at various HPC centers.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./LUMI/catalog.json",
+      "type": "application/json",
+      "title": "LUMI"
+    },
+    {
+      "rel": "child",
+      "href": "./MareNostrum/catalog.json",
+      "type": "application/json",
+      "title": "MareNostrum"
+    }
+  ]
+}

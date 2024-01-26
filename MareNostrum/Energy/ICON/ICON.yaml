@@ -1,0 +1,7 @@
+description: 'Catalog for files generated from ICON GSV.  '
+sources:
+  text:
+    description: text files data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/text/text.yaml'

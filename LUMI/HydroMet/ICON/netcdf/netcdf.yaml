@@ -1,0 +1,17 @@
+description: null
+metadata: {}
+name: netcdf
+sources:
+  netcdf1:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/HydroMet/mHM_Fluxes_States_2020_2025.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/LUMI/HydroMet/ICON/netcdf/
+    description: ''
+    direct_access: forbid
+    driver: intake_xarray.netcdf.NetCDFSource
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf1
+    parameters: {}

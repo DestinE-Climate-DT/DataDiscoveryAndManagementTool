@@ -1,0 +1,17 @@
+description: null
+metadata: {}
+name: text
+sources:
+  text1:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/Aqua/fileList.txt
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/Aqua/IFS/text/
+    description: ''
+    direct_access: forbid
+    driver: intake.source.textfiles.TextFilesSource
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: text1
+    parameters: {}

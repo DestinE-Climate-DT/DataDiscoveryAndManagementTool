@@ -1,0 +1,7 @@
+stacCuration module
+===================
+
+.. automodule:: stacCuration
+   :members:
+   :undoc-members:
+   :show-inheritance:

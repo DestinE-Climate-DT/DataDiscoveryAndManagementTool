@@ -1,0 +1,12 @@
+description: 'DestinE data discovery tool master intake catalog for the data produced at various HPC centers.'
+sources:
+  LUMI:
+    description: LUMI data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/LUMI/LUMI.yaml'
+  MareNostrum:
+    description: MareNostrum data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/MareNostrum/MareNostrum.yaml'

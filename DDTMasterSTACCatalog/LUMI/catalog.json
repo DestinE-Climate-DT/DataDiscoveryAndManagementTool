@@ -1,0 +1,54 @@
+{
+  "type": "Catalog",
+  "id": "LUMI",
+  "stac_version": "1.0.0",
+  "description": "LUMI data catalog",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./Aqua/catalog.json",
+      "type": "application/json",
+      "title": "Aqua"
+    },
+    {
+      "rel": "child",
+      "href": "./Energy/catalog.json",
+      "type": "application/json",
+      "title": "Energy"
+    },
+    {
+      "rel": "child",
+      "href": "./HydroMet/catalog.json",
+      "type": "application/json",
+      "title": "HydroMet"
+    },
+    {
+      "rel": "child",
+      "href": "./HydroRiver/catalog.json",
+      "type": "application/json",
+      "title": "HydroRiver"
+    },
+    {
+      "rel": "child",
+      "href": "./Urban/catalog.json",
+      "type": "application/json",
+      "title": "Urban"
+    },
+    {
+      "rel": "child",
+      "href": "./Wildfires/catalog.json",
+      "type": "application/json",
+      "title": "Wildfires"
+    }
+  ]
+}

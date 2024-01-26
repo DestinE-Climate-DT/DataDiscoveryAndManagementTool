@@ -1,0 +1,30 @@
+{
+  "type": "Catalog",
+  "id": "HydroRiver",
+  "stac_version": "1.0.0",
+  "description": "HydroRiver application data catalog",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./ICON/catalog.json",
+      "type": "application/json",
+      "title": "ICON"
+    },
+    {
+      "rel": "child",
+      "href": "./IFS/catalog.json",
+      "type": "application/json",
+      "title": "IFS"
+    }
+  ]
+}
