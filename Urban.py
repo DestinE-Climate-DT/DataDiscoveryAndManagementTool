@@ -1,0 +1,8 @@
+UrbanInfo={
+
+
+    'description' : 'In urban environments, heat waves are the extreme weather events with a highest impact on human well-being and health, as their impacts are amplified by the urban heat island (UHI) effect, which magnifies the severity of heat waves inside cities and significantly increases the health-related risks associated with heat stress. Current climate projections point towards a severe increase in the intensity, duration and frequency of heat waves under climate change conditions. In this warming scenario, the significance of heat waves as a public health issue is going to increase sharply. The study and modelling of urban climate is therefore key to understand how climate change will impact urban environments and their populations.',
+    
+    'providers': 'Barcelona Supercomputing Center (BSC)'
+
+}

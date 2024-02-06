@@ -1,0 +1,24 @@
+{
+  "type": "Catalog",
+  "id": "IFS",
+  "stac_version": "1.0.0",
+  "description": "IFS GSV data catalog",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./netcdf/catalog.json",
+      "type": "application/json",
+      "title": "netcdf"
+    }
+  ]
+}

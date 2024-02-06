@@ -242,8 +242,8 @@ def createSrcIntakeCatalog():
                 os.makedirs(srcCatalogPath,exist_ok=True)
             srcCatalog = os.path.join(ddtBasePath,f"{hpc}",f"{app}",f"{esm}",f"{src}",f"{src}.yaml")
 
-            srcExt=appDataSrcNameFileExt[src]
-            (appDataSrcNamesAPImap[src])(srcCatalog,getAppSrcFileList(app,src,srcExt))
+            srcExtList=appDataSrcNameFileExt[src]
+            (appDataSrcNamesAPImap[src])(srcCatalog,getAppSrcFileList(app,src,srcExtList))
         else:
             continue
 

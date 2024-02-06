@@ -1,15 +1,25 @@
 description: 'Catalog for application data produced by the desitnation earth twin engine simulations performed on MareNostrum.'
 sources:
-  Aqua:
-    description: Aqua application data catalog
+  AQUA:
+    description: AQUA application data catalog
     driver: yaml_file_cat
     args:
-      path: '{{CATALOG_DIR}}/Aqua/Aqua.yaml'
-  Energy:
-    description: Energy application data catalog
+      path: '{{CATALOG_DIR}}/AQUA/AQUA.yaml'
+  EnergyOnShore:
+    description: EnergyOnShore application data catalog
     driver: yaml_file_cat
     args:
-      path: '{{CATALOG_DIR}}/Energy/Energy.yaml'
+      path: '{{CATALOG_DIR}}/EnergyOnShore/EnergyOnShore.yaml'
+  EnergyOffShore:
+    description: EnergyOffShore application data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/EnergyOffShore/EnergyOffShore.yaml'
+  FWI:
+    description: FWI application data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/FWI/FWI.yaml'
   HydroMet:
     description: HydroMet application data catalog
     driver: yaml_file_cat
@@ -20,13 +30,18 @@ sources:
     driver: yaml_file_cat
     args:
       path: '{{CATALOG_DIR}}/HydroRiver/HydroRiver.yaml'
+  SPITFIRE:
+    description: SPITFIRE application data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/SPITFIRE/SPITFIRE.yaml'
   Urban:
     description: Urban application data catalog
     driver: yaml_file_cat
     args:
       path: '{{CATALOG_DIR}}/Urban/Urban.yaml'
-  Wildfires:
-    description: Wildfires application data catalog
+  WISE:
+    description: WISE application data catalog
     driver: yaml_file_cat
     args:
-      path: '{{CATALOG_DIR}}/Wildfires/Wildfires.yaml'
+      path: '{{CATALOG_DIR}}/WISE/WISE.yaml'

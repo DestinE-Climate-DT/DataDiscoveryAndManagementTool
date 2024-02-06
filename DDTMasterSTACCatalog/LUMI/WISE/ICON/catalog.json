@@ -1,0 +1,24 @@
+{
+  "type": "Catalog",
+  "id": "ICON",
+  "stac_version": "1.0.0",
+  "description": "ICON GSV data catalog",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./image/catalog.json",
+      "type": "application/json",
+      "title": "image"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+description: 'Catalog for files generated from IFS GSV.  '
+sources:
+  image:
+    description: image files data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/image/image.yaml'

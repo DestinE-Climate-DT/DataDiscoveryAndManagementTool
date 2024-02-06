@@ -19,6 +19,12 @@
       "href": "./netcdf/catalog.json",
       "type": "application/json",
       "title": "netcdf"
+    },
+    {
+      "rel": "child",
+      "href": "./text/catalog.json",
+      "type": "application/json",
+      "title": "text"
     }
   ]
 }

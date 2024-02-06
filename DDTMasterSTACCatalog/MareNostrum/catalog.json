@@ -16,15 +16,27 @@
     },
     {
       "rel": "child",
-      "href": "./Aqua/catalog.json",
+      "href": "./AQUA/catalog.json",
       "type": "application/json",
-      "title": "Aqua"
+      "title": "AQUA"
     },
     {
       "rel": "child",
-      "href": "./Energy/catalog.json",
+      "href": "./EnergyOnShore/catalog.json",
       "type": "application/json",
-      "title": "Energy"
+      "title": "EnergyOnShore"
+    },
+    {
+      "rel": "child",
+      "href": "./EnergyOffShore/catalog.json",
+      "type": "application/json",
+      "title": "EnergyOffShore"
+    },
+    {
+      "rel": "child",
+      "href": "./FWI/catalog.json",
+      "type": "application/json",
+      "title": "FWI"
     },
     {
       "rel": "child",
@@ -40,15 +52,21 @@
     },
     {
       "rel": "child",
+      "href": "./SPITFIRE/catalog.json",
+      "type": "application/json",
+      "title": "SPITFIRE"
+    },
+    {
+      "rel": "child",
       "href": "./Urban/catalog.json",
       "type": "application/json",
       "title": "Urban"
     },
     {
       "rel": "child",
-      "href": "./Wildfires/catalog.json",
+      "href": "./WISE/catalog.json",
       "type": "application/json",
-      "title": "Wildfires"
+      "title": "WISE"
     }
   ]
 }

@@ -16,6 +16,18 @@
     },
     {
       "rel": "child",
+      "href": "./netcdf/catalog.json",
+      "type": "application/json",
+      "title": "netcdf"
+    },
+    {
+      "rel": "child",
+      "href": "./image/catalog.json",
+      "type": "application/json",
+      "title": "image"
+    },
+    {
+      "rel": "child",
       "href": "./text/catalog.json",
       "type": "application/json",
       "title": "text"

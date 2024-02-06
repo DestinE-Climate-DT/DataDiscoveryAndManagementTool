@@ -1,0 +1,437 @@
+description: null
+metadata: {}
+name: image
+sources:
+  image1:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/P3.jpg
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image1
+    parameters: {}
+  image10:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_ifs_tco1279_orca0258_mswep_lra_r100_monthly_bias_seasons.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image10
+    parameters: {}
+  image11:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__histogram.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image11
+    parameters: {}
+  image12:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_era5_seasons.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image12
+    parameters: {}
+  image13:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__map.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image13
+    parameters: {}
+  image14:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__dailyvar.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image14
+    parameters: {}
+  image15:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__lra_r100_monthly_comparison_along_lon_mean.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image15
+    parameters: {}
+  image16:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_icon_ngc3028_seasons.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image16
+    parameters: {}
+  image17:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_mswep_seasons.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image17
+    parameters: {}
+  image18:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_icon_ngc3028_ifs_tco2559_ng5_ifs_tco1279_orca025_mswep_lra_r100_monthly_comparison_along_lon_mean.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image18
+    parameters: {}
+  image19:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_ifs_tco1279_seasons.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image19
+    parameters: {}
+  image2:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/P2.jpg
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image2
+    parameters: {}
+  image20:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_icon_ngc3028_mswep_lra_r100_monthly_bias_seasons.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image20
+    parameters: {}
+  image21:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_CDF_lra_r100_monthly_comparison_histogram.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image21
+    parameters: {}
+  image22:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_mean_along_lon.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image22
+    parameters: {}
+  image23:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_test_histogram.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image23
+    parameters: {}
+  image24:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_comparisonmean_along_lat.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image24
+    parameters: {}
+  image25:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_comparisonmean_along_lon.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image25
+    parameters: {}
+  image26:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__seasons.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image26
+    parameters: {}
+  image27:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_icon_ngc3028_ifs_tco2559_ng5_ifs_tco1279_orca025_mswep_10km_3h_histogram.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image27
+    parameters: {}
+  image28:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_ifs_tco2559_seasons.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image28
+    parameters: {}
+  image29:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_tco2559-ng5_mswep_lra_r100_monthly_bias_seasons.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image29
+    parameters: {}
+  image3:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/P1.jpg
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image3
+    parameters: {}
+  image30:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_CDF_icon_ngc3028_ifs_tco2559_ng5_ifs_tco1279_orca025_mswep_10km_3h_histogram.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image30
+    parameters: {}
+  image31:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_mean_along_lat.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver: intake_xarray.raster.RasterIOSource
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image31
+    parameters: {}
+  image4:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__mean_along_lat.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image4
+    parameters: {}
+  image5:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_comparison_mean.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image5
+    parameters: {}
+  image6:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_ifs_tco2559_era5_seasons.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image6
+    parameters: {}
+  image7:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_comparison_histogram.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image7
+    parameters: {}
+  image8:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_r100_monthly_comparison_histogram.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image8
+    parameters: {}
+  image9:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_r100_monthly_comparison_along_lon_mean.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image9
+    parameters: {}

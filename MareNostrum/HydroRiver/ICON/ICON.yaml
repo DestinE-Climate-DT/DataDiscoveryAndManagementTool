@@ -5,3 +5,8 @@ sources:
     driver: yaml_file_cat
     args:
       path: '{{CATALOG_DIR}}/netcdf/netcdf.yaml'
+  text:
+    description: text files data catalog
+    driver: yaml_file_cat
+    args:
+      path: '{{CATALOG_DIR}}/text/text.yaml'
