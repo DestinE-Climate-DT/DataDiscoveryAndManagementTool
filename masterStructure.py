@@ -4,7 +4,7 @@
 import os
 
 # The app info modules
-'''
+
 from AQUA import *
 from EnergyOffShore import *
 from EnergyOnShore import *
@@ -14,7 +14,7 @@ from HydroRiver import *
 from SPITFIRE import *
 from Urban import *
 from WISE import *
-'''
+
 
 # Names of the HPC centers producing the data.
 hpcCenters=['LUMI','MareNostrum']

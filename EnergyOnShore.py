@@ -1,10 +1,7 @@
 EnergyOnShoreInfo={
 
-
     'description' : 'Climate change mitigation efforts are reshaping the global energy system as efforts to decarbonize electricity generation lead to a prioritization of renewable energy sources. The Energy Directive of the European Commission has set the net zero emissions target by 2050, and thus, vulnerability studies of the European energy system under this scenario, and other potential energy mix scenarios, are crucial for ensuring the short- and long-term security of the energy supply, price, and stability of the power grid. most of the current datasets that estimate the potential generation of electricity by renewable sources at both global and European levels do not consider the effects of a changing climate. Besides, those that do consider this information are highly sensitive to the uncertainties from the inputs of future climate estimations as they are mainly coming from coarse-resolution GCMs.',
-
     
-    'providers': 'Barcelona Supercomputing Center (BSC)'
-
+    'provider': 'Barcelona Supercomputing Center (BSC)'
 
 }

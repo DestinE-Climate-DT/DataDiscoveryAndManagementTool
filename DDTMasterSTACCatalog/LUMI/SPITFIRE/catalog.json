@@ -2,7 +2,7 @@
   "type": "Catalog",
   "id": "SPITFIRE",
   "stac_version": "1.0.0",
-  "description": "SPITFIRE application data catalog",
+  "description": "The use case is to describe the fire risk, number of fires and bunt area for Finland.",
   "links": [
     {
       "rel": "root",

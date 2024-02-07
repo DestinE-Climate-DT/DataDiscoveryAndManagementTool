@@ -2,7 +2,7 @@
   "type": "Catalog",
   "id": "WISE",
   "stac_version": "1.0.0",
-  "description": "WISE application data catalog",
+  "description": "The use cases consists of three separate fire spread test scenarios in Finland.",
   "links": [
     {
       "rel": "root",

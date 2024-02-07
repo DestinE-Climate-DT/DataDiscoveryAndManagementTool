@@ -78,9 +78,10 @@ def createHPCSTACCatalog():
         hpcCatalogPath = os.path.join(ddtBasePath,"DDTMasterSTACCatalog",f"{hpc}")
         hpcCatalogFile = os.path.join(ddtBasePath,"DDTMasterSTACCatalog",f"{hpc}","catalog.json")
         hpcCatalog=pystac.Catalog.from_file(hpcCatalogFile)
-
-        appCatalog = pystac.Catalog(id=f'{app}', 
-        description=f"{app} application data catalog")
+        
+        appInfoDict = globals()[f"{app}Info"]
+        appCatalog = pystac.Catalog( id=f'{app}', 
+                        description = appInfoDict['description'])
         hpcCatalog.add_child(appCatalog,f'{app}')
         hpcCatalog.normalize_and_save(root_href = hpcCatalogPath, 
                      catalog_type=pystac.CatalogType.SELF_CONTAINED)
