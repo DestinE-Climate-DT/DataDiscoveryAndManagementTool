@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="masterStructure module" href="masterStructure.html" />
-    <link rel="prev" title="src" href="modules.html" /> 
+    <link rel="next" title="stacCuration module" href="stacCuration.html" />
+    <link rel="prev" title="utils module" href="utils.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,6 +47,17 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="masterStructure.html">masterStructure module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AQUA.html">AQUA module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EnergyOffShore.html">EnergyOffShore module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EnergyOnShore.html">EnergyOnShore module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FWI.html">FWI module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HydroMet.html">HydroMet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HydroRiver.html">HydroRiver module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SPITFIRE.html">SPITFIRE module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Urban.html">Urban module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WISE.html">WISE module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">intakeCuration module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createAppDataSrcNamesIntakeAPImap"><code class="docutils literal notranslate"><span class="pre">createAppDataSrcNamesIntakeAPImap()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createAppIntakeCatalog"><code class="docutils literal notranslate"><span class="pre">createAppIntakeCatalog()</span></code></a></li>
@@ -57,12 +68,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createNetcdfSrcListForIntake"><code class="docutils literal notranslate"><span class="pre">createNetcdfSrcListForIntake()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createSrcIntakeCatalog"><code class="docutils literal notranslate"><span class="pre">createSrcIntakeCatalog()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createTextSrcListForIntake"><code class="docutils literal notranslate"><span class="pre">createTextSrcListForIntake()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#intakeCuration.getAppSrcFileList"><code class="docutils literal notranslate"><span class="pre">getAppSrcFileList()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="masterStructure.html">masterStructure module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stacCuration.html">stacCuration module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
 </ul>
 </li>
 </ul>
@@ -94,6 +102,8 @@
              
   <section id="module-intakeCuration">
 <span id="intakecuration-module"></span><h1>intakeCuration module<a class="headerlink" href="#module-intakeCuration" title="Link to this heading"></a></h1>
+<p>This module contains the APIs for updating the intake catalog for each app and each of it’s file types.
+These APIs need to be called by the app data curator for maintaining the intake catalog.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="intakeCuration.createAppDataSrcNamesIntakeAPImap">
 <span class="sig-prename descclassname"><span class="pre">intakeCuration.</span></span><span class="sig-name descname"><span class="pre">createAppDataSrcNamesIntakeAPImap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#intakeCuration.createAppDataSrcNamesIntakeAPImap" title="Link to this definition"></a></dt>
@@ -247,33 +257,14 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="intakeCuration.getAppSrcFileList">
-<span class="sig-prename descclassname"><span class="pre">intakeCuration.</span></span><span class="sig-name descname"><span class="pre">getAppSrcFileList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srcExt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intakeCuration.getAppSrcFileList" title="Link to this definition"></a></dt>
-<dd><p>Create a list of files produced by the app, for a given file type.</p>
-<p>Search the app data directory and create a list of all the files of a given file type like netcdf, jpeg etc.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>app</strong> – Application Name.</p></li>
-<li><p><strong>src</strong> – Source or file type name like netcdf, image, text.</p></li>
-<li><p><strong>srcExt</strong> – The file suffix like <em>.nc, *.jpg,</em>.txt.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>srcFileList - a list.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="masterStructure.html" class="btn btn-neutral float-right" title="masterStructure module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="utils.html" class="btn btn-neutral float-left" title="utils module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="stacCuration.html" class="btn btn-neutral float-right" title="stacCuration module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

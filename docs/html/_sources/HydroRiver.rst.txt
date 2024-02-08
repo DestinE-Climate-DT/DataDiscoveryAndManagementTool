@@ -1,0 +1,7 @@
+HydroRiver module
+=================
+
+.. automodule:: HydroRiver
+   :members:
+   :undoc-members:
+   :show-inheritance:

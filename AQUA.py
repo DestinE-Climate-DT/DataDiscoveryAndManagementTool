@@ -1,3 +1,7 @@
+"""
+This module contains the information about the AQUA app.
+"""
+
 AQUAInfo={
 
     'description' : 'Aqua is specifically developed for running advanced diagnostics on high-resolution climate models, crucial components of the Digital Twins of Earth initiative. ',

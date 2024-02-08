@@ -1,23 +1,30 @@
-# This module contains the APIs for updating the catalog for each app and each of it's file types.
-# These APIs need to be called by the app data curator for maintaining the catalog.
+"""
+This module contains the APIs for updating the intake catalog for each app and each of it's file types.
+These APIs need to be called by the app data curator for maintaining the intake catalog.
+"""
 
-#TODO: 
-# Create temporary files for each app and check the APIs.
-# Create catalog for each app as well as the master catalog.
-# Update the files to github and share in the meeting.
-# Demonstrate with intake GUI.
-# Create docstrings for each api and generate the online documentation.
-# Create the STAC catalog and demonstrate in browser.
-
-import os
+#Standard modules
+import sys
 import subprocess
-import yaml
-import intake
-import pathlib
 import itertools
+from importlib import import_module
 
-from masterStructure import *
-from utils import getAppSrcFileList
+#Non-standard modules
+try:
+    import intake
+    import yaml
+except:
+    print(sys.exc_info())
+
+#Local modules
+modName = "utils"
+try:
+    utilsModule = import_module(modName)
+except:
+    print(sys.exc_info())
+else:
+    globals()["utils"]=utilsModule
+    eval(f'exec("from {modName} import *")')
 
 
 def createAppDataSrcNamesIntakeAPImap():

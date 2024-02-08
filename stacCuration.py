@@ -1,14 +1,32 @@
-import os
+"""
+This module contains the APIs for updating the STAC catalog for each app and each of it's file types.
+These APIs need to be called by the app data curator for maintaining the STAC catalog.
+"""
+
+#Standard modules
+import sys
 import json
-import rasterio
-import pystac
 import itertools
-
 from datetime import datetime, timezone
-from shapely.geometry import Polygon, mapping
+from importlib import import_module
 
-from masterStructure import *
-from utils import getAppSrcFileList
+#Non-standard modules
+try:
+    import rasterio
+    import pystac
+    from shapely.geometry import Polygon, mapping
+except:
+    print(sys.exc_info())
+
+#Local modules
+modName = "utils"
+try:
+    utilsModule = import_module(modName)
+except:
+    print(sys.exc_info())
+else:
+    globals()["utils"]=utilsModule
+    eval(f'exec("from {modName} import *")')
 
 
 def createAppDataSrcNamesSTACAPImap():

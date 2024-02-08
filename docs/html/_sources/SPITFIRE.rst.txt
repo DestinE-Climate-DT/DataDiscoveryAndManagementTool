@@ -1,0 +1,7 @@
+SPITFIRE module
+===============
+
+.. automodule:: SPITFIRE
+   :members:
+   :undoc-members:
+   :show-inheritance:

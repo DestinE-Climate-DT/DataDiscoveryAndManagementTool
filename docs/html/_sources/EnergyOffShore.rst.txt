@@ -1,0 +1,7 @@
+EnergyOffShore module
+=====================
+
+.. automodule:: EnergyOffShore
+   :members:
+   :undoc-members:
+   :show-inheritance:

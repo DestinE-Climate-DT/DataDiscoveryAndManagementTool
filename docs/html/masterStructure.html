@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="stacCuration module" href="stacCuration.html" />
-    <link rel="prev" title="intakeCuration module" href="intakeCuration.html" /> 
+    <link rel="next" title="AQUA module" href="AQUA.html" />
+    <link rel="prev" title="src" href="modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,10 +47,29 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="intakeCuration.html">intakeCuration module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">masterStructure module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stacCuration.html">stacCuration module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">masterStructure module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#masterStructure.appDataPath"><code class="docutils literal notranslate"><span class="pre">appDataPath</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#masterStructure.appDataSrcNameFileExt"><code class="docutils literal notranslate"><span class="pre">appDataSrcNameFileExt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#masterStructure.appDataSrcNames"><code class="docutils literal notranslate"><span class="pre">appDataSrcNames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#masterStructure.appNamesList"><code class="docutils literal notranslate"><span class="pre">appNamesList</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#masterStructure.appSrcFlags"><code class="docutils literal notranslate"><span class="pre">appSrcFlags</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#masterStructure.ddtBasePath"><code class="docutils literal notranslate"><span class="pre">ddtBasePath</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#masterStructure.esmNames"><code class="docutils literal notranslate"><span class="pre">esmNames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#masterStructure.hpcCenters"><code class="docutils literal notranslate"><span class="pre">hpcCenters</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AQUA.html">AQUA module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EnergyOffShore.html">EnergyOffShore module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EnergyOnShore.html">EnergyOnShore module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FWI.html">FWI module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HydroMet.html">HydroMet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HydroRiver.html">HydroRiver module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SPITFIRE.html">SPITFIRE module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Urban.html">Urban module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WISE.html">WISE module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intakeCuration.html">intakeCuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stacCuration.html">stacCuration module</a></li>
 </ul>
 </li>
 </ul>
@@ -82,14 +101,106 @@
              
   <section id="module-masterStructure">
 <span id="masterstructure-module"></span><h1>masterStructure module<a class="headerlink" href="#module-masterStructure" title="Link to this heading"></a></h1>
+<p>This module contains the core structural elements of the data discovery tool.
+The core structural elements consists of the names of applications, HPC centers, ESMs etc.
+The names of the file types produced by each application and their extensions.
+Apart from that certain data structures to hold these infos.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="masterStructure.appDataPath">
+<span class="sig-prename descclassname"><span class="pre">masterStructure.</span></span><span class="sig-name descname"><span class="pre">appDataPath</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/work/bm0146/k204247/DestinE/destinE_DDTool/destinEData'</span></em><a class="headerlink" href="#masterStructure.appDataPath" title="Link to this definition"></a></dt>
+<dd><p>Path to location of the data produced by the applications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="masterStructure.appDataSrcNameFileExt">
+<span class="sig-prename descclassname"><span class="pre">masterStructure.</span></span><span class="sig-name descname"><span class="pre">appDataSrcNameFileExt</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'image':</span> <span class="pre">['*.jpg',</span> <span class="pre">'*.pdf',</span> <span class="pre">'*.png',</span> <span class="pre">'*.gif'],</span> <span class="pre">'netcdf':</span> <span class="pre">['*.nc'],</span> <span class="pre">'text':</span> <span class="pre">['*.txt',</span> <span class="pre">'*.csv']}</span></em><a class="headerlink" href="#masterStructure.appDataSrcNameFileExt" title="Link to this definition"></a></dt>
+<dd><p>List of the file extensions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="masterStructure.appDataSrcNames">
+<span class="sig-prename descclassname"><span class="pre">masterStructure.</span></span><span class="sig-name descname"><span class="pre">appDataSrcNames</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['netcdf',</span> <span class="pre">'image',</span> <span class="pre">'text']</span></em><a class="headerlink" href="#masterStructure.appDataSrcNames" title="Link to this definition"></a></dt>
+<dd><p>List of the file types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="masterStructure.appNamesList">
+<span class="sig-prename descclassname"><span class="pre">masterStructure.</span></span><span class="sig-name descname"><span class="pre">appNamesList</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['AQUA',</span> <span class="pre">'EnergyOnShore',</span> <span class="pre">'EnergyOffShore',</span> <span class="pre">'FWI',</span> <span class="pre">'HydroMet',</span> <span class="pre">'HydroRiver',</span> <span class="pre">'SPITFIRE',</span> <span class="pre">'Urban',</span> <span class="pre">'WISE']</span></em><a class="headerlink" href="#masterStructure.appNamesList" title="Link to this definition"></a></dt>
+<dd><p>List of the application names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="masterStructure.appSrcFlags">
+<span class="sig-prename descclassname"><span class="pre">masterStructure.</span></span><span class="sig-name descname"><span class="pre">appSrcFlags</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'AQUA':</span> <span class="pre">[True,</span> <span class="pre">True,</span> <span class="pre">False],</span> <span class="pre">'EnergyOffShore':</span> <span class="pre">[True,</span> <span class="pre">True,</span> <span class="pre">False],</span> <span class="pre">'EnergyOnShore':</span> <span class="pre">[True,</span> <span class="pre">True,</span> <span class="pre">True],</span> <span class="pre">'FWI':</span> <span class="pre">[True,</span> <span class="pre">True,</span> <span class="pre">False],</span> <span class="pre">'HydroMet':</span> <span class="pre">[True,</span> <span class="pre">False,</span> <span class="pre">True],</span> <span class="pre">'HydroRiver':</span> <span class="pre">[True,</span> <span class="pre">False,</span> <span class="pre">True],</span> <span class="pre">'SPITFIRE':</span> <span class="pre">[True,</span> <span class="pre">False,</span> <span class="pre">False],</span> <span class="pre">'Urban':</span> <span class="pre">[True,</span> <span class="pre">True,</span> <span class="pre">True],</span> <span class="pre">'WISE':</span> <span class="pre">[False,</span> <span class="pre">True,</span> <span class="pre">False]}</span></em><a class="headerlink" href="#masterStructure.appSrcFlags" title="Link to this definition"></a></dt>
+<dd><p>Dictionary of the file types produced by all the apps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="masterStructure.ddtBasePath">
+<span class="sig-prename descclassname"><span class="pre">masterStructure.</span></span><span class="sig-name descname"><span class="pre">ddtBasePath</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/work/bm0146/k204247/DestinE/destinE_DDTool'</span></em><a class="headerlink" href="#masterStructure.ddtBasePath" title="Link to this definition"></a></dt>
+<dd><p>Path to location of the data discovery and management tool on disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="masterStructure.esmNames">
+<span class="sig-prename descclassname"><span class="pre">masterStructure.</span></span><span class="sig-name descname"><span class="pre">esmNames</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['ICON',</span> <span class="pre">'IFS']</span></em><a class="headerlink" href="#masterStructure.esmNames" title="Link to this definition"></a></dt>
+<dd><p>List of the ESMs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="masterStructure.hpcCenters">
+<span class="sig-prename descclassname"><span class="pre">masterStructure.</span></span><span class="sig-name descname"><span class="pre">hpcCenters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['LUMI',</span> <span class="pre">'MareNostrum']</span></em><a class="headerlink" href="#masterStructure.hpcCenters" title="Link to this definition"></a></dt>
+<dd><p>List of the HPC centers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="intakeCuration.html" class="btn btn-neutral float-left" title="intakeCuration module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="stacCuration.html" class="btn btn-neutral float-right" title="stacCuration module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="AQUA.html" class="btn btn-neutral float-right" title="AQUA module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

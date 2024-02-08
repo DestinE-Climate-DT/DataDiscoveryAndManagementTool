@@ -1,0 +1,7 @@
+EnergyOnShore module
+====================
+
+.. automodule:: EnergyOnShore
+   :members:
+   :undoc-members:
+   :show-inheritance:
