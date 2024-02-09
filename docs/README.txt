@@ -1,4 +1,4 @@
-To create the sphinx documentation from the python source filesi, create docs folder under the project folder and execute the following from the docs folder.
+To create the sphinx documentation from the python source files, create docs folder under the project folder and execute the following from the docs folder.
 1. sphinx-quickstart  --- options mostly default, for seperate build and source , choose yes.
 2. Edit conf.py to 
 	a.Add 'sphinx_rtd_theme' in html_theme.
