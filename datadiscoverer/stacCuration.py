@@ -4,11 +4,12 @@ These APIs need to be called by the app data curator for maintaining the STAC ca
 """
 
 #Standard modules
+import os
 import sys
 import json
 import itertools
 from datetime import datetime, timezone
-from importlib import import_module
+import importlib
 
 #Non-standard modules
 try:
@@ -19,14 +20,24 @@ except:
     print(sys.exc_info())
 
 #Local modules
-modName = "utils"
 try:
-    utilsModule = import_module(modName)
+    from .config import configDatadiscoverer
 except:
     print(sys.exc_info())
-else:
-    globals()["utils"]=utilsModule
-    eval(f'exec("from {modName} import *")')
+
+try:
+    from .utils import getAppSrcFileList
+except:
+    print(sys.exc_info())
+    
+appNamesList=['AQUA','EnergyOnShore','EnergyOffShore','FWI','HydroMet','HydroRiver','SPITFIRE','Urban','WISE']
+
+#Local modules
+for appName in appNamesList:
+    try:
+        eval(f'exec("from .{appName} import {appName}Info")')
+    except:
+        print(sys.exc_info())
 
 
 def createAppDataSrcNamesSTACAPImap():
@@ -40,6 +51,9 @@ def createAppDataSrcNamesSTACAPImap():
     Returns: 
             None
     """
+    localconfig = configDatadiscoverer.activeConfig
+    appDataSrcNames = localconfig.getappDataSrcNames()
+    appDataSrcNamesAPImap = localconfig.getappDataSrcNamesAPImap()
     
     for src in appDataSrcNames:
         if src == 'netcdf':
@@ -63,18 +77,25 @@ def createDDTMasterSTACCatalog():
     Returns: 
             None.
     """
+    localconfig = configDatadiscoverer.activeConfig
+    outputPath = localconfig.getdatadiscovererOutputPath()
 
-    catalog = pystac.Catalog(id='DDTMasterSTACCatalog', 
+    catalog = pystac.Catalog(id='datadiscovererSTACCatalog', 
                          description='DestinE data discovery tool master STAC catalog for the data produced at various HPC centers.')
     
-    for hpc in hpcCenters:
+    for hpc in localconfig.getHPCCenters():
     
         hpcCatalog = pystac.Catalog(id=f'{hpc}', 
                          description=f"{hpc} data catalog")
         catalog.add_child(hpcCatalog,f'{hpc}')
     
-    root_path = os.path.join(ddtBasePath,"DDTMasterSTACCatalog")
-    catalog.normalize_and_save(root_href = root_path, 
+    try:
+        os.path.exists(outputPath)
+    except:
+        print(sys.exc_info())
+        
+    #root_path = os.path.join(outputPath,"stacCatalog")
+    catalog.normalize_and_save(root_href = outputPath, 
                          catalog_type=pystac.CatalogType.SELF_CONTAINED)
     return
 
@@ -89,20 +110,26 @@ def createHPCSTACCatalog():
     Returns: 
             None.
     """
+    localconfig = configDatadiscoverer.activeConfig
+    outputPath = localconfig.getdatadiscovererOutputPath()
 
-    root_path = os.path.join(ddtBasePath,"DDTMasterSTACCatalog")
-
-    for hpc, app in itertools.product(hpcCenters,appNamesList):
-        hpcCatalogPath = os.path.join(ddtBasePath,"DDTMasterSTACCatalog",f"{hpc}")
-        hpcCatalogFile = os.path.join(ddtBasePath,"DDTMasterSTACCatalog",f"{hpc}","catalog.json")
+    for hpc, app  in itertools.product(localconfig.getHPCCenters(),
+                                       localconfig.getappNamesList()):
+        
+        hpcCatalogPath = os.path.join(outputPath,f"{hpc}")
+        hpcCatalogFile = os.path.join(hpcCatalogPath,"catalog.json")
         hpcCatalog=pystac.Catalog.from_file(hpcCatalogFile)
         
         appInfoDict = globals()[f"{app}Info"]
+        #['provider']
+        appDescription = f"{app}info" 
         appCatalog = pystac.Catalog( id=f'{app}', 
-                        description = appInfoDict['description'])
+                        description = appInfoDict['description']
+                        #,providers = appInfoDict['provider']
+                        )
         hpcCatalog.add_child(appCatalog,f'{app}')
         hpcCatalog.normalize_and_save(root_href = hpcCatalogPath, 
-                     catalog_type=pystac.CatalogType.SELF_CONTAINED)
+                         catalog_type=pystac.CatalogType.SELF_CONTAINED)
     return
 
 
@@ -116,12 +143,15 @@ def createAppSTACCatalog():
     Returns: 
             None.
     """
-    
-    root_path = os.path.join(ddtBasePath,"DDTMasterSTACCatalog")
-    
-    for hpc, app, esm in itertools.product(hpcCenters,appNamesList,esmNames):
-        appCatalogPath = os.path.join(ddtBasePath,"DDTMasterSTACCatalog",f"{hpc}",f"{app}")
-        appCatalogFile = os.path.join(ddtBasePath,"DDTMasterSTACCatalog",f"{hpc}",f"{app}","catalog.json")
+    localconfig = configDatadiscoverer.activeConfig
+    outputPath = localconfig.getdatadiscovererOutputPath()
+
+    for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
+                                        localconfig.getappNamesList(),
+                                        localconfig.getESMs()):
+
+        appCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}")
+        appCatalogFile = os.path.join(outputPath,f"{hpc}",f"{app}","catalog.json")
         appCatalog=pystac.Catalog.from_file(appCatalogFile)
         
         esmCatalog = pystac.Catalog(id=f'{esm}', 
@@ -142,18 +172,28 @@ def createESMSTACCatalog():
     Returns: 
             None.
     """
-       
-    root_path = os.path.join(ddtBasePath,"DDTMasterSTACCatalog")
+
+    localconfig = configDatadiscoverer.activeConfig
+    outputPath = localconfig.getdatadiscovererOutputPath()
+
+    appDataSrcNames = localconfig.getappDataSrcNames()
+    appDataSrcNamesAPImap = localconfig.getappDataSrcNamesAPImap()
+    appDataSrcNameFileExt = localconfig.getappDataSrcNameFileExt()
     
-    for hpc, app, esm, src in itertools.product(hpcCenters,appNamesList,esmNames,appDataSrcNames):
+    for hpc, app, esm, src  in itertools.product(localconfig.getHPCCenters(),
+                                        localconfig.getappNamesList(),
+                                        localconfig.getESMs(),
+                                        localconfig.getappDataSrcNames()):
+
         currentAppSrcDict = {}
-        currentAppSrcFlags = appSrcFlags[app]
+        #currentAppSrcFlags = appSrcFlags[app]
+        currentAppDataSrcFlags = (localconfig.getappDataSrcFlags())[app]
         
-        esmCatalogPath = os.path.join(ddtBasePath,"DDTMasterSTACCatalog",f"{hpc}",f"{app}",f"{esm}")
-        esmCatalogFile = os.path.join(ddtBasePath,"DDTMasterSTACCatalog",f"{hpc}",f"{app}",f"{esm}","catalog.json")
+        esmCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}")
+        esmCatalogFile = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}","catalog.json")
         esmCatalog=pystac.Catalog.from_file(esmCatalogFile)
 
-        if currentAppSrcFlags[appDataSrcNames.index(src)] == True:
+        if currentAppDataSrcFlags[appDataSrcNames.index(src)] == True:
 
             srcCatalog = pystac.Catalog(id=f'{src}', 
                         description=f"{src} files data catalog")

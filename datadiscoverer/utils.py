@@ -7,19 +7,15 @@ import os
 import sys
 import glob
 from pathlib import Path
-from importlib import import_module
+import importlib
 
 #Local modules
 try:
-    masterStructureModule = import_module("masterStructure")
+    from .config import configDatadiscoverer
 except:
     print(sys.exc_info())
-else:
-    globals()["masterStructure"] = masterStructureModule
-    eval('exec("from masterStructure import *")')
 
     
-
 def getAppSrcFileList(app,src,srcExtList):
     """Create a list of files produced by the app, for a given file type.
 
@@ -35,7 +31,8 @@ def getAppSrcFileList(app,src,srcExtList):
     
     srcFileList = []
     
-    #root=Path(os.path.join(appDataPath,app,src))
+    localconfig = configDatadiscoverer.activeConfig
+    appDataPath = localconfig.getdatadiscovererDataPath()
     root=Path(os.path.join(appDataPath,app))
     
     try:
@@ -50,5 +47,4 @@ def getAppSrcFileList(app,src,srcExtList):
 
         srcFileList += glob.glob(globArg)
     
-    print(srcFileList)
     return srcFileList

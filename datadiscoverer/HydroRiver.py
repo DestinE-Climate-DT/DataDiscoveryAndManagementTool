@@ -1,3 +1,7 @@
+"""
+This module contains the information about the HydroRiver app.
+"""
+
 HydroRiverInfo={
 
     'description' : 'The HydroRiver application provides high-resolution information to the user regarding freshwater availability. The results from the mhm can be used in a scientific use case as: \

@@ -1,0 +1,26 @@
+{
+	"hpcCenters":["LUMI","MareNostrum"],
+	"esmNames":["ICON","IFS"],
+	"appDataSrcNames":["netcdf","image","text"],
+	"appDataSrcNameFileExt":{
+    		"netcdf"   :["*.nc"],
+	   	"image"   :["*.jpg","*.pdf","*.png","*.gif"],
+	    	"text"     :["*.txt","*.csv"]
+		},
+	"datadiscovererDataPath":"/work/bm0146/k204247/DestinE/destinE_DDTool/destinEData",
+	"datadiscovererOutputPath":"/work/bm0146/k204247/DestinE/destinE_DDTool/output",
+	"appDataSrcNamesAPImap":{},
+	"ddtBasePath":"/work/bm0146/k204247/DestinE/destinE_DDTool",
+	"appNamesList":["AQUA","EnergyOnShore","EnergyOffShore","FWI","HydroMet","HydroRiver","SPITFIRE","Urban","WISE"],
+	"appDataSrcFlags":{
+	    "AQUA"               :   [true,true,false],
+	    "EnergyOnShore"      :   [true,true,true],
+	    "EnergyOffShore"     :   [true,true,false],
+	    "FWI"                :   [true,true,false],
+	    "HydroMet"           :   [true,false,true],
+	    "HydroRiver"         :   [true,false,true],
+	    "SPITFIRE"           :   [true,false,false],
+	    "Urban"              :   [true,true,true],
+	    "WISE"               :   [false,true,false]
+	}
+}
