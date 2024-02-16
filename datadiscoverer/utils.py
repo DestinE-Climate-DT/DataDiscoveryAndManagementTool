@@ -24,7 +24,7 @@ def getAppSrcFileList(app,src,srcExtList):
     Args:
             app : Application Name.
             src : Source or file type name like netcdf, image, text.
-            srcExt: The file suffix like *.nc, *.jpg, *.pdf, *.txt, *.csv.
+            srcExtList: The file suffix like *.nc, *.jpg, *.pdf, *.txt, *.csv.
     Returns: 
             srcFileList - a list.
     """

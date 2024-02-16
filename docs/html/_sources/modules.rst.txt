@@ -4,7 +4,6 @@ src
 .. toctree::
    :maxdepth: 4
    
-   masterStructure
    AQUA
    EnergyOffShore
    EnergyOnShore
@@ -17,4 +16,3 @@ src
    utils
    intakeCuration
    stacCuration
-   

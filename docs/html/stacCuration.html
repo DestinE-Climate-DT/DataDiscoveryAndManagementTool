@@ -46,7 +46,6 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="masterStructure.html">masterStructure module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AQUA.html">AQUA module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EnergyOffShore.html">EnergyOffShore module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EnergyOnShore.html">EnergyOnShore module</a></li>
@@ -58,17 +57,7 @@
 <li class="toctree-l2"><a class="reference internal" href="WISE.html">WISE module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intakeCuration.html">intakeCuration module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">stacCuration module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#stacCuration.createAppDataSrcNamesSTACAPImap"><code class="docutils literal notranslate"><span class="pre">createAppDataSrcNamesSTACAPImap()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stacCuration.createAppSTACCatalog"><code class="docutils literal notranslate"><span class="pre">createAppSTACCatalog()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stacCuration.createDDTMasterSTACCatalog"><code class="docutils literal notranslate"><span class="pre">createDDTMasterSTACCatalog()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stacCuration.createESMSTACCatalog"><code class="docutils literal notranslate"><span class="pre">createESMSTACCatalog()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stacCuration.createHPCSTACCatalog"><code class="docutils literal notranslate"><span class="pre">createHPCSTACCatalog()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stacCuration.createImageSrcListForSTAC"><code class="docutils literal notranslate"><span class="pre">createImageSrcListForSTAC()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stacCuration.createNetcdfSrcListForSTAC"><code class="docutils literal notranslate"><span class="pre">createNetcdfSrcListForSTAC()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stacCuration.createTextSrcListForSTAC"><code class="docutils literal notranslate"><span class="pre">createTextSrcListForSTAC()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">stacCuration module</a></li>
 </ul>
 </li>
 </ul>
@@ -98,148 +87,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-stacCuration">
-<span id="staccuration-module"></span><h1>stacCuration module<a class="headerlink" href="#module-stacCuration" title="Link to this heading"></a></h1>
-<p>This module contains the APIs for updating the STAC catalog for each app and each of it’s file types.
-These APIs need to be called by the app data curator for maintaining the STAC catalog.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="stacCuration.createAppDataSrcNamesSTACAPImap">
-<span class="sig-prename descclassname"><span class="pre">stacCuration.</span></span><span class="sig-name descname"><span class="pre">createAppDataSrcNamesSTACAPImap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stacCuration.createAppDataSrcNamesSTACAPImap" title="Link to this definition"></a></dt>
-<dd><p>Create a mapping between the file types and the associated STAC API for handling it.</p>
-<p>Mapper to club the file types and the corresponding access methods for handling netcdf, jpeg etc.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None.</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="stacCuration.createAppSTACCatalog">
-<span class="sig-prename descclassname"><span class="pre">stacCuration.</span></span><span class="sig-name descname"><span class="pre">createAppSTACCatalog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stacCuration.createAppSTACCatalog" title="Link to this definition"></a></dt>
-<dd><p>Create STAC catalog for the Apps.</p>
-<p>For each of the Apps, create the STAC catalog containing the links to the STAC catalogs for the ESMs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None.</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="stacCuration.createDDTMasterSTACCatalog">
-<span class="sig-prename descclassname"><span class="pre">stacCuration.</span></span><span class="sig-name descname"><span class="pre">createDDTMasterSTACCatalog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stacCuration.createDDTMasterSTACCatalog" title="Link to this definition"></a></dt>
-<dd><p>Create master STAC catalog file for the HPC centers.</p>
-<p>Create the top level master STAC catalog containing the links to the STAC catalogs for the HPC centers.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None.</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="stacCuration.createESMSTACCatalog">
-<span class="sig-prename descclassname"><span class="pre">stacCuration.</span></span><span class="sig-name descname"><span class="pre">createESMSTACCatalog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stacCuration.createESMSTACCatalog" title="Link to this definition"></a></dt>
-<dd><p>Create STAC catalog for the ESMs.</p>
-<p>For each of the ESMs, create the STAC catalog containing the links to the STAC catalogs for the available sources.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None.</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="stacCuration.createHPCSTACCatalog">
-<span class="sig-prename descclassname"><span class="pre">stacCuration.</span></span><span class="sig-name descname"><span class="pre">createHPCSTACCatalog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stacCuration.createHPCSTACCatalog" title="Link to this definition"></a></dt>
-<dd><p>Create STAC catalog for the HPC centers.</p>
-<p>For each of the HPC centers, create the STAC catalog containing the links to the STAC catalogs for the Apps.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None.</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="stacCuration.createImageSrcListForSTAC">
-<span class="sig-prename descclassname"><span class="pre">stacCuration.</span></span><span class="sig-name descname"><span class="pre">createImageSrcListForSTAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">srcCatalog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srcFileList</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stacCuration.createImageSrcListForSTAC" title="Link to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Create STAC items for the image files in the input</dt><dd><p>file list of files.</p>
-</dd>
-</dl>
-<p>For each of the image files in the input file list, create the STAC item and save in the input catalog file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>catFile</strong> – Catalog File Name.</p></li>
-<li><p><strong>srcFileList</strong> – List of image files.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="stacCuration.createNetcdfSrcListForSTAC">
-<span class="sig-prename descclassname"><span class="pre">stacCuration.</span></span><span class="sig-name descname"><span class="pre">createNetcdfSrcListForSTAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">srcCatalog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srcFileList</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stacCuration.createNetcdfSrcListForSTAC" title="Link to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Create STAC items for the netcdf files in the input</dt><dd><p>file list of files.</p>
-</dd>
-</dl>
-<p>For each of the netcdf files in the input file list, create the STAC item and save in the input catalog file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>catFile</strong> – Catalog File Name.</p></li>
-<li><p><strong>srcFileList</strong> – List of netcdf files.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="stacCuration.createTextSrcListForSTAC">
-<span class="sig-prename descclassname"><span class="pre">stacCuration.</span></span><span class="sig-name descname"><span class="pre">createTextSrcListForSTAC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">srcCatalog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srcFileList</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stacCuration.createTextSrcListForSTAC" title="Link to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Create STAC items for the text files in the input</dt><dd><p>file list of files.</p>
-</dd>
-</dl>
-<p>For each of the text files in the input file list, create the STAC item and save in the input catalog file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>catFile</strong> – Catalog File Name.</p></li>
-<li><p><strong>srcFileList</strong> – List of text files.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
+  <section id="staccuration-module">
+<h1>stacCuration module<a class="headerlink" href="#staccuration-module" title="Link to this heading"></a></h1>
 </section>
 
 
