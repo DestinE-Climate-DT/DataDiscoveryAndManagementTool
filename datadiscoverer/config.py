@@ -10,29 +10,134 @@ import os
 import sys
 from importlib import import_module
 import importlib
+import json
 
-appNamesList=['AQUA','EnergyOnShore','EnergyOffShore','FWI','HydroMet','HydroRiver','SPITFIRE','Urban','WISE']
+#Non-standard modules
+try:
+    from jsonschema import validate
+    from jsonschema import exceptions
+except:
+    print(sys.exc_info())
+    print(f"Module 'jsonschema' import error in {__file__}")
 
-#Local modules
-for appName in appNamesList:
-    try:
-        spec = importlib.util.spec_from_file_location(appName,
-                         os.path.join(os.path.dirname(__file__),f"{appName}.py"))
-        module = importlib.util.module_from_spec(spec)
-        sys.modules[appName] = module
-        spec.loader.exec_module(module)
-        eval(f'exec("from {appName} import *")')
-    except:
-        print(sys.exc_info())
+        
+configSchema = {
+                    "type" : "object",
+                    "properties" : {
+                            "installationPath":{ "type" : "string"},
+                            "dataPath":{ "type" : "string"},
+                            "outputPath":{ "type" : "string"},
+
+                            "appNames":{
+                                "type" : "array",
+                                "items": {"type": "string","enum" : ['AQUA','EnergyOnShore','EnergyOffShore','FWI',
+                                                                     'HydroMet','HydroRiver','SPITFIRE','Urban','WISE']},
+                                "uniqueItems": True
+                                 },
+
+                            "hpcCenters":{
+                                "type" : "array",
+                                "items": {"type": "string","enum" : ["LUMI","MareNostrum"]},
+                                "uniqueItems": True
+                                 },
+
+                            "esmNames":{
+                                "type" : "array",
+                                "items": {"type": "string","enum" : ["ICON","IFS"]},
+                                "uniqueItems": True
+                                 },
+
+                            "appDataSrcNames":{
+                                "type" : "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum" : ["netcdf","image","text"]
+                                },
+                                "uniqueItems": True
+                            },
+
+                            "appDataSrcNameFileExt":{
+
+                                "type" : "object",
+                                "propertyNames": {
+                                    "enum": ["netcdf","image","text"]
+                                },
+                                "additionalProperties": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                        
+                            "appDescriptionInfo":{
+                               
+                                "type" : "object",
+                                "propertyNames": {
+                                    "enum" : ["AQUA","EnergyOnShore","EnergyOffShore","FWI",
+                                                      "HydroMet","HydroRiver","SPITFIRE","Urban","WISE"]
+                                },
+                                
+                                "additionalProperties": {
+                                    
+                                    "type": "object",
+                                    "propertyNames": {
+                                            "enum" : ['description','provider','datasources']
+                                    },
+                                    "required":['description','provider','datasources']
+                                }
+                            }
+                    },
     
+                    "required":["installationPath","dataPath","outputPath","appNames","hpcCenters","esmNames","appDataSrcNames","appDataSrcNameFileExt","appDescriptionInfo"]                       
+               }
 
+
+def initializeDataDiscoverer(configFile):
+    """Initializing the datadiscoverer.
+
+    Initialize the datadiscoverer library configuration with the parameters provided in 
+    the input json file.
+
+    Args:
+            configFile : JSON file with configuration parameters.
+     Returns: 
+            curconfig - current configuration object.
+    """
+    
+    global configSchema
+    
+    if not os.path.exists(configFile):
+        print(f"Configuration File {configFile} doesn't exist !!!")
+        return 
+    
+    userConfig = None
+    with open(f"{configFile}") as f:
+        userConfig = json.load(f)
+        
+        try:
+            validate(instance=userConfig, schema=configSchema)
+        except exceptions.ValidationError:
+            print(f"Invalid JSON schema found in configuration file : {configFile}")
+            print(f"Message:{exceptions.ValidationError.message}\n \
+                    Failed key :{exceptions.ValidationError.validator}\n \
+                    Value :{exceptions.ValidationError.validator_value}")
+            return 
+    
+    curconfig = configDatadiscoverer()
+    configDatadiscoverer.activeConfig = curconfig
+    curconfig.setConfigfromJSON(userConfig)
+    
+    return curconfig
+        
+        
 class configDatadiscoverer():
 
     activeConfig = None # static to be set once the instance is created from JSON,
                         # that would be further used by other modules.
     def __init__(self):
         
-        self.appNamesList=[]
+        self.appNames=[]
         """list[str]: List of the application names.
         Names of the applications using the GSV data and producing respective application specific data. 
         """
@@ -49,31 +154,29 @@ class configDatadiscoverer():
 
         self.appDataSrcNames=[]
         """list[str]: List of the file types.
-        Names of the different types of data sources / files each application can produce. 
+        Names of the different types of data sources / files the applications can produce. 
         """
 
         self.appDataSrcNameFileExt={}    
         """list[str]: List of the file extensions.
         """
+        
+        self.appDescriptionInfo={}
+        """dict[str]: Dictionary of the description for each of the apps.
+        Data structure to store the description, provider etc corresponding to each app.
+        """
 
-        self.datadiscovererBasePath=""
+
+        self.installationPath=""
         """str: Path to location of the data discovery and management tool on disk.
         """
 
-        self.datadiscovererDataPath=""
+        self.dataPath=""
         """str: Path to location of the data produced by the applications.
         """
 
-        self.datadiscovererOutputPath=""
+        self.outputPath=""
         """str: Path to location of the catalog prouced by data discovery and management tool.
-        """
-        
-        self.appSrcFlags={}
-        """dict[str]: Dictionary of the file types produced by all the apps.
-        Data structure to store the availability of different dataSrcNames ['netcdf','image','text'] 
-        corresponding to each app in that sequence.
-        For example we are using the above specified data sources for each app and filling this data 
-        structure.
         """
 
         self.appDataSrcNamesAPImap={}
@@ -83,12 +186,31 @@ class configDatadiscoverer():
     
     def setConfigfromJSON(self,jsonDict):
         self.__dict__ = jsonDict
+        self.appDataSrcNamesAPImap = {}
+
+    def setInstallationPath(self,path):
+        self.installationPath = path
+    
+    def getInstallationPath(self):
+        return self.installationPath
+    
+    def setDataPath(self,path):
+        self.dataPath=path
         
-    def setappNamesList(self,appNamesList):
-        self.appNamesList = appNamesList
+    def getDataPath(self):
+        return self.dataPath
+    
+    def setOutputPath(self,path):
+        self.outputPath = path
         
-    def getappNamesList(self):
-        return self.appNamesList
+    def getOutputPath(self):
+        return self.outputPath
+        
+    def setappNames(self,appNamesList):
+        self.appNames = appNamesList
+        
+    def getappNames(self):
+        return self.appNames
     
     def setHPCCenters(self,hpcCenters):
         self.hpcCenters = hpcCenters
@@ -114,29 +236,20 @@ class configDatadiscoverer():
     def getappDataSrcNameFileExt(self):
         return self.appDataSrcNameFileExt
     
-    def setappDataSrcFlags(self,appDataSrcFlags):
-        self.appDataSrcFlags = appDataSrcFlags
+    def setappDescriptionInfo(self,appDescInfo):
+        self.appDescriptionInfo = appDescInfo
+        
+    def getappDescriptionInfo(self):
+        return self.appDescriptionInfo
 
-    def getappDataSrcFlags(self):
-        return self.appDataSrcFlags
-        
-    def setdatadiscovererBasePath(self,path):
-        self.datadiscovererBasePath = path
+    def getappDataSrcs(self,app):
+        return self.appDescriptionInfo[app]['datasources']
     
-    def getdatadiscovererBasePath(self):
-        return self.datadiscovererBasePath
-    
-    def setdatadiscovererDataPath(self,path):
-        self.datadiscovererDataPath=path
-        
-    def getdatadiscovererDataPath(self):
-        return self.datadiscovererDataPath
-    
-    def setdatadiscovererOutputPath(self,path):
-        self.datadiscovererOutputPath = path
-        
-    def getdatadiscovererOutputPath(self):
-        return self.datadiscovererOutputPath
+    def getappDescription(self,app):
+        return self.appDescriptionInfo[app]['description']
+
+    def getappProvider(self,app):
+        return self.appDescriptionInfo[app]['provider']
     
     def setappDataSrcNamesAPImap(self):
         self.appDataSrcNamesAPImap = {}

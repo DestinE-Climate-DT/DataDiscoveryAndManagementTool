@@ -2,7 +2,7 @@
   "type": "Catalog",
   "id": "AQUA",
   "stac_version": "1.0.0",
-  "description": "Aqua is specifically developed for running advanced diagnostics on high-resolution climate models, crucial components of the Digital Twins of Earth initiative. ",
+  "description": "Aqua is specifically developed for running advanced diagnostics on high-resolution climate models,crucial components of the Digital Twins of Earth initiative.",
   "links": [
     {
       "rel": "root",

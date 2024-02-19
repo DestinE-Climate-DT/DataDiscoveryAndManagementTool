@@ -8,15 +8,16 @@ import sys
 import glob
 from pathlib import Path
 import importlib
-
+    
 #Local modules
 try:
     from .config import configDatadiscoverer
 except:
     print(sys.exc_info())
+    print(f"Module 'config' import error in {__file__}")
 
-    
-def getAppSrcFileList(app,src,srcExtList):
+
+def getAppSrcFileList(app,src,esm,srcExtList):
     """Create a list of files produced by the app, for a given file type.
 
     Search the app data directory and create a list of all the files of a given file type like netcdf, jpeg etc.
@@ -24,6 +25,7 @@ def getAppSrcFileList(app,src,srcExtList):
     Args:
             app : Application Name.
             src : Source or file type name like netcdf, image, text.
+            esm : Earth system model Name.
             srcExtList: The file suffix like *.nc, *.jpg, *.pdf, *.txt, *.csv.
     Returns: 
             srcFileList - a list.
@@ -32,19 +34,21 @@ def getAppSrcFileList(app,src,srcExtList):
     srcFileList = []
     
     localconfig = configDatadiscoverer.activeConfig
-    appDataPath = localconfig.getdatadiscovererDataPath()
-    root=Path(os.path.join(appDataPath,app))
+    appDataPath = localconfig.getDataPath()
+    appDataSrcPath = Path(os.path.join(appDataPath,app))
     
     try:
-        os.path.exists(root)
+        os.path.exists(appDataSrcPath)
     except:
         print(sys.exc_info())
 
+    print(f"\t{appDataSrcPath} {src}")
     for srcExt in srcExtList:
-        print(f"{root} {src} {srcExt}")
-        globArg = os.path.join(root,f"{srcExt}")
-        print(globArg)
+        print(f"\t\t{srcExt}")
+        globArg = os.path.join(appDataSrcPath,"**",f"{srcExt}")
 
-        srcFileList += glob.glob(globArg)
+        srcFileList += glob.glob(globArg,recursive=True)
     
-    return srcFileList
+    esmList = list(filter(lambda k: esm in k, srcFileList))
+    
+    return esmList

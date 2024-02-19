@@ -4,9 +4,9 @@ name: image
 sources:
   image1:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/P3.jpg
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_index.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -18,9 +18,9 @@ sources:
     parameters: {}
   image10:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_ifs_tco1279_orca0258_mswep_lra_r100_monthly_bias_seasons.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -32,9 +32,9 @@ sources:
     parameters: {}
   image11:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__histogram.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_hcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -46,9 +46,9 @@ sources:
     parameters: {}
   image12:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_era5_seasons.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tprate.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -60,9 +60,9 @@ sources:
     parameters: {}
   image13:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__map.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_mcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -74,9 +74,9 @@ sources:
     parameters: {}
   image14:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__dailyvar.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -88,9 +88,9 @@ sources:
     parameters: {}
   image15:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__lra_r100_monthly_comparison_along_lon_mean.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_2t.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -102,9 +102,9 @@ sources:
     parameters: {}
   image16:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_icon_ngc3028_seasons.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_msl.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -116,9 +116,9 @@ sources:
     parameters: {}
   image17:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_mswep_seasons.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -130,9 +130,9 @@ sources:
     parameters: {}
   image18:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_icon_ngc3028_ifs_tco2559_ng5_ifs_tco1279_orca025_mswep_lra_r100_monthly_comparison_along_lon_mean.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/tropical_rainfall/pdf/IFS_historical-1990-devcon_lra-r100-monthly/trop_rainfall_IFS_historical-1990-devcon_lra-r100-monthly_histogram.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -144,9 +144,9 @@ sources:
     parameters: {}
   image19:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_ifs_tco1279_seasons.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/pdf/Statistics_maps_msl_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -158,9 +158,9 @@ sources:
     parameters: {}
   image2:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/P2.jpg
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -172,9 +172,9 @@ sources:
     parameters: {}
   image20:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_icon_ngc3028_mswep_lra_r100_monthly_bias_seasons.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/pdf/Statistics_maps_tprate_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -186,9 +186,9 @@ sources:
     parameters: {}
   image21:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_CDF_lra_r100_monthly_comparison_histogram.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/pdf/Statistics_maps_2t_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -200,9 +200,9 @@ sources:
     parameters: {}
   image22:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_mean_along_lon.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/global_time_series/pdf/global_time_series_IFS_historical-1990-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -214,9 +214,9 @@ sources:
     parameters: {}
   image23:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_test_histogram.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_index.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -228,9 +228,9 @@ sources:
     parameters: {}
   image24:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_comparisonmean_along_lat.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -242,9 +242,9 @@ sources:
     parameters: {}
   image25:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_comparisonmean_along_lon.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_hcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -256,9 +256,9 @@ sources:
     parameters: {}
   image26:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__seasons.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tprate.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -270,9 +270,9 @@ sources:
     parameters: {}
   image27:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_icon_ngc3028_ifs_tco2559_ng5_ifs_tco1279_orca025_mswep_10km_3h_histogram.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_historical-1990-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -284,9 +284,9 @@ sources:
     parameters: {}
   image28:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_ifs_tco2559_seasons.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_mcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -298,9 +298,9 @@ sources:
     parameters: {}
   image29:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_tco2559-ng5_mswep_lra_r100_monthly_bias_seasons.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -312,9 +312,9 @@ sources:
     parameters: {}
   image3:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/P1.jpg
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -326,9 +326,9 @@ sources:
     parameters: {}
   image30:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_CDF_icon_ngc3028_ifs_tco2559_ng5_ifs_tco1279_orca025_mswep_10km_3h_histogram.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -340,22 +340,134 @@ sources:
     parameters: {}
   image31:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_mean_along_lat.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image31
+    parameters: {}
+  image32:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_2t.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image32
+    parameters: {}
+  image33:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_msl.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image33
+    parameters: {}
+  image34:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_DJF.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image34
+    parameters: {}
+  image35:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/Statistics_maps_msl_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image35
+    parameters: {}
+  image36:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/Statistics_maps_tprate_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image36
+    parameters: {}
+  image37:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/Statistics_maps_2t_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image37
+    parameters: {}
+  image38:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tcc.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    description: ''
+    direct_access: forbid
+    driver:
+    - rasterio
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: image38
+    parameters: {}
+  image39:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.pdf
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver: intake_xarray.raster.RasterIOSource
     getenv: true
     getshell: true
     metadata: {}
-    name: image31
+    name: image39
     parameters: {}
   image4:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall__mean_along_lat.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_DJF.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -367,9 +479,9 @@ sources:
     parameters: {}
   image5:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_comparison_mean.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -381,9 +493,9 @@ sources:
     parameters: {}
   image6:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_ifs_tco2559_era5_seasons.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/tropical_rainfall/pdf/IFS_control-1950-devcon_lra-r100-monthly/trop_rainfall_IFS_control-1950-devcon_lra-r100-monthly_histogram.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -395,9 +507,9 @@ sources:
     parameters: {}
   image7:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_comparison_histogram.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/pdf/Statistics_maps_tprate_IFS_control-1950-devcon_1950-1-1_1959-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -409,9 +521,9 @@ sources:
     parameters: {}
   image8:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_r100_monthly_comparison_histogram.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/pdf/Statistics_maps_msl_IFS_control-1950-devcon_1950-1-1_1959-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -423,9 +535,9 @@ sources:
     parameters: {}
   image9:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/trop_rainfall_lra_r100_monthly_comparison_along_lon_mean.pdf
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/pdf/Statistics_maps_2t_IFS_control-1950-devcon_1950-1-1_1959-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:

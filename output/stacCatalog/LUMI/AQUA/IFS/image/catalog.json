@@ -10,6 +10,201 @@
       "type": "application/json"
     },
     {
+      "rel": "item",
+      "href": "./image1/image1.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image2/image2.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image3/image3.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image4/image4.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image5/image5.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image6/image6.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image7/image7.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image8/image8.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image9/image9.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image10/image10.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image11/image11.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image12/image12.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image13/image13.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image14/image14.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image15/image15.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image16/image16.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image17/image17.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image18/image18.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image19/image19.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image20/image20.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image21/image21.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image22/image22.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image23/image23.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image24/image24.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image25/image25.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image26/image26.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image27/image27.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image28/image28.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image29/image29.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image30/image30.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image31/image31.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image32/image32.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image33/image33.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image34/image34.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image35/image35.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image36/image36.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image37/image37.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image38/image38.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./image39/image39.json",
+      "type": "application/json"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json"

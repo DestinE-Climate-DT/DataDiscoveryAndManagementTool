@@ -4,14 +4,490 @@ name: netcdf
 sources:
   netcdf1:
     args:
-      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinEData/AQUA/wildfire_fires_2020_2025.nc
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/netcdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_DJF.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/LUMI/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf1
+    parameters: {}
+  netcdf10:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_2t.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf10
+    parameters: {}
+  netcdf11:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_msl.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf11
+    parameters: {}
+  netcdf12:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tcc.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf12
+    parameters: {}
+  netcdf13:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_hcc.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf13
+    parameters: {}
+  netcdf14:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_mcc.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf14
+    parameters: {}
+  netcdf15:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tprate.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf15
+    parameters: {}
+  netcdf16:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf16
+    parameters: {}
+  netcdf17:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/tropical_rainfall/netcdf/IFS_historical-1990-devcon_lra-r100-monthly/histograms/trop_rainfall_IFS_historical-1990-devcon_lra-r100-monthly_histogram_0_1000_1000_1990-01-01T00_1990-12-01T00_M.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf17
+    parameters: {}
+  netcdf18:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/netcdf/Statistics_Data_2t_IFS_historical-1990-devcon_1990-1-1_1990-12-1.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf18
+    parameters: {}
+  netcdf19:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/netcdf/Statistics_Data_msl_IFS_historical-1990-devcon_1990-1-1_1990-12-1.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf19
+    parameters: {}
+  netcdf2:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/netcdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_index.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf2
+    parameters: {}
+  netcdf20:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/netcdf/Statistics_Data_tprate_IFS_historical-1990-devcon_1990-1-1_1990-12-1.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf20
+    parameters: {}
+  netcdf21:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_DJF.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf21
+    parameters: {}
+  netcdf22:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_2t.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf22
+    parameters: {}
+  netcdf23:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/Statistics_Data_2t_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf23
+    parameters: {}
+  netcdf24:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_msl.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf24
+    parameters: {}
+  netcdf25:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/Statistics_Data_tprate_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf25
+    parameters: {}
+  netcdf26:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_index.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf26
+    parameters: {}
+  netcdf27:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_JJA.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf27
+    parameters: {}
+  netcdf28:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tcc.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf28
+    parameters: {}
+  netcdf29:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf29
+    parameters: {}
+  netcdf3:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/netcdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_JJA.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf3
+    parameters: {}
+  netcdf30:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_hcc.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf30
+    parameters: {}
+  netcdf31:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_mcc.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf31
+    parameters: {}
+  netcdf32:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/Statistics_Data_msl_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf32
+    parameters: {}
+  netcdf33:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tprate.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf33
+    parameters: {}
+  netcdf34:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf34
+    parameters: {}
+  netcdf35:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_JJA.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver: intake_xarray.netcdf.NetCDFSource
     getenv: true
     getshell: true
     metadata: {}
-    name: netcdf1
+    name: netcdf35
+    parameters: {}
+  netcdf4:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/netcdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf4
+    parameters: {}
+  netcdf5:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/netcdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_JJA.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf5
+    parameters: {}
+  netcdf6:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/tropical_rainfall/netcdf/IFS_control-1950-devcon_lra-r100-monthly/histograms/trop_rainfall_IFS_control-1950-devcon_lra-r100-monthly_histogram_0_1000_1000_1950-01-01T00_1959-12-01T00_M.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf6
+    parameters: {}
+  netcdf7:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/netcdf/Statistics_Data_2t_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf7
+    parameters: {}
+  netcdf8:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/netcdf/Statistics_Data_tprate_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf8
+    parameters: {}
+  netcdf9:
+    args:
+      urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/netcdf/Statistics_Data_msl_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
+    cache: []
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/LUMI/AQUA/IFS/netcdf/
+    description: ''
+    direct_access: forbid
+    driver:
+    - netcdf
+    getenv: true
+    getshell: true
+    metadata: {}
+    name: netcdf9
     parameters: {}

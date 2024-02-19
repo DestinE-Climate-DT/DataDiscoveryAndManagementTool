@@ -1,26 +1,67 @@
 {
+	"installationPath":"/work/bm0146/k204247/DestinE/destinE_DDTool",
+	"dataPath":"/work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData",
+	"outputPath":"/work/bm0146/k204247/DestinE/destinE_DDTool/output",
+	"appNames":["AQUA","EnergyOnShore","EnergyOffShore","FWI","HydroMet","HydroRiver","SPITFIRE","Urban","WISE"],
 	"hpcCenters":["LUMI","MareNostrum"],
-	"esmNames":["ICON","IFS"],
-	"appDataSrcNames":["netcdf","image","text"],
+        "esmNames":["ICON","IFS"],
+        "appDataSrcNames":["netcdf","image","text"],
 	"appDataSrcNameFileExt":{
-    		"netcdf"   :["*.nc"],
-	   	"image"   :["*.jpg","*.pdf","*.png","*.gif"],
-	    	"text"     :["*.txt","*.csv"]
-		},
-	"datadiscovererDataPath":"/work/bm0146/k204247/DestinE/destinE_DDTool/destinEData",
-	"datadiscovererOutputPath":"/work/bm0146/k204247/DestinE/destinE_DDTool/output",
-	"appDataSrcNamesAPImap":{},
-	"ddtBasePath":"/work/bm0146/k204247/DestinE/destinE_DDTool",
-	"appNamesList":["AQUA","EnergyOnShore","EnergyOffShore","FWI","HydroMet","HydroRiver","SPITFIRE","Urban","WISE"],
-	"appDataSrcFlags":{
-	    "AQUA"               :   [true,true,false],
-	    "EnergyOnShore"      :   [true,true,true],
-	    "EnergyOffShore"     :   [true,true,false],
-	    "FWI"                :   [true,true,false],
-	    "HydroMet"           :   [true,false,true],
-	    "HydroRiver"         :   [true,false,true],
-	    "SPITFIRE"           :   [true,false,false],
-	    "Urban"              :   [true,true,true],
-	    "WISE"               :   [false,true,false]
+                "netcdf"   :["*.nc"],
+                "image"   :["*.jpg","*.pdf","*.png","*.gif"],
+                "text"     :["*.txt","*.csv"]
+                },
+	"appDescriptionInfo":{
+
+	    "AQUA": {
+            		"description" : "Aqua is specifically developed for running advanced diagnostics on high-resolution climate models,crucial components of the Digital Twins of Earth initiative.",
+            		"provider": "Istituto di Scienze dell’Atmosfera e del Clima, Consiglio Nazionale delle Ricerche (CNR-ISAC), Corso Fiume 4, 10133 Torino, Italy. Department of Environment, Land and Infrastructure Engineering (DIATI), Politecnico di Torino, Corso Duca degli Abruzzi 24, 10129 Torino, Italy.Istituto di Scienze dell’Atmosfera e del Clima, Consiglio Nazionale delle Ricerche (CNR-ISAC), Via Piero Gobetti 101, 40129 Bologna, Italy.Barcelona Supercomputing Center (BSC), Placa Eusebi Guell, 1-3, 08034 Barcelona, Spain.Max Planck Institute for Meteorology, Bundesstrabe 53, 20146 Hamburg, Germany.Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research (AWI), Bremerhaven, Germany.Universite Catholique de Louvain, Place Lous Pasteur 3, Louvain-la-Neuve, Belgium.Deutscher Wetterdienst (DWD), Frankfurter Strabe 135, 63067 Offenbach, Germany.",
+			"datasources": ["netcdf","image"]
+	            },
+	    "EnergyOnShore" :{
+		        "description" : "Climate change mitigation efforts are reshaping the global energy system as efforts to decarbonize electricity generation lead to a prioritization of renewable energy sources. The Energy Directive of the European Commission has set the net zero emissions target by 2050, and thus, vulnerability studies of the European energy system under this scenario, and other potential energy mix scenarios, are crucial for ensuring the short- and long-term security of the energy supply, price, and stability of the power grid. most of the current datasets that estimate the potential generation of electricity by renewable sources at both global and European levels do not consider the effects of a changing climate. Besides, those that do consider this information are highly sensitive to the uncertainties from the inputs of future climate estimations as they are mainly coming from coarse-resolution GCMs.",
+    			"provider": "Barcelona Supercomputing Center (BSC)",
+			"datasources": ["netcdf","image","text"]
+	    },
+	    "EnergyOffShore" :{
+		    	"description" : "The siting of the Offshore Wind Farms (OWFs) requires, in addition to mapping the actual wind resource, also information on the marine environment, e.g. including winds, currents, and sea ice over the planned to plan their operations. The app produces climatological statistics (mean/extremes) of the above mentioned parameters for 30 year climate periods (historical/future).",
+		    	"provider": "Finnish Meteorological Institute",
+			"datasources": ["netcdf","image"]
+	    },
+	    "FWI" :{
+		        "description" : "Wildfires in numerous terrestrial ecosystems, spanning from the tropics to the Arctic, represent a significant disturbance that impacts both human life and societies. The prevalence of wildfires is anticipated to rise on a global scale due to increased levels of global warming. It is essential to comprehend the present and predicted fire activity and its repercussions on regional ecosystems and human communities. This understanding is critical for assessing future risks and implementing informed knowledge-based actions.",
+    			"provider": "Finnish Meteorological Institute",
+			"datasources": ["netcdf","image"]
+	    },
+	    "HydroMet" :{
+		    	"description" : "The HydroMet use case will provide statistics for extreme precipitation events and a catalogue with event-based information that also allows for identification of changes in the event characteristics in the future, based on the streamed data from ClimateDT. Identification of the changes in event characteristics are needed for the planning of infrastructure building measures and a well-tailored adaptation strategy in vulnerable or potentially affected regions.",
+
+    			"provider": "Deutscher Wetterdienst (DWD)",
+			"datasources": ["netcdf","text"]
+	    },
+	    "HydroRiver" :{
+		        "description" : "The HydroRiver application provides high-resolution information to the user regarding freshwater availability. The results from the mhm can be used in a scientific use case as: - using the hydrological model as one of the ensemble members to the regional hydrological model by the user - Use the results from the Hydroriver as a forcing for other regional models of a higher resolution. ",
+
+    			"provider": "Helmholtz Center for Environmental Research (UFZ) / mhm-ufz.org",
+			"datasources": ["netcdf","text"]
+	    },
+	    "SPITFIRE" :{
+		        "description" : "The use case is to describe the fire risk, number of fires and bunt area for Finland.",
+
+    			"provider": "Finnish Meteorological Institution",
+			"datasources": ["netcdf"]
+	    },
+	    "Urban" :{
+		        "description" : "In urban environments, heat waves are the extreme weather events with a highest impact on human well-being and health, as their impacts are amplified by the urban heat island (UHI) effect, which magnifies the severity of heat waves inside cities and significantly increases the health-related risks associated with heat stress. Current climate projections point towards a severe increase in the intensity, duration and frequency of heat waves under climate change conditions. In this warming scenario, the significance of heat waves as a public health issue is going to increase sharply. The study and modelling of urban climate is therefore key to understand how climate change will impact urban environments and their populations.",
+
+    			"provider": "Barcelona Supercomputing Center (BSC)",
+			"datasources": ["netcdf","image","text"]
+	    },
+	    "WISE" :{
+		        "description" : "The use cases consists of three separate fire spread test scenarios in Finland.",
+
+    			"provider": "Finnish Meteorological Institution",
+			"datasources": ["image"]
+	    }
 	}
 }

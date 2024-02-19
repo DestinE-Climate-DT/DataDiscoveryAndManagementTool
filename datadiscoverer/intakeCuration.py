@@ -17,19 +17,24 @@ try:
     import yaml
 except:
     print(sys.exc_info())
+    print(f"Module 'intake/yaml' import error in {__file__}")
+
 
 #Local modules
 try:
     from .config import configDatadiscoverer
 except:
     print(sys.exc_info())
+    print(f"Module 'config' import error in {__file__}")
+
 
 try:
     from .utils import getAppSrcFileList
 except:
     print(sys.exc_info())
-    
+    print(f"Module 'utils' import error in {__file__}")
 
+    
 def createAppDataSrcNamesIntakeAPImap():
     """Create a mapping between the file types and the associated API for handling it.
 
@@ -66,8 +71,9 @@ def createDDTMasterIntakeCatalog():
     Returns: 
             None
     """
+    createAppDataSrcNamesIntakeAPImap()
     localconfig = configDatadiscoverer.activeConfig
-    outputPath = localconfig.getdatadiscovererOutputPath()
+    outputPath = localconfig.getOutputPath()
     
     sources={}
     sources.setdefault("sources",{})
@@ -108,14 +114,14 @@ def createHPCIntakeCatalog():
             None
     """
     localconfig = configDatadiscoverer.activeConfig
-    outputPath = localconfig.getdatadiscovererOutputPath()
+    outputPath = localconfig.getOutputPath()
 
     sources={}
     sources.setdefault("sources",{})
 
 
     for hpc, app  in itertools.product(localconfig.getHPCCenters(),
-                                       localconfig.getappNamesList()):
+                                       localconfig.getappNames()):
 
         sources["sources"].setdefault(app,{})
         argsdict={
@@ -156,13 +162,13 @@ def createAppIntakeCatalog():
             None
     """
     localconfig = configDatadiscoverer.activeConfig
-    outputPath = localconfig.getdatadiscovererOutputPath()
+    outputPath = localconfig.getOutputPath()
     
     sources={}
     sources.setdefault("sources",{})
 
     for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
-                                            localconfig.getappNamesList(),
+                                            localconfig.getappNames(),
                                             localconfig.getESMs()):
 
         sources["sources"].setdefault(esm,{})
@@ -202,36 +208,34 @@ def createESMIntakeCatalog():
             None
     """
     localconfig = configDatadiscoverer.activeConfig
-    outputPath = localconfig.getdatadiscovererOutputPath()
+    outputPath = localconfig.getOutputPath()
        
     sources={}
     sources.setdefault("sources",{})
-    appDataSrcFlags = localconfig.getappDataSrcFlags()
+    
     
     for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
-                                            localconfig.getappNamesList(),
+                                            localconfig.getappNames(),
                                             localconfig.getESMs()):
         currentAppSrcDict = {}
-        currentAppDataSrcFlags = appDataSrcFlags[app]
+        currentAppDataSrcs = localconfig.getappDataSrcs(app)
 
         sources={}
         sources.setdefault("sources",{})
     
-        appDataSrcNames = localconfig.getappDataSrcNames()
-        for src in appDataSrcNames:
-            if currentAppDataSrcFlags[appDataSrcNames.index(src)] == True:
+        for src in currentAppDataSrcs:
 
-                sources["sources"].setdefault(src,{})
-                argsdict={
-                      "description": f"{src} files data catalog",
-                      "driver":"yaml_file_cat",
-                      "args":
-                            {
-                              "path":"{{CATALOG_DIR}}/"+f"{src}/"+f"{src}.yaml"
-                            }
+            sources["sources"].setdefault(src,{})
+            argsdict={
+                  "description": f"{src} files data catalog",
+                  "driver":"yaml_file_cat",
+                  "args":
+                        {
+                          "path":"{{CATALOG_DIR}}/"+f"{src}/"+f"{src}.yaml"
                         }
+                    }
 
-                sources["sources"][src]=argsdict
+            sources["sources"][src]=argsdict
 
         esmCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}")
                 
@@ -246,7 +250,7 @@ def createESMIntakeCatalog():
         with open( esmCatalog, "w" ) as f:
             f.write(f"description: 'Catalog for files generated from {esm} GSV.  '\n")
             yaml.dump(sources,f,sort_keys=False)
-            f.close()            
+            f.close()
 
 
 def createSrcIntakeCatalog():
@@ -260,24 +264,18 @@ def createSrcIntakeCatalog():
             None
     """
     localconfig = configDatadiscoverer.activeConfig
-    outputPath = localconfig.getdatadiscovererOutputPath()
+    outputPath = localconfig.getOutputPath()
 
-    appDataSrcNames = localconfig.getappDataSrcNames()
     appDataSrcNamesAPImap = localconfig.getappDataSrcNamesAPImap()
     appDataSrcNameFileExt = localconfig.getappDataSrcNameFileExt()
 
-    for hpc, app, esm, src  in itertools.product(localconfig.getHPCCenters(),
-                                            localconfig.getappNamesList(),
-                                            localconfig.getESMs(),
-                                            localconfig.getappDataSrcNames()):
+    for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
+                                            localconfig.getappNames(),
+                                            localconfig.getESMs()):
 
-        currentAppSrcDict = {}
-        currentAppDataSrcFlags = (localconfig.getappDataSrcFlags())[app]
-                
-        #print(f"current HPC : {hpc} App: {app} ESM : {esm}  Source : {src} Flag: {currentAppDataSrcFlags[appDataSrcNames.index(src)]}")
-
-        if currentAppDataSrcFlags[appDataSrcNames.index(src)] == True:
-
+        currentAppDataSrcs = localconfig.getappDataSrcs(app)
+        print(f"Ingesting '{app}' data produced using GSV from {esm} simulations performed on {hpc}")
+        for src in currentAppDataSrcs:
             srcCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}",f"{src}")
 
             if not os.path.exists(srcCatalogPath):
@@ -285,9 +283,7 @@ def createSrcIntakeCatalog():
             srcCatalog = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}",f"{src}",f"{src}.yaml")
 
             srcExtList=appDataSrcNameFileExt[src]
-            (appDataSrcNamesAPImap[src])(srcCatalog,getAppSrcFileList(app,src,srcExtList))
-        else:
-            continue
+            (appDataSrcNamesAPImap[src])(srcCatalog,getAppSrcFileList(app,src,esm,srcExtList))
 
 
 def createNetcdfSrcListForIntake(catFile,srcFileList):

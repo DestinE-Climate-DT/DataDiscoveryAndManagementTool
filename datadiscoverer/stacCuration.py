@@ -18,26 +18,20 @@ try:
     from shapely.geometry import Polygon, mapping
 except:
     print(sys.exc_info())
+    print(f"Module 'raterio/pystac/shapely' import error in {__file__}")
 
 #Local modules
 try:
     from .config import configDatadiscoverer
 except:
     print(sys.exc_info())
+    print(f"Module 'config' import error in {__file__}")
 
 try:
     from .utils import getAppSrcFileList
 except:
     print(sys.exc_info())
-    
-appNamesList=['AQUA','EnergyOnShore','EnergyOffShore','FWI','HydroMet','HydroRiver','SPITFIRE','Urban','WISE']
-
-#Local modules
-for appName in appNamesList:
-    try:
-        eval(f'exec("from .{appName} import {appName}Info")')
-    except:
-        print(sys.exc_info())
+    print(f"Module 'utils' import error in {__file__}")
 
 
 def createAppDataSrcNamesSTACAPImap():
@@ -77,8 +71,10 @@ def createDDTMasterSTACCatalog():
     Returns: 
             None.
     """
+
+    createAppDataSrcNamesSTACAPImap()
     localconfig = configDatadiscoverer.activeConfig
-    outputPath = localconfig.getdatadiscovererOutputPath()
+    outputPath = localconfig.getOutputPath()
 
     catalog = pystac.Catalog(id='datadiscovererSTACCatalog', 
                          description='DestinE data discovery tool master STAC catalog for the data produced at various HPC centers.')
@@ -94,7 +90,6 @@ def createDDTMasterSTACCatalog():
     except:
         print(sys.exc_info())
         
-    #root_path = os.path.join(outputPath,"stacCatalog")
     catalog.normalize_and_save(root_href = outputPath, 
                          catalog_type=pystac.CatalogType.SELF_CONTAINED)
     return
@@ -111,20 +106,19 @@ def createHPCSTACCatalog():
             None.
     """
     localconfig = configDatadiscoverer.activeConfig
-    outputPath = localconfig.getdatadiscovererOutputPath()
+    outputPath = localconfig.getOutputPath()
 
     for hpc, app  in itertools.product(localconfig.getHPCCenters(),
-                                       localconfig.getappNamesList()):
+                                       localconfig.getappNames()):
         
         hpcCatalogPath = os.path.join(outputPath,f"{hpc}")
         hpcCatalogFile = os.path.join(hpcCatalogPath,"catalog.json")
         hpcCatalog=pystac.Catalog.from_file(hpcCatalogFile)
         
-        appInfoDict = globals()[f"{app}Info"]
-        #['provider']
-        appDescription = f"{app}info" 
+        appDescription = localconfig.getappDescription(app)
+        
         appCatalog = pystac.Catalog( id=f'{app}', 
-                        description = appInfoDict['description']
+                        description = appDescription
                         #,providers = appInfoDict['provider']
                         )
         hpcCatalog.add_child(appCatalog,f'{app}')
@@ -144,10 +138,10 @@ def createAppSTACCatalog():
             None.
     """
     localconfig = configDatadiscoverer.activeConfig
-    outputPath = localconfig.getdatadiscovererOutputPath()
+    outputPath = localconfig.getOutputPath()
 
     for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
-                                        localconfig.getappNamesList(),
+                                        localconfig.getappNames(),
                                         localconfig.getESMs()):
 
         appCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}")
@@ -174,33 +168,33 @@ def createESMSTACCatalog():
     """
 
     localconfig = configDatadiscoverer.activeConfig
-    outputPath = localconfig.getdatadiscovererOutputPath()
+    outputPath = localconfig.getOutputPath()
 
+    
     appDataSrcNames = localconfig.getappDataSrcNames()
     appDataSrcNamesAPImap = localconfig.getappDataSrcNamesAPImap()
     appDataSrcNameFileExt = localconfig.getappDataSrcNameFileExt()
     
-    for hpc, app, esm, src  in itertools.product(localconfig.getHPCCenters(),
-                                        localconfig.getappNamesList(),
-                                        localconfig.getESMs(),
-                                        localconfig.getappDataSrcNames()):
-
-        currentAppSrcDict = {}
-        #currentAppSrcFlags = appSrcFlags[app]
-        currentAppDataSrcFlags = (localconfig.getappDataSrcFlags())[app]
+    for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
+                                            localconfig.getappNames(),
+                                            localconfig.getESMs()):
+    
+        currentAppDataSrcs = localconfig.getappDataSrcs(app)
         
         esmCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}")
         esmCatalogFile = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}","catalog.json")
-        esmCatalog=pystac.Catalog.from_file(esmCatalogFile)
-
-        if currentAppDataSrcFlags[appDataSrcNames.index(src)] == True:
-
+        esmCatalog = pystac.Catalog.from_file(esmCatalogFile)
+        
+        print(f"Ingesting '{app}' data produced using GSV from {esm} simulations performed on {hpc}")
+        
+        for src in currentAppDataSrcs:
+            
             srcCatalog = pystac.Catalog(id=f'{src}', 
                         description=f"{src} files data catalog")
 
             srcExt=appDataSrcNameFileExt[src]
 
-            (appDataSrcNamesAPImap[src])(srcCatalog,getAppSrcFileList(app,src,srcExt))
+            (appDataSrcNamesAPImap[src])(srcCatalog,getAppSrcFileList(app,src,esm,srcExt))
 
             esmCatalog.add_child(srcCatalog,f'{src}')
                     
@@ -228,13 +222,6 @@ def createNetcdfSrcListForSTAC(srcCatalog,srcFileList):
             print(f"File {srcFile} doesn't exist!")
             return
         
-        
-        #NOTE: 
-        #      As of now using global bounding box ,geometry and current time as datetime.
-        #      For exact metdata open the file using intake API and fetch the data.
-        #          netcdfSrc = intake.open_netcdf(srcFile)
-        #          netcdfSrc.name = f"netcdf{count}"
-
         datetime_utc = datetime.now(tz=timezone.utc)
         bbox_global=[-180,-90,180,90]
         
@@ -274,12 +261,6 @@ def createImageSrcListForSTAC(srcCatalog,srcFileList):
         if not os.path.isfile(srcFile):
             print(f"File {srcFile} doesn't exist!")
             return
-        
-        
-        #NOTE: 
-        #      As of now using global bounding box ,geometry and current time as datetime.
-        #      For exact metdata open the file using intake API and fetch the data.
-        #          imageSrc = intake.open_rasterio(srcFile)
 
         datetime_utc = datetime.now(tz=timezone.utc)
         bbox_global=[-180,-90,180,90]
@@ -319,12 +300,6 @@ def createTextSrcListForSTAC(srcCatalog,srcFileList):
         if not os.path.isfile(srcFile):
             print(f"File {srcFile} doesn't exist!")
             return
-        
-        
-        #NOTE: 
-        #      As of now using global bounding box ,geometry and current time as datetime.
-        #      For exact metdata open the file using intake API and fetch the data.
-        #          textSrc = intake.open_textfiles(srcFile)
 
         datetime_utc = datetime.now(tz=timezone.utc)
         bbox_global=[-180,-90,180,90]

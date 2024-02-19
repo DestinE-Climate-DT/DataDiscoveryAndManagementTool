@@ -1,6 +1,6 @@
 {
   "type": "Catalog",
-  "id": "DDTMasterSTACCatalog",
+  "id": "datadiscovererSTACCatalog",
   "stac_version": "1.0.0",
   "description": "DestinE data discovery tool master STAC catalog for the data produced at various HPC centers.",
   "links": [

@@ -10,6 +10,181 @@
       "type": "application/json"
     },
     {
+      "rel": "item",
+      "href": "./netcdf1/netcdf1.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf2/netcdf2.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf3/netcdf3.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf4/netcdf4.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf5/netcdf5.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf6/netcdf6.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf7/netcdf7.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf8/netcdf8.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf9/netcdf9.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf10/netcdf10.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf11/netcdf11.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf12/netcdf12.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf13/netcdf13.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf14/netcdf14.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf15/netcdf15.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf16/netcdf16.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf17/netcdf17.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf18/netcdf18.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf19/netcdf19.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf20/netcdf20.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf21/netcdf21.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf22/netcdf22.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf23/netcdf23.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf24/netcdf24.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf25/netcdf25.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf26/netcdf26.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf27/netcdf27.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf28/netcdf28.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf29/netcdf29.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf30/netcdf30.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf31/netcdf31.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf32/netcdf32.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf33/netcdf33.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf34/netcdf34.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./netcdf35/netcdf35.json",
+      "type": "application/json"
+    },
+    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json"
