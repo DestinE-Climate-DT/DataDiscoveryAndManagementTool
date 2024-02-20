@@ -193,8 +193,11 @@ def createESMSTACCatalog():
                         description=f"{src} files data catalog")
 
             srcExt=appDataSrcNameFileExt[src]
-
-            (appDataSrcNamesAPImap[src])(srcCatalog,getAppSrcFileList(app,src,esm,srcExt))
+            
+            #  Fetch the 'metadata' keys for this 'app' from 'appDescInfo'.
+            appMetadataKeys = localconfig.getappMetadataKeys(app)
+            
+            (appDataSrcNamesAPImap[src])(app,srcCatalog,getAppSrcFileList(app,src,esm,srcExt),appMetadataKeys)
 
             esmCatalog.add_child(srcCatalog,f'{src}')
                     
@@ -203,15 +206,17 @@ def createESMSTACCatalog():
     return
 
 
-def createNetcdfSrcListForSTAC(srcCatalog,srcFileList):
+def createNetcdfSrcListForSTAC(app,srcCatalog,srcFileList,appMetadataKeys):
     """Create STAC items for the netcdf files in the input
        file list of files.
 
     For each of the netcdf files in the input file list, create the STAC item and save in the input catalog file.
 
     Args:
+            app : application Name
             catFile : Catalog File Name.
             srcFileList : List of netcdf files.
+            appMetadataKeys : List of metadata keys.
     Returns: 
             None
     """
@@ -229,11 +234,36 @@ def createNetcdfSrcListForSTAC(srcCatalog,srcFileList):
                                       [180, 90],    [180, -90] ])
         footprint=mapping(footprint_polygon)
         
+        
+        #create metadata for item
+        itemMetadata = {}
+        
+        #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
+        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
+        print(f"{appMetadataKeys}")
+        print(f"{metadataValues}")
+        
+        for key in appMetadataKeys:
+            if app == 'AQUA':
+                if key == 'product':
+                    itemMetadata[key] = metadataValues[0]
+                elif key == 'diagnostic':
+                    itemMetadata[key] = metadataValues[1]
+                elif key == 'experiment':
+                    itemMetadata[key] = metadataValues[2]
+                elif key == 'variable':
+                    itemMetadata[key] = metadataValues[3]
+                elif key == 'duration':
+                    itemMetadata[key] = metadataValues[4]
+            # TODO for other apps
+            else:
+                print('Metadata not available')
+        
         item = pystac.Item(id=f'netcdf{count}',
                  geometry=footprint,
                  bbox=bbox_global,
                  datetime=datetime_utc,
-                 properties={})
+                 properties=itemMetadata)
         
         item.add_asset(key=f'netcdffile{count}',
                        asset=pystac.Asset(href=srcFile,media_type=pystac.MediaType.HDF5))
@@ -243,15 +273,17 @@ def createNetcdfSrcListForSTAC(srcCatalog,srcFileList):
     return
 
 
-def createImageSrcListForSTAC(srcCatalog,srcFileList):
+def createImageSrcListForSTAC(app,srcCatalog,srcFileList,appMetadataKeys):
     """Create STAC items for the image files in the input
        file list of files.
 
     For each of the image files in the input file list, create the STAC item and save in the input catalog file.
 
     Args:
+            app : application Name
             catFile : Catalog File Name.
             srcFileList : List of image files.
+            appMetadataKeys : List of metadata keys.
     Returns: 
             None
     """
@@ -269,11 +301,35 @@ def createImageSrcListForSTAC(srcCatalog,srcFileList):
                                       [180, 90],    [180, -90] ])
         footprint=mapping(footprint_polygon)
         
+        #create metadata for item
+        itemMetadata = {}
+        
+        #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
+        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
+        print(f"{appMetadataKeys}")
+        print(f"{metadataValues}")
+        
+        for key in appMetadataKeys:
+            if app == 'AQUA':
+                if key == 'product':
+                    itemMetadata[key] = metadataValues[0]
+                elif key == 'diagnostic':
+                    itemMetadata[key] = metadataValues[1]
+                elif key == 'experiment':
+                    itemMetadata[key] = metadataValues[2]
+                elif key == 'variable':
+                    itemMetadata[key] = metadataValues[3]
+                elif key == 'duration':
+                    itemMetadata[key] = metadataValues[4]
+            # TODO for other apps
+            else:
+                print('Metadata not available')
+        
         item = pystac.Item(id=f'image{count}',
                  geometry=footprint,
                  bbox=bbox_global,
                  datetime=datetime_utc,
-                 properties={})
+                 properties=itemMetadata)
         
         item.add_asset(key=f'imagefile{count}',
                        asset=pystac.Asset(href=srcFile,media_type=pystac.MediaType.TEXT))
@@ -283,15 +339,17 @@ def createImageSrcListForSTAC(srcCatalog,srcFileList):
     return
 
 
-def createTextSrcListForSTAC(srcCatalog,srcFileList):
+def createTextSrcListForSTAC(app,srcCatalog,srcFileList,appMetadataKeys):
     """Create STAC items for the text files in the input
        file list of files.
 
     For each of the text files in the input file list, create the STAC item and save in the input catalog file.
 
     Args:
+            app : application Name
             catFile : Catalog File Name.
             srcFileList : List of text files.
+            appMetadataKeys : List of metadata keys.
     Returns:
             None
     """
@@ -308,11 +366,35 @@ def createTextSrcListForSTAC(srcCatalog,srcFileList):
                                       [180, 90],    [180, -90] ])
         footprint=mapping(footprint_polygon)
         
+        #create metadata for item
+        itemMetadata = {}
+        
+        #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
+        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
+        print(f"{appMetadataKeys}")
+        print(f"{metadataValues}")
+        
+        for key in appMetadataKeys:
+            if app == 'AQUA':
+                if key == 'product':
+                    itemMetadata[key] = metadataValues[0]
+                elif key == 'diagnostic':
+                    itemMetadata[key] = metadataValues[1]
+                elif key == 'experiment':
+                    itemMetadata[key] = metadataValues[2]
+                elif key == 'variable':
+                    itemMetadata[key] = metadataValues[3]
+                elif key == 'duration':
+                    itemMetadata[key] = metadataValues[4]
+            # TODO for other apps
+            else:
+                print('Metadata not available')
+        
         item = pystac.Item(id=f'text{count}',
                  geometry=footprint,
                  bbox=bbox_global,
                  datetime=datetime_utc,
-                 properties={})
+                 properties=itemMetadata)
         
         item.add_asset(key=f'textfile{count}',
                        asset=pystac.Asset(href=srcFile,media_type=pystac.MediaType.TEXT))

@@ -293,8 +293,11 @@ class configDatadiscoverer():
     def getappProvider(self,app):
         return self.appDescriptionInfo[app]['provider']
     
+    def getappMetadataKeys(self,app):
+        return self.appDescriptionInfo[app]['metadata']
+    
     def setappDataSrcNamesAPImap(self):
         self.appDataSrcNamesAPImap = {}
-        
+    
     def getappDataSrcNamesAPImap(self):
         return self.appDataSrcNamesAPImap

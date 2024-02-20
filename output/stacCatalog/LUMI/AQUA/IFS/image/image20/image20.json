@@ -3,7 +3,12 @@
   "stac_version": "1.0.0",
   "id": "image20",
   "properties": {
-    "datetime": "2024-02-20T13:11:27.039864Z"
+    "diagnostic": "maps",
+    "product": "Statistics",
+    "experiment": "tprate",
+    "variable": "IFS",
+    "duration": "historical-1990-devcon",
+    "datetime": "2024-02-20T17:49:42.372974Z"
   },
   "geometry": {
     "type": "Polygon",

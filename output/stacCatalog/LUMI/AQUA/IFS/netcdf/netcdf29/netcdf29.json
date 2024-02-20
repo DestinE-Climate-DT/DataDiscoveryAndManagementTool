@@ -3,7 +3,12 @@
   "stac_version": "1.0.0",
   "id": "netcdf29",
   "properties": {
-    "datetime": "2024-02-20T13:11:26.882071Z"
+    "diagnostic": "IFS",
+    "product": "teleconnections",
+    "experiment": "control-1950-devcon",
+    "variable": "lra-r100-monthly",
+    "duration": "NAO",
+    "datetime": "2024-02-20T17:49:41.938295Z"
   },
   "geometry": {
     "type": "Polygon",

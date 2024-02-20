@@ -3,7 +3,12 @@
   "stac_version": "1.0.0",
   "id": "image29",
   "properties": {
-    "datetime": "2024-02-20T13:11:29.889981Z"
+    "diagnostic": "IFS",
+    "product": "teleconnections",
+    "experiment": "control-1950-devcon",
+    "variable": "lra-r100-monthly",
+    "duration": "NAO",
+    "datetime": "2024-02-20T17:49:43.777465Z"
   },
   "geometry": {
     "type": "Polygon",

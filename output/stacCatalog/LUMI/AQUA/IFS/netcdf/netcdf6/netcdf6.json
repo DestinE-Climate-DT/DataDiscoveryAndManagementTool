@@ -3,7 +3,12 @@
   "stac_version": "1.0.0",
   "id": "netcdf6",
   "properties": {
-    "datetime": "2024-02-20T13:11:26.878687Z"
+    "diagnostic": "rainfall",
+    "product": "trop",
+    "experiment": "IFS",
+    "variable": "control-1950-devcon",
+    "duration": "lra-r100-monthly",
+    "datetime": "2024-02-20T17:49:41.934470Z"
   },
   "geometry": {
     "type": "Polygon",

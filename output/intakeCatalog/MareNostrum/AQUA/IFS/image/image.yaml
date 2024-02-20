@@ -6,544 +6,739 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_index.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: IFS
+      duration: NAO
+      experiment: control-1950-devcon
+      product: teleconnections
+      variable: lra-r100-monthly
     name: image1
     parameters: {}
   image10:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image10
     parameters: {}
   image11:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_hcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image11
     parameters: {}
   image12:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tprate.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image12
     parameters: {}
   image13:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_mcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image13
     parameters: {}
   image14:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image14
     parameters: {}
   image15:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_2t.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image15
     parameters: {}
   image16:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_msl.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image16
     parameters: {}
   image17:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image17
     parameters: {}
   image18:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/tropical_rainfall/pdf/IFS_historical-1990-devcon_lra-r100-monthly/trop_rainfall_IFS_historical-1990-devcon_lra-r100-monthly_histogram.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: rainfall
+      duration: lra-r100-monthly
+      experiment: IFS
+      product: trop
+      variable: historical-1990-devcon
     name: image18
     parameters: {}
   image19:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/pdf/Statistics_maps_msl_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: maps
+      duration: historical-1990-devcon
+      experiment: msl
+      product: Statistics
+      variable: IFS
     name: image19
     parameters: {}
   image2:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: IFS
+      duration: NAO
+      experiment: control-1950-devcon
+      product: teleconnections
+      variable: lra-r100-monthly
     name: image2
     parameters: {}
   image20:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/pdf/Statistics_maps_tprate_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: maps
+      duration: historical-1990-devcon
+      experiment: tprate
+      product: Statistics
+      variable: IFS
     name: image20
     parameters: {}
   image21:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/pdf/Statistics_maps_2t_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: maps
+      duration: historical-1990-devcon
+      experiment: 2t
+      product: Statistics
+      variable: IFS
     name: image21
     parameters: {}
   image22:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/global_time_series/pdf/global_time_series_IFS_historical-1990-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: historical-1990-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image22
     parameters: {}
   image23:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_index.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: IFS
+      duration: NAO
+      experiment: control-1950-devcon
+      product: teleconnections
+      variable: lra-r100-monthly
     name: image23
     parameters: {}
   image24:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image24
     parameters: {}
   image25:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_hcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image25
     parameters: {}
   image26:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tprate.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image26
     parameters: {}
   image27:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_historical-1990-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: historical-1990-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image27
     parameters: {}
   image28:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_mcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image28
     parameters: {}
   image29:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: IFS
+      duration: NAO
+      experiment: control-1950-devcon
+      product: teleconnections
+      variable: lra-r100-monthly
     name: image29
     parameters: {}
   image3:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: IFS
+      duration: NAO
+      experiment: control-1950-devcon
+      product: teleconnections
+      variable: lra-r100-monthly
     name: image3
     parameters: {}
   image30:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image30
     parameters: {}
   image31:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: IFS
+      duration: NAO
+      experiment: control-1950-devcon
+      product: teleconnections
+      variable: lra-r100-monthly
     name: image31
     parameters: {}
   image32:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_2t.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image32
     parameters: {}
   image33:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_msl.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image33
     parameters: {}
   image34:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_DJF.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: IFS
+      duration: NAO
+      experiment: control-1950-devcon
+      product: teleconnections
+      variable: lra-r100-monthly
     name: image34
     parameters: {}
   image35:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/Statistics_maps_msl_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: maps
+      duration: historical-1990-devcon
+      experiment: msl
+      product: Statistics
+      variable: IFS
     name: image35
     parameters: {}
   image36:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/Statistics_maps_tprate_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: maps
+      duration: historical-1990-devcon
+      experiment: tprate
+      product: Statistics
+      variable: IFS
     name: image36
     parameters: {}
   image37:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/Statistics_maps_2t_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: maps
+      duration: historical-1990-devcon
+      experiment: 2t
+      product: Statistics
+      variable: IFS
     name: image37
     parameters: {}
   image38:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: time
+      duration: control-1950-devcon
+      experiment: series
+      product: global
+      variable: IFS
     name: image38
     parameters: {}
   image39:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver: intake_xarray.raster.RasterIOSource
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: IFS
+      duration: NAO
+      experiment: control-1950-devcon
+      product: teleconnections
+      variable: lra-r100-monthly
     name: image39
     parameters: {}
   image4:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_DJF.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: IFS
+      duration: NAO
+      experiment: control-1950-devcon
+      product: teleconnections
+      variable: lra-r100-monthly
     name: image4
     parameters: {}
   image5:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: IFS
+      duration: NAO
+      experiment: control-1950-devcon
+      product: teleconnections
+      variable: lra-r100-monthly
     name: image5
     parameters: {}
   image6:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/tropical_rainfall/pdf/IFS_control-1950-devcon_lra-r100-monthly/trop_rainfall_IFS_control-1950-devcon_lra-r100-monthly_histogram.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: rainfall
+      duration: lra-r100-monthly
+      experiment: IFS
+      product: trop
+      variable: control-1950-devcon
     name: image6
     parameters: {}
   image7:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/pdf/Statistics_maps_tprate_IFS_control-1950-devcon_1950-1-1_1959-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: maps
+      duration: control-1950-devcon
+      experiment: tprate
+      product: Statistics
+      variable: IFS
     name: image7
     parameters: {}
   image8:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/pdf/Statistics_maps_msl_IFS_control-1950-devcon_1950-1-1_1959-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: maps
+      duration: control-1950-devcon
+      experiment: msl
+      product: Statistics
+      variable: IFS
     name: image8
     parameters: {}
   image9:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/pdf/Statistics_maps_2t_IFS_control-1950-devcon_1950-1-1_1959-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/output/intakeCatalog/MareNostrum/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
     - rasterio
     getenv: true
     getshell: true
-    metadata: {}
+    metadata:
+      diagnostic: maps
+      duration: control-1950-devcon
+      experiment: 2t
+      product: Statistics
+      variable: IFS
     name: image9
     parameters: {}

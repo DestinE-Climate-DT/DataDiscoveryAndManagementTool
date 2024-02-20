@@ -280,20 +280,24 @@ def createSrcIntakeCatalog():
                 os.makedirs(srcCatalogPath,exist_ok=True)
             srcCatalog = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}",f"{src}",f"{src}.yaml")
 
-            srcExtList=appDataSrcNameFileExt[src]
-            (appDataSrcNamesAPImap[src])(srcCatalog,getAppSrcFileList(app,src,esm,srcExtList))
+            srcExtList = appDataSrcNameFileExt[src]
+            #  Fetch the 'metadata' keys for this 'app' from 'appDescInfo'.
+            appMetadataKeys = localconfig.getappMetadataKeys(app)
+            (appDataSrcNamesAPImap[src])(app,srcCatalog,getAppSrcFileList(app,src,esm,srcExtList),appMetadataKeys)
 
 
-def createNetcdfSrcListForIntake(catFile,srcFileList):
+def createNetcdfSrcListForIntake(app,catFile,srcFileList,appMetadataKeys):
     """Create yaml sources for the netcdf files in the input
        file list of files.
 
     For each of the netcdf files in the input file list, create the yaml source and save in the input catalog file.
 
     Args:
+            app : application Name
             catFile : Catalog File Name.
             srcFileList : List of netcdf files.
-    Returns: 
+            appMetadataKeys : List of metadata keys.
+    Returns:
             None
     """
 
@@ -317,21 +321,38 @@ def createNetcdfSrcListForIntake(catFile,srcFileList):
             print(f"File {srcFile} doesn't exist!")
             return
         
-        #create source
+        # Create source.
         netcdfSrc = intake.open_netcdf(srcFile)
         
-        #create unique name for source
+        # Create unique name for source.
         netcdfSrc.name = f"netcdf{count}"
+        
         
         #create metadata for source
         netcdfSrc.metadata = {}
-        # TODO : 
-        #  Fetch the 'metadata' keys for this 'src' and 'app' from 'appDescInfo'.
-        #  Fetch the 'metadata' values from the 'srcFile' and update to catalog 'metadata'.
         
-        #netcdfSrc.metadata[''] = 
+        #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
+        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
+        print(f"{appMetadataKeys}")
+        print(f"{metadataValues}")
         
-        # Add the sources to the catalog
+        for key in appMetadataKeys:
+            if app == 'AQUA':
+                if key == 'product':
+                    netcdfSrc.metadata[key] = metadataValues[0]
+                elif key == 'diagnostic':
+                    netcdfSrc.metadata[key] = metadataValues[1]
+                elif key == 'experiment':
+                    netcdfSrc.metadata[key] = metadataValues[2]
+                elif key == 'variable':
+                    netcdfSrc.metadata[key] = metadataValues[3]
+                elif key == 'duration':
+                    netcdfSrc.metadata[key] = metadataValues[4]
+            # TODO for other apps
+            else:
+                print('Metadata not available')
+        
+        # Add the sources to the catalog.
         srcCatalog = srcCatalog.add(netcdfSrc)
         count += 1
         
@@ -339,15 +360,17 @@ def createNetcdfSrcListForIntake(catFile,srcFileList):
     return
 
 
-def createImageSrcListForIntake(catFile,srcFileList):
+def createImageSrcListForIntake(app,catFile,srcFileList,appMetadataKeys):
     """Create yaml sources for the image files in the input
        file list of files.
 
     For each of the image files in the input file list, create the yaml source and save in the input catalog file.
 
     Args:
+            app : application Name
             catFile : Catalog File Name.
             srcFileList : List of image files.
+            appMetadataKeys : List of metadata keys.
     Returns: 
             None
     """
@@ -375,7 +398,30 @@ def createImageSrcListForIntake(catFile,srcFileList):
         imageSrc = intake.open_rasterio(srcFile)
         imageSrc.name = f"image{count}"
         
-        # Add the sources to the catalog
+        # Create metadata for source.
+        imageSrc.metadata = {}
+
+        # Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
+        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
+        
+        for key in appMetadataKeys:
+            if app == 'AQUA':
+                if key == 'product':
+                    imageSrc.metadata[key] = metadataValues[0]
+                elif key == 'diagnostic':
+                    imageSrc.metadata[key] = metadataValues[1]
+                elif key == 'experiment':
+                    imageSrc.metadata[key] = metadataValues[2]
+                elif key == 'variable':
+                    imageSrc.metadata[key] = metadataValues[3]
+                elif key == 'duration':
+                    imageSrc.metadata[key] = metadataValues[4]
+            # TODO for other apps
+            else:
+                print('Metadata not available')
+
+        
+        # Add the sources to the catalog.
         srcCatalog = srcCatalog.add(imageSrc)
         count += 1
         
@@ -383,15 +429,17 @@ def createImageSrcListForIntake(catFile,srcFileList):
     return
 
 
-def createTextSrcListForIntake(catFile,srcFileList):
+def createTextSrcListForIntake(app,catFile,srcFileList,appMetadataKeys):
     """Create yaml sources for the text files in the input
        file list of files.
 
     For each of the text files in the input file list, create the yaml source and save in the input catalog file.
 
     Args:
+            app : application Name
             catFile : Catalog File Name.
             srcFileList : List of text files.
+            appMetadataKeys : List of metadata keys.
     Returns: 
             None
     """
@@ -418,10 +466,31 @@ def createTextSrcListForIntake(catFile,srcFileList):
             return
         textSrc = intake.open_textfiles(srcFile)
         textSrc.name = f"text{count}"
-        count += 1
+
+        # Create metadata for source.
+        textSrc.metadata = {}
+
+        # Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
+        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
+        for key in appMetadataKeys:
+            if app == 'AQUA':
+                if key == 'product':
+                    textSrc.metadata[key] = metadataValues[0]
+                elif key == 'diagnostic':
+                    textSrc.metadata[key] = metadataValues[1]
+                elif key == 'experiment':
+                    textSrc.metadata[key] = metadataValues[2]
+                elif key == 'variable':
+                    textSrc.metadata[key] = metadataValues[3]
+                elif key == 'duration':
+                    textSrc.metadata[key] = metadataValues[4]
+            # TODO for other apps
+            else:
+                print('Metadata not available')
         
         # Add the sources to the catalog
         srcCatalog = srcCatalog.add(textSrc)
+        count += 1
         
     srcCatalog.save(catFile)
     return
