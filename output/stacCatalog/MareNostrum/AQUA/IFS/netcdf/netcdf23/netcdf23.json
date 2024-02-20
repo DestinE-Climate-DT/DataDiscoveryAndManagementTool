@@ -3,7 +3,7 @@
   "stac_version": "1.0.0",
   "id": "netcdf23",
   "properties": {
-    "datetime": "2024-02-19T14:49:22.472897Z"
+    "datetime": "2024-02-20T13:11:29.709503Z"
   },
   "geometry": {
     "type": "Polygon",
