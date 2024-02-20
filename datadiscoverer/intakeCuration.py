@@ -19,14 +19,12 @@ except:
     print(sys.exc_info())
     print(f"Module 'intake/yaml' import error in {__file__}")
 
-
 #Local modules
 try:
     from .config import configDatadiscoverer
 except:
     print(sys.exc_info())
     print(f"Module 'config' import error in {__file__}")
-
 
 try:
     from .utils import getAppSrcFileList
@@ -318,8 +316,20 @@ def createNetcdfSrcListForIntake(catFile,srcFileList):
         if not os.path.isfile(srcFile):
             print(f"File {srcFile} doesn't exist!")
             return
+        
+        #create source
         netcdfSrc = intake.open_netcdf(srcFile)
+        
+        #create unique name for source
         netcdfSrc.name = f"netcdf{count}"
+        
+        #create metadata for source
+        netcdfSrc.metadata = {}
+        # TODO : 
+        #  Fetch the 'metadata' keys for this 'src' and 'app' from 'appDescInfo'.
+        #  Fetch the 'metadata' values from the 'srcFile' and update to catalog 'metadata'.
+        
+        #netcdfSrc.metadata[''] = 
         
         # Add the sources to the catalog
         srcCatalog = srcCatalog.add(netcdfSrc)

@@ -82,9 +82,11 @@ configSchema = {
                                     
                                     "type": "object",
                                     "propertyNames": {
-                                            "enum" : ['description','provider','datasources']
+                                            "enum" : ['description','provider',
+                                                      'datasources','metadata']
                                     },
-                                    "required":['description','provider','datasources']
+                                    "required":['description','provider',
+                                                'datasources','metadata']
                                 }
                             }
                     },
@@ -109,25 +111,65 @@ def initializeDataDiscoverer(configFile):
     
     if not os.path.exists(configFile):
         print(f"Configuration File {configFile} doesn't exist !!!")
-        return 
+        return None
     
     userConfig = None
+    
     with open(f"{configFile}") as f:
-        userConfig = json.load(f)
-        
+
         try:
-            validate(instance=userConfig, schema=configSchema)
-        except exceptions.ValidationError:
-            print(f"Invalid JSON schema found in configuration file : {configFile}")
-            print(f"Message:{exceptions.ValidationError.message}\n \
-                    Failed key :{exceptions.ValidationError.validator}\n \
-                    Value :{exceptions.ValidationError.validator_value}")
-            return 
+            userConfig = json.load(f)
+        
+            try:
+                # Input data - JSON format validation.
+                validate(instance=userConfig, schema=configSchema)
+            except exceptions.ValidationError as e:
+                print(f"Invalid JSON schema found in configuration file : {configFile}")
+                print(f"Error :{e}")
+                return None
+            
+        except json.JSONDecodeError as e:
+            print(f"Error :{e}")
+            return None
+    
+    print("Input data format validation checks done!")
     
     curconfig = configDatadiscoverer()
     configDatadiscoverer.activeConfig = curconfig
     curconfig.setConfigfromJSON(userConfig)
     
+    # TODO: Input data - additional checks for the input data.
+    inputDataChecksPassed = True 
+            
+    print("Input data additional checks on-going")
+    
+    # 1.Check if all apps exist in appNames and appDescriptionInfo.
+    appNames     = curconfig.getappNames()
+    appDescInfo  = curconfig.getappDescriptionInfo()
+    
+    errorMessages = []
+    if len(appNames) != len(appDescInfo.items()) :
+        failedApps = []
+        inputDataChecksPassed = False
+        for app in appNames:
+            if app not in appDescInfo.keys():
+                failedApps.append(app)
+        errorMessages.append(f"Mismatch in number of apps in 'appNames' and 'appDescriptionInfo'.The following apps failed:{failedApps}")
+        
+    # 2.
+    
+    
+    # 3.
+    
+    
+    if inputDataChecksPassed is False:
+        curconfig = None
+        for msg in errorMessages:
+            print(f"{msg}\n")
+        return None
+    else:
+        print("Input data additional checks done")
+
     return curconfig
         
         
@@ -256,17 +298,3 @@ class configDatadiscoverer():
         
     def getappDataSrcNamesAPImap(self):
         return self.appDataSrcNamesAPImap
-        
-'''
-# NOTE: TO BE DISCUSSED!
-# ----------------------
-# Grouping of the different data sources for each application
-# for example say 
-#       'netcdf' files can be grouped as -- 'monthly', 'daily' etc. and an app can produce some
-#                                           subset of this classification
-appDataSrcNamesGrouping={
-    'netcdf'   :['monthly','daily'],
-    'images'   :[''],
-    'text'     :['']
-}
-'''
