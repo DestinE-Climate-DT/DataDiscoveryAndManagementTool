@@ -3,12 +3,12 @@
   "stac_version": "1.0.0",
   "id": "image20",
   "properties": {
-    "diagnostic": "maps",
-    "product": "Statistics",
+    "diagnostic": "Statistics",
+    "product": "maps",
     "experiment": "tprate",
     "variable": "IFS",
     "duration": "historical-1990-devcon",
-    "datetime": "2024-02-20T17:49:42.372974Z"
+    "datetime": "2024-02-21T15:56:51.313458Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -52,7 +52,7 @@
   "assets": {
     "imagefile20": {
       "href": "/work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/pdf/Statistics_maps_tprate_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf",
-      "type": "text/plain"
+      "type": "application/pdf"
     }
   },
   "bbox": [

@@ -6,7 +6,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_index.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -14,10 +14,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: image1
     parameters: {}
@@ -25,7 +25,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -33,10 +33,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image10
     parameters: {}
@@ -44,7 +44,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_hcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -52,10 +52,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image11
     parameters: {}
@@ -63,7 +63,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tprate.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -71,10 +71,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image12
     parameters: {}
@@ -82,7 +82,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_mcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -90,10 +90,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image13
     parameters: {}
@@ -101,7 +101,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -109,10 +109,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image14
     parameters: {}
@@ -120,7 +120,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_2t.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -128,10 +128,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image15
     parameters: {}
@@ -139,7 +139,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_msl.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -147,10 +147,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image16
     parameters: {}
@@ -158,7 +158,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -166,10 +166,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image17
     parameters: {}
@@ -177,7 +177,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/tropical_rainfall/pdf/IFS_historical-1990-devcon_lra-r100-monthly/trop_rainfall_IFS_historical-1990-devcon_lra-r100-monthly_histogram.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -185,10 +185,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: rainfall
+      diagnostic: trop
       duration: lra-r100-monthly
       experiment: IFS
-      product: trop
+      product: rainfall
       variable: historical-1990-devcon
     name: image18
     parameters: {}
@@ -196,7 +196,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/pdf/Statistics_maps_msl_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -204,10 +204,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: maps
+      diagnostic: Statistics
       duration: historical-1990-devcon
       experiment: msl
-      product: Statistics
+      product: maps
       variable: IFS
     name: image19
     parameters: {}
@@ -215,7 +215,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -223,10 +223,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: image2
     parameters: {}
@@ -234,7 +234,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/pdf/Statistics_maps_tprate_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -242,10 +242,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: maps
+      diagnostic: Statistics
       duration: historical-1990-devcon
       experiment: tprate
-      product: Statistics
+      product: maps
       variable: IFS
     name: image20
     parameters: {}
@@ -253,7 +253,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/pdf/Statistics_maps_2t_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -261,10 +261,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: maps
+      diagnostic: Statistics
       duration: historical-1990-devcon
       experiment: 2t
-      product: Statistics
+      product: maps
       variable: IFS
     name: image21
     parameters: {}
@@ -272,7 +272,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/global_time_series/pdf/global_time_series_IFS_historical-1990-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -280,10 +280,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: historical-1990-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image22
     parameters: {}
@@ -291,7 +291,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_index.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -299,10 +299,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: image23
     parameters: {}
@@ -310,7 +310,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -318,10 +318,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image24
     parameters: {}
@@ -329,7 +329,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_hcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -337,10 +337,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image25
     parameters: {}
@@ -348,7 +348,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tprate.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -356,10 +356,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image26
     parameters: {}
@@ -367,7 +367,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_historical-1990-devcon_lra-r100-monthly_gregory.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -375,10 +375,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: historical-1990-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image27
     parameters: {}
@@ -386,7 +386,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_mcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -394,10 +394,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image28
     parameters: {}
@@ -405,7 +405,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -413,10 +413,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: image29
     parameters: {}
@@ -424,7 +424,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -432,10 +432,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: image3
     parameters: {}
@@ -443,7 +443,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -451,10 +451,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image30
     parameters: {}
@@ -462,7 +462,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_JJA.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -470,10 +470,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: image31
     parameters: {}
@@ -481,7 +481,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_2t.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -489,10 +489,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image32
     parameters: {}
@@ -500,7 +500,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_msl.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -508,10 +508,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image33
     parameters: {}
@@ -519,7 +519,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_DJF.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -527,10 +527,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: image34
     parameters: {}
@@ -538,7 +538,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/Statistics_maps_msl_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -546,10 +546,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: maps
+      diagnostic: Statistics
       duration: historical-1990-devcon
       experiment: msl
-      product: Statistics
+      product: maps
       variable: IFS
     name: image35
     parameters: {}
@@ -557,7 +557,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/Statistics_maps_tprate_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -565,10 +565,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: maps
+      diagnostic: Statistics
       duration: historical-1990-devcon
       experiment: tprate
-      product: Statistics
+      product: maps
       variable: IFS
     name: image36
     parameters: {}
@@ -576,7 +576,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/Statistics_maps_2t_IFS_historical-1990-devcon_1990-1-1_1990-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -584,10 +584,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: maps
+      diagnostic: Statistics
       duration: historical-1990-devcon
       experiment: 2t
-      product: Statistics
+      product: maps
       variable: IFS
     name: image37
     parameters: {}
@@ -595,7 +595,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tcc.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -603,10 +603,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: image38
     parameters: {}
@@ -614,17 +614,17 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver: intake_xarray.raster.RasterIOSource
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: image39
     parameters: {}
@@ -632,7 +632,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_DJF.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -640,10 +640,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: image4
     parameters: {}
@@ -651,7 +651,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/pdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -659,10 +659,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: image5
     parameters: {}
@@ -670,7 +670,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/tropical_rainfall/pdf/IFS_control-1950-devcon_lra-r100-monthly/trop_rainfall_IFS_control-1950-devcon_lra-r100-monthly_histogram.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -678,10 +678,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: rainfall
+      diagnostic: trop
       duration: lra-r100-monthly
       experiment: IFS
-      product: trop
+      product: rainfall
       variable: control-1950-devcon
     name: image6
     parameters: {}
@@ -689,7 +689,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/pdf/Statistics_maps_tprate_IFS_control-1950-devcon_1950-1-1_1959-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -697,10 +697,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: maps
+      diagnostic: Statistics
       duration: control-1950-devcon
       experiment: tprate
-      product: Statistics
+      product: maps
       variable: IFS
     name: image7
     parameters: {}
@@ -708,7 +708,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/pdf/Statistics_maps_msl_IFS_control-1950-devcon_1950-1-1_1959-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -716,10 +716,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: maps
+      diagnostic: Statistics
       duration: control-1950-devcon
       experiment: msl
-      product: Statistics
+      product: maps
       variable: IFS
     name: image8
     parameters: {}
@@ -727,7 +727,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/pdf/Statistics_maps_2t_IFS_control-1950-devcon_1950-1-1_1959-12-1.pdf
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/LUMI/AQUA/IFS/image/
     description: ''
     direct_access: forbid
     driver:
@@ -735,10 +735,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: maps
+      diagnostic: Statistics
       duration: control-1950-devcon
       experiment: 2t
-      product: Statistics
+      product: maps
       variable: IFS
     name: image9
     parameters: {}

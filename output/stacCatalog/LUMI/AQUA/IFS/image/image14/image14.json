@@ -3,12 +3,12 @@
   "stac_version": "1.0.0",
   "id": "image14",
   "properties": {
-    "diagnostic": "time",
-    "product": "global",
+    "diagnostic": "global",
+    "product": "time",
     "experiment": "series",
     "variable": "IFS",
     "duration": "control-1950-devcon",
-    "datetime": "2024-02-20T17:49:42.372046Z"
+    "datetime": "2024-02-21T15:56:51.312524Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -52,7 +52,7 @@
   "assets": {
     "imagefile14": {
       "href": "/work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/pdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.pdf",
-      "type": "text/plain"
+      "type": "application/pdf"
     }
   },
   "bbox": [

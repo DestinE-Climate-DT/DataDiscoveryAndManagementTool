@@ -1,18 +1,10 @@
-src
-===
+datadiscoverer
+==============
 
 .. toctree::
    :maxdepth: 4
-   
-   AQUA
-   EnergyOffShore
-   EnergyOnShore
-   FWI
-   HydroMet
-   HydroRiver
-   SPITFIRE
-   Urban
-   WISE
-   utils
+
+   config
    intakeCuration
    stacCuration
+   utils

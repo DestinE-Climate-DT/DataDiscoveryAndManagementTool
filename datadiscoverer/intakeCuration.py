@@ -32,44 +32,17 @@ except:
     print(sys.exc_info())
     print(f"Module 'utils' import error in {__file__}")
 
-    
-def createAppDataSrcNamesIntakeAPImap():
-    """Create a mapping between the file types and the associated API for handling it.
 
-    Mapper to club the file types and the corresponding access methods for handling netcdf, jpeg etc.
-
-    Args:
-            None.
-
-    Returns: 
-            None
-    """
-    localconfig = configDatadiscoverer.activeConfig
-    appDataSrcNames = localconfig.getappDataSrcNames()
-    appDataSrcNamesAPImap = localconfig.getappDataSrcNamesAPImap()
-    
-    for src in appDataSrcNames:
-        if src == 'netcdf':
-            appDataSrcNamesAPImap[src]=createNetcdfSrcListForIntake
-        elif src == 'image':
-            appDataSrcNamesAPImap[src]=createImageSrcListForIntake
-        elif src == 'text':
-            appDataSrcNamesAPImap[src]=createTextSrcListForIntake
-        else:
-            raise f'Unknown source type {src} encountered!'
-
-
-def createDDTMasterIntakeCatalog():
+def createMasterIntakeCatalog(catalogFileName):
     """Create master catalog file for the HPC centers.
 
     Create the top level master catalog containing the links to the yaml files for the HPC centers.
 
     Args:
-            None
+            catalogFileName : String to hold the name of top level catalog file that would be created.
     Returns: 
             None
     """
-    createAppDataSrcNamesIntakeAPImap()
     localconfig = configDatadiscoverer.activeConfig
     outputPath = localconfig.getOutputPath()
     
@@ -91,14 +64,25 @@ def createDDTMasterIntakeCatalog():
     if not os.path.exists(f"{outputPath}"):
         Path(f"{outputPath}").mkdir(parents=True, exist_ok=True) 
     else:
-        if os.path.isfile(f"{outputPath}/datadiscovererIntakeCatalog.yaml"):
-            Path(f"{outputPath}/datadiscovererIntakeCatalog.yaml").unlink(missing_ok=True)
+        if os.path.isfile(f"{outputPath}/{catalogFileName}.yaml"):
+            # TODO: If update then read the exisitng yaml file and compare with the 'sources'
+            #       created above based on the 'config.json' parameters. Update if any missing 
+            #       items into the existing yaml tree and dump this updated 'sources' to file.
+            # If update is 'false' , i.e., create fresh catalog, then delete the existing yaml
+            #       file and create a new one.
+            Path(f"{outputPath}/{catalogFileName}.yaml").unlink(missing_ok=True)
 
-    with open(f"{outputPath}/datadiscovererIntakeCatalog.yaml", "w") as f:
-        f.write(
-            "description: 'DestinE data discovery tool master intake catalog for the data produced at various HPC centers.'\n")
-        yaml.dump(sources,f,sort_keys=False)
-        f.close()
+    try:
+        with open(f"{outputPath}/{catalogFileName}.yaml", "w") as f:
+            f.write(
+                "description: 'DestinE data discovery tool -'datadiscoverer' intake catalog for the data produced at various HPC centers.'\n")
+            yaml.dump(sources,f,sort_keys=False)
+            f.close()
+    except OSError as err:
+        print(f"Error {err} while writing {outputPath}/{catalogFileName}.yaml!")
+        return
+        
+    createHPCIntakeCatalog()
 
 
 def createHPCIntakeCatalog():
@@ -116,7 +100,6 @@ def createHPCIntakeCatalog():
 
     sources={}
     sources.setdefault("sources",{})
-
 
     for hpc, app  in itertools.product(localconfig.getHPCCenters(),
                                        localconfig.getappNames()):
@@ -140,13 +123,25 @@ def createHPCIntakeCatalog():
         hpcCatalog = os.path.join(hpcCatalogPath,f"{hpc}.yaml")
         
         if os.path.isfile(hpcCatalog):
+            # TODO: If update then read the exisitng yaml file and compare with the 'sources'
+            #       created above based on the 'config.json' parameters. Update if any missing 
+            #       items into the existing yaml tree and dump this updated 'sources' to file.
+            # If update is 'false' , i.e., create fresh catalog, then delete the existing yaml
+            #       file and create a new one.
             Path(hpcCatalog).unlink(missing_ok=True)
 
-        with open(f"{hpcCatalog}", "w") as f:
-            f.write(
-                "description: "+ f"\'Catalog for application data produced by the desitnation earth twin engine simulations performed on {hpc}.\'\n")
-            yaml.dump(sources,f,sort_keys=False)
-            f.close()
+        try:
+            with open(f"{hpcCatalog}", "w") as f:
+                f.write(
+                    "description: "+ f"\'Catalog for application data produced by the desitnation earth twin engine simulations performed on {hpc}.\'\n")
+                yaml.dump(sources,f,sort_keys=False)
+                f.close()
+        except OSError as err:
+            print(f"Error {err} while writing {hpcCatalog}!")
+            return
+
+    print('calling createAppIntakeCatalog()')        
+    createAppIntakeCatalog()
 
 
 def createAppIntakeCatalog():
@@ -187,13 +182,26 @@ def createAppIntakeCatalog():
         appCatalog = os.path.join(appCatalogPath,f"{app}.yaml")
 
         if os.path.isfile(appCatalog):
+            # TODO: If update then read the exisitng yaml file and compare with the 'sources'
+            #       created above based on the 'config.json' parameters. Update if any missing 
+            #       items into the existing yaml tree and dump this updated 'sources' to file.
+            # If update is 'false' , i.e., create fresh catalog, then delete the existing yaml
+            #       file and create a new one.
             Path(appCatalog).unlink(missing_ok=True)
 
-        with open( appCatalog, "w" ) as f:
-            f.write(f"description: {app} application data catalog\n")
-            yaml.dump(sources,f,sort_keys=False)
-            f.close()
+        try:
+            with open( appCatalog, "w" ) as f:
+                f.write(f"description: {app} application data catalog\n")
+                yaml.dump(sources,f,sort_keys=False)
+                f.close()
+        except OSError as err:
+            print(f"Error {err} while writing {appCatalog}!")
+            return
 
+        
+    print('calling createESMIntakeCatalog()')        
+    createESMIntakeCatalog()
+    
 
 def createESMIntakeCatalog():
     """Create yaml files for the ESMs.
@@ -243,14 +251,26 @@ def createESMIntakeCatalog():
         esmCatalog = os.path.join(esmCatalogPath,f"{esm}.yaml")
 
         if os.path.isfile(esmCatalog):
+            # TODO: If update then read the exisitng yaml file and compare with the 'sources'
+            #       created above based on the 'config.json' parameters. Update if any missing 
+            #       items into the existing yaml tree and dump this updated 'sources' to file.
+            # If update is 'false' , i.e., create fresh catalog, then delete the existing yaml
+            #       file and create a new one.
             Path(esmCatalog).unlink(missing_ok=True)
+        
+        try:
+            with open( esmCatalog, "w" ) as f:
+                f.write(f"description: 'Catalog for files generated from {esm} GSV.  '\n")
+                yaml.dump(sources,f,sort_keys=False)
+                f.close()
+        except OSError as err:
+            print(f"Error {err} while writing {esmCatalog}!")
+            return
 
-        with open( esmCatalog, "w" ) as f:
-            f.write(f"description: 'Catalog for files generated from {esm} GSV.  '\n")
-            yaml.dump(sources,f,sort_keys=False)
-            f.close()
+    print('calling createESMIntakeCatalog()')        
+    createSrcIntakeCatalog()
 
-
+            
 def createSrcIntakeCatalog():
     """Create yaml files for the sources.
 
@@ -264,7 +284,6 @@ def createSrcIntakeCatalog():
     localconfig = configDatadiscoverer.activeConfig
     outputPath = localconfig.getOutputPath()
 
-    appDataSrcNamesAPImap = localconfig.getappDataSrcNamesAPImap()
     appDataSrcNameFileExt = localconfig.getappDataSrcNameFileExt()
 
     for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
@@ -281,216 +300,114 @@ def createSrcIntakeCatalog():
             srcCatalog = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}",f"{src}",f"{src}.yaml")
 
             srcExtList = appDataSrcNameFileExt[src]
-            #  Fetch the 'metadata' keys for this 'app' from 'appDescInfo'.
-            appMetadataKeys = localconfig.getappMetadataKeys(app)
-            (appDataSrcNamesAPImap[src])(app,srcCatalog,getAppSrcFileList(app,src,esm,srcExtList),appMetadataKeys)
+            createIntakeCatalogSourcesForFileList(app,src,srcCatalog,getAppSrcFileList(app,src,esm,srcExtList))
 
+            
+def createIntakeCatalogSourcesForFileList(app,src,catFile,srcFileList):
+    """Create catalog for the sources for the inout file list.
 
-def createNetcdfSrcListForIntake(app,catFile,srcFileList,appMetadataKeys):
-    """Create yaml sources for the netcdf files in the input
-       file list of files.
-
-    For each of the netcdf files in the input file list, create the yaml source and save in the input catalog file.
+    For all the source files, create the intake counterparts and write out to the catalog file.
 
     Args:
             app : application Name
+            src : source Name
             catFile : Catalog File Name.
             srcFileList : List of netcdf files.
-            appMetadataKeys : List of metadata keys.
     Returns:
             None
     """
-
+    
+    localconfig = configDatadiscoverer.activeConfig
+    #  Fetch the 'metadata' keys for this 'app' from 'appDescInfo'.
+    appMetadataKeys = localconfig.getappMetadataKeys(app)
+    
+    #intakeSrcList = map(intakeSrcCreator,srcFileList)
     if os.path.isfile(catFile):
+    # TODO: If update then read the exisitng yaml file and compare with the 'sources'
+    #       created above based on the 'config.json' parameters. Update if any missing 
+    #       items into the existing yaml tree and dump this updated 'sources' to file.
+    # If update is 'false' , i.e., create fresh catalog, then delete the existing yaml
+    #       file and create a new one.
         Path(catFile).unlink(missing_ok=True)
-
+        
     sources={}
     sources.setdefault("sources",{})
 
-    srcCatalogFile = open( catFile, "w" )
-    srcCatalogFile.write("description: 'Catalog for netcdf files.'\n")
+    try:
+        srcCatalogFile = open( catFile, "w" )
+    except OSError as err:
+        print(f"Error {err} while opening {catFile}!")
+        return
+    
+    srcCatalogFile.write(f"description: 'Catalog for {src} files.'\n")
     yaml.dump(sources,srcCatalogFile,sort_keys=False)
     srcCatalogFile.close()
     
     srcCatalog = intake.open_catalog(catFile)
 
-    netcdfSrcs=[]
+    intakeSrcList=[]
     count=1
-    for srcFile in srcFileList:
-        if not os.path.isfile(srcFile):
-            print(f"File {srcFile} doesn't exist!")
-            return
-        
-        # Create source.
-        netcdfSrc = intake.open_netcdf(srcFile)
-        
-        # Create unique name for source.
-        netcdfSrc.name = f"netcdf{count}"
-        
-        
-        #create metadata for source
-        netcdfSrc.metadata = {}
-        
-        #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
-        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
-        print(f"{appMetadataKeys}")
-        print(f"{metadataValues}")
-        
-        for key in appMetadataKeys:
-            if app == 'AQUA':
-                if key == 'product':
-                    netcdfSrc.metadata[key] = metadataValues[0]
-                elif key == 'diagnostic':
-                    netcdfSrc.metadata[key] = metadataValues[1]
-                elif key == 'experiment':
-                    netcdfSrc.metadata[key] = metadataValues[2]
-                elif key == 'variable':
-                    netcdfSrc.metadata[key] = metadataValues[3]
-                elif key == 'duration':
-                    netcdfSrc.metadata[key] = metadataValues[4]
-            # TODO for other apps
-            else:
-                print('Metadata not available')
-        
-        # Add the sources to the catalog.
-        srcCatalog = srcCatalog.add(netcdfSrc)
+    
+    intakeSrcList = map(intakeSrcCreator,itertools.repeat(app,len(srcFileList)),
+                    itertools.repeat(src,len(srcFileList)),srcFileList,
+                    itertools.repeat(appMetadataKeys,len(srcFileList)))
+    
+    
+    # Add the sources to the catalog.
+    for intakeSrc in intakeSrcList:
+        intakeSrc.name = f"{src}{count}"
+        srcCatalog = srcCatalog.add(intakeSrc)
         count += 1
-        
+
     srcCatalog.save(catFile)
+        
     return
 
 
-def createImageSrcListForIntake(app,catFile,srcFileList,appMetadataKeys):
-    """Create yaml sources for the image files in the input
-       file list of files.
+def intakeSrcCreator(app,src,srcFile,appMetadataKeys):
+    """Create yaml resource for the input source file.
 
-    For each of the image files in the input file list, create the yaml source and save in the input catalog file.
+    For the input file of given source and app and metadata keys, prepare the intake object.
 
     Args:
             app : application Name
+            src : source Name
             catFile : Catalog File Name.
-            srcFileList : List of image files.
-            appMetadataKeys : List of metadata keys.
-    Returns: 
-            None
+            srcFileList : List of netcdf files.
+    Returns:
+            intakeSrc : intake catalog object.
     """
     
-    if os.path.isfile(catFile):
-        Path(catFile).unlink(missing_ok=True)
+    if not os.path.isfile(srcFile):
+        print(f"File {srcFile} doesn't exist!")
+        return None
 
-    sources={}
-    sources.setdefault("sources",{})
+    # Create source.
+    if src == 'netcdf':
+        intakeSrc = intake.open_netcdf(srcFile)
+    elif src == 'image':
+        intakeSrc = intake.open_rasterio(srcFile)
+    elif src == 'text':
+        intakeSrc = intake.open_textfiles(srcFile)
+    else:
+        print(f'Source type {src} not handled! \n Ignoring {srcFile} in intakeSrcCreator.')
 
-    srcCatalogFile = open( catFile, "w" )
-    srcCatalogFile.write(
-        "description: 'Catalog for image files.'\n")
-    yaml.dump(sources,srcCatalogFile,sort_keys=False)
-    srcCatalogFile.close()
+    #create metadata for source.
+    intakeSrc.metadata = {}
+
+    #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
+    metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
+
+    # NOTE: The metadata keys have fixed order as the file name parts seperated by '_'.
+    if len(metadataValues) < len(appMetadataKeys) :
+        for i in range(len(metadataValues),len(appMetadataKeys)):
+            metadataValues.append('-')
+
+    for key in appMetadataKeys:
+        if app == 'AQUA':
+            intakeSrc.metadata[key] =  metadataValues[appMetadataKeys.index(key)]
+        # TODO for other apps once the data is available.
+        else:
+            print('Metadata not available')
     
-    srcCatalog = intake.open_catalog(catFile)
-
-    imageSrcs=[]
-    count=1
-    for srcFile in srcFileList:
-        if not os.path.isfile(srcFile):
-            print(f"File {srcFile} doesn't exist!")
-            return
-        imageSrc = intake.open_rasterio(srcFile)
-        imageSrc.name = f"image{count}"
-        
-        # Create metadata for source.
-        imageSrc.metadata = {}
-
-        # Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
-        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
-        
-        for key in appMetadataKeys:
-            if app == 'AQUA':
-                if key == 'product':
-                    imageSrc.metadata[key] = metadataValues[0]
-                elif key == 'diagnostic':
-                    imageSrc.metadata[key] = metadataValues[1]
-                elif key == 'experiment':
-                    imageSrc.metadata[key] = metadataValues[2]
-                elif key == 'variable':
-                    imageSrc.metadata[key] = metadataValues[3]
-                elif key == 'duration':
-                    imageSrc.metadata[key] = metadataValues[4]
-            # TODO for other apps
-            else:
-                print('Metadata not available')
-
-        
-        # Add the sources to the catalog.
-        srcCatalog = srcCatalog.add(imageSrc)
-        count += 1
-        
-    srcCatalog.save(catFile)
-    return
-
-
-def createTextSrcListForIntake(app,catFile,srcFileList,appMetadataKeys):
-    """Create yaml sources for the text files in the input
-       file list of files.
-
-    For each of the text files in the input file list, create the yaml source and save in the input catalog file.
-
-    Args:
-            app : application Name
-            catFile : Catalog File Name.
-            srcFileList : List of text files.
-            appMetadataKeys : List of metadata keys.
-    Returns: 
-            None
-    """
-
-    if os.path.isfile(catFile):
-        Path(catFile).unlink(missing_ok=True)
-        
-    sources={}
-    sources.setdefault("sources",{})
-
-    srcCatalogFile = open( catFile, "w" )
-    srcCatalogFile.write(
-            "description: 'Catalog for text files.'\n")
-    yaml.dump(sources,srcCatalogFile,sort_keys=False)
-    srcCatalogFile.close()
-    
-    srcCatalog = intake.open_catalog(catFile)
-
-    textSrcs=[]
-    count=1
-    for srcFile in srcFileList:
-        if not os.path.isfile(srcFile):
-            print(f"File {srcFile} doesn't exist!")
-            return
-        textSrc = intake.open_textfiles(srcFile)
-        textSrc.name = f"text{count}"
-
-        # Create metadata for source.
-        textSrc.metadata = {}
-
-        # Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
-        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
-        for key in appMetadataKeys:
-            if app == 'AQUA':
-                if key == 'product':
-                    textSrc.metadata[key] = metadataValues[0]
-                elif key == 'diagnostic':
-                    textSrc.metadata[key] = metadataValues[1]
-                elif key == 'experiment':
-                    textSrc.metadata[key] = metadataValues[2]
-                elif key == 'variable':
-                    textSrc.metadata[key] = metadataValues[3]
-                elif key == 'duration':
-                    textSrc.metadata[key] = metadataValues[4]
-            # TODO for other apps
-            else:
-                print('Metadata not available')
-        
-        # Add the sources to the catalog
-        srcCatalog = srcCatalog.add(textSrc)
-        count += 1
-        
-    srcCatalog.save(catFile)
-    return
+    return intakeSrc

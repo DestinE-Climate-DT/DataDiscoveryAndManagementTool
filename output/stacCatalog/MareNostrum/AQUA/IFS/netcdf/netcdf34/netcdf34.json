@@ -3,12 +3,12 @@
   "stac_version": "1.0.0",
   "id": "netcdf34",
   "properties": {
-    "diagnostic": "time",
-    "product": "global",
+    "diagnostic": "global",
+    "product": "time",
     "experiment": "series",
     "variable": "IFS",
     "duration": "control-1950-devcon",
-    "datetime": "2024-02-20T17:49:43.593129Z"
+    "datetime": "2024-02-21T15:56:51.784982Z"
   },
   "geometry": {
     "type": "Polygon",

@@ -1,7 +1,0 @@
-FWI module
-==========
-
-.. automodule:: FWI
-   :members:
-   :undoc-members:
-   :show-inheritance:

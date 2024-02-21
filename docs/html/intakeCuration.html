@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>intakeCuration module &mdash; Destination Earth - Data discovery and Management Tool 1.0 documentation</title>
+  <title>intakeCuration module &mdash; Data discovery and management tool - &#39;datadiscoverer&#39; 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="stacCuration module" href="stacCuration.html" />
-    <link rel="prev" title="utils module" href="utils.html" /> 
+    <link rel="prev" title="config module" href="config.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            Destination Earth - Data discovery and Management Tool
+            Data discovery and management tool - 'datadiscoverer'
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -46,19 +46,20 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="AQUA.html">AQUA module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EnergyOffShore.html">EnergyOffShore module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EnergyOnShore.html">EnergyOnShore module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FWI.html">FWI module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HydroMet.html">HydroMet module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HydroRiver.html">HydroRiver module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SPITFIRE.html">SPITFIRE module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Urban.html">Urban module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WISE.html">WISE module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">intakeCuration module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">datadiscoverer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="config.html">config module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">intakeCuration module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createAppIntakeCatalog"><code class="docutils literal notranslate"><span class="pre">createAppIntakeCatalog()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createESMIntakeCatalog"><code class="docutils literal notranslate"><span class="pre">createESMIntakeCatalog()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createHPCIntakeCatalog"><code class="docutils literal notranslate"><span class="pre">createHPCIntakeCatalog()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createIntakeCatalogSourcesForFileList"><code class="docutils literal notranslate"><span class="pre">createIntakeCatalogSourcesForFileList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createMasterIntakeCatalog"><code class="docutils literal notranslate"><span class="pre">createMasterIntakeCatalog()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intakeCuration.createSrcIntakeCatalog"><code class="docutils literal notranslate"><span class="pre">createSrcIntakeCatalog()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intakeCuration.intakeSrcCreator"><code class="docutils literal notranslate"><span class="pre">intakeSrcCreator()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="stacCuration.html">stacCuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
 </ul>
 </li>
 </ul>
@@ -69,7 +70,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Destination Earth - Data discovery and Management Tool</a>
+          <a href="index.html">Data discovery and management tool - 'datadiscoverer'</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -77,7 +78,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+          <li class="breadcrumb-item"><a href="modules.html">datadiscoverer</a></li>
       <li class="breadcrumb-item active">intakeCuration module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/intakeCuration.rst.txt" rel="nofollow"> View page source</a>
@@ -88,22 +89,142 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="intakecuration-module">
-<h1>intakeCuration module<a class="headerlink" href="#intakecuration-module" title="Link to this heading"></a></h1>
+  <section id="module-intakeCuration">
+<span id="intakecuration-module"></span><h1>intakeCuration module<a class="headerlink" href="#module-intakeCuration" title="Link to this heading"></a></h1>
+<p>This module contains the APIs for updating the intake catalog for each app and each of it’s file types.
+These APIs need to be called by the app data curator for maintaining the intake catalog.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="intakeCuration.createAppIntakeCatalog">
+<span class="sig-prename descclassname"><span class="pre">intakeCuration.</span></span><span class="sig-name descname"><span class="pre">createAppIntakeCatalog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#intakeCuration.createAppIntakeCatalog" title="Link to this definition"></a></dt>
+<dd><p>Create yaml files for the Apps.</p>
+<p>For each of the Apps, create the yaml files containing the links to the yaml files for the ESMs .</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="intakeCuration.createESMIntakeCatalog">
+<span class="sig-prename descclassname"><span class="pre">intakeCuration.</span></span><span class="sig-name descname"><span class="pre">createESMIntakeCatalog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#intakeCuration.createESMIntakeCatalog" title="Link to this definition"></a></dt>
+<dd><p>Create yaml files for the ESMs.</p>
+<p>For each of the ESMs, create the yaml files containing the links to the yaml files for the available sources .</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="intakeCuration.createHPCIntakeCatalog">
+<span class="sig-prename descclassname"><span class="pre">intakeCuration.</span></span><span class="sig-name descname"><span class="pre">createHPCIntakeCatalog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#intakeCuration.createHPCIntakeCatalog" title="Link to this definition"></a></dt>
+<dd><p>Create yaml files for the HPC centers.</p>
+<p>For each of the HPC centers, create the yaml files containing the links to the yaml files for the Apps .</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="intakeCuration.createIntakeCatalogSourcesForFileList">
+<span class="sig-prename descclassname"><span class="pre">intakeCuration.</span></span><span class="sig-name descname"><span class="pre">createIntakeCatalogSourcesForFileList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">catFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srcFileList</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intakeCuration.createIntakeCatalogSourcesForFileList" title="Link to this definition"></a></dt>
+<dd><p>Create catalog for the sources for the inout file list.</p>
+<p>For all the source files, create the intake counterparts and write out to the catalog file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app</strong> – application Name</p></li>
+<li><p><strong>src</strong> – source Name</p></li>
+<li><p><strong>catFile</strong> – Catalog File Name.</p></li>
+<li><p><strong>srcFileList</strong> – List of netcdf files.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="intakeCuration.createMasterIntakeCatalog">
+<span class="sig-prename descclassname"><span class="pre">intakeCuration.</span></span><span class="sig-name descname"><span class="pre">createMasterIntakeCatalog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">catalogFileName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intakeCuration.createMasterIntakeCatalog" title="Link to this definition"></a></dt>
+<dd><p>Create master catalog file for the HPC centers.</p>
+<p>Create the top level master catalog containing the links to the yaml files for the HPC centers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>catalogFileName</strong> – String to hold the name of top level catalog file that would be created.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="intakeCuration.createSrcIntakeCatalog">
+<span class="sig-prename descclassname"><span class="pre">intakeCuration.</span></span><span class="sig-name descname"><span class="pre">createSrcIntakeCatalog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#intakeCuration.createSrcIntakeCatalog" title="Link to this definition"></a></dt>
+<dd><p>Create yaml files for the sources.</p>
+<p>For each of the app, check the available sources (file types) and  create the corresponding yaml files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="intakeCuration.intakeSrcCreator">
+<span class="sig-prename descclassname"><span class="pre">intakeCuration.</span></span><span class="sig-name descname"><span class="pre">intakeSrcCreator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srcFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">appMetadataKeys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intakeCuration.intakeSrcCreator" title="Link to this definition"></a></dt>
+<dd><p>Create yaml resource for the input source file.</p>
+<p>For the input file of given source and app and metadata keys, prepare the intake object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app</strong> – application Name</p></li>
+<li><p><strong>src</strong> – source Name</p></li>
+<li><p><strong>catFile</strong> – Catalog File Name.</p></li>
+<li><p><strong>srcFileList</strong> – List of netcdf files.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>intake catalog object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>intakeSrc</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="utils.html" class="btn btn-neutral float-left" title="utils module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="config.html" class="btn btn-neutral float-left" title="config module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="stacCuration.html" class="btn btn-neutral float-right" title="stacCuration module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Kameswar Rao Modali, Karsten Peters-von Gehlen, Stephan Kindermann.</p>
+    <p>&#169; Copyright 2024, Kameswar Rao Modali,Karsten Peters-von,Gehlen Stephan Kindermann.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

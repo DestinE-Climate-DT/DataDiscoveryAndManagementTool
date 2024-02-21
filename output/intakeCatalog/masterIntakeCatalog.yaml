@@ -1,4 +1,4 @@
-description: 'DestinE data discovery tool master intake catalog for the data produced at various HPC centers.'
+description: 'DestinE data discovery tool -'datadiscoverer' intake catalog for the data produced at various HPC centers.'
 sources:
   LUMI:
     description: LUMI data catalog

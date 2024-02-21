@@ -3,12 +3,12 @@
   "stac_version": "1.0.0",
   "id": "netcdf17",
   "properties": {
-    "diagnostic": "rainfall",
-    "product": "trop",
+    "diagnostic": "trop",
+    "product": "rainfall",
     "experiment": "IFS",
     "variable": "historical-1990-devcon",
     "duration": "lra-r100-monthly",
-    "datetime": "2024-02-20T17:49:43.590458Z"
+    "datetime": "2024-02-21T15:56:51.782396Z"
   },
   "geometry": {
     "type": "Polygon",

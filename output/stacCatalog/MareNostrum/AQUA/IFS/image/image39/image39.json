@@ -3,12 +3,12 @@
   "stac_version": "1.0.0",
   "id": "image39",
   "properties": {
-    "diagnostic": "IFS",
-    "product": "teleconnections",
+    "diagnostic": "teleconnections",
+    "product": "IFS",
     "experiment": "control-1950-devcon",
     "variable": "lra-r100-monthly",
     "duration": "NAO",
-    "datetime": "2024-02-20T17:49:43.779102Z"
+    "datetime": "2024-02-21T15:56:51.911457Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -52,7 +52,7 @@
   "assets": {
     "imagefile39": {
       "href": "/work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/image/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.pdf",
-      "type": "text/plain"
+      "type": "application/pdf"
     }
   },
   "bbox": [

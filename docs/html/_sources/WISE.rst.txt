@@ -1,7 +1,0 @@
-WISE module
-===========
-
-.. automodule:: WISE
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -3,12 +3,12 @@
   "stac_version": "1.0.0",
   "id": "image8",
   "properties": {
-    "diagnostic": "maps",
-    "product": "Statistics",
+    "diagnostic": "Statistics",
+    "product": "maps",
     "experiment": "msl",
     "variable": "IFS",
     "duration": "control-1950-devcon",
-    "datetime": "2024-02-20T17:49:43.774057Z"
+    "datetime": "2024-02-21T15:56:51.906807Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -52,7 +52,7 @@
   "assets": {
     "imagefile8": {
       "href": "/work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/pdf/Statistics_maps_msl_IFS_control-1950-devcon_1950-1-1_1959-12-1.pdf",
-      "type": "text/plain"
+      "type": "application/pdf"
     }
   },
   "bbox": [

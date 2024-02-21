@@ -6,7 +6,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/netcdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_DJF.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -14,10 +14,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: netcdf1
     parameters: {}
@@ -25,7 +25,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_2t.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -33,10 +33,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf10
     parameters: {}
@@ -44,7 +44,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_msl.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -52,10 +52,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf11
     parameters: {}
@@ -63,7 +63,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tcc.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -71,10 +71,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf12
     parameters: {}
@@ -82,7 +82,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_hcc.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -90,10 +90,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf13
     parameters: {}
@@ -101,7 +101,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_mcc.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -109,10 +109,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf14
     parameters: {}
@@ -120,7 +120,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tprate.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -128,10 +128,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf15
     parameters: {}
@@ -139,7 +139,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/global_time_series/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -147,10 +147,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf16
     parameters: {}
@@ -158,7 +158,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/tropical_rainfall/netcdf/IFS_historical-1990-devcon_lra-r100-monthly/histograms/trop_rainfall_IFS_historical-1990-devcon_lra-r100-monthly_histogram_0_1000_1000_1990-01-01T00_1990-12-01T00_M.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -166,10 +166,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: rainfall
+      diagnostic: trop
       duration: lra-r100-monthly
       experiment: IFS
-      product: trop
+      product: rainfall
       variable: historical-1990-devcon
     name: netcdf17
     parameters: {}
@@ -177,7 +177,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/netcdf/Statistics_Data_2t_IFS_historical-1990-devcon_1990-1-1_1990-12-1.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -185,10 +185,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: Data
+      diagnostic: Statistics
       duration: historical-1990-devcon
       experiment: 2t
-      product: Statistics
+      product: Data
       variable: IFS
     name: netcdf18
     parameters: {}
@@ -196,7 +196,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/netcdf/Statistics_Data_msl_IFS_historical-1990-devcon_1990-1-1_1990-12-1.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -204,10 +204,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: Data
+      diagnostic: Statistics
       duration: historical-1990-devcon
       experiment: msl
-      product: Statistics
+      product: Data
       variable: IFS
     name: netcdf19
     parameters: {}
@@ -215,7 +215,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/netcdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_index.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -223,10 +223,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: netcdf2
     parameters: {}
@@ -234,7 +234,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/atmglobalmean/netcdf/Statistics_Data_tprate_IFS_historical-1990-devcon_1990-1-1_1990-12-1.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -242,10 +242,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: Data
+      diagnostic: Statistics
       duration: historical-1990-devcon
       experiment: tprate
-      product: Statistics
+      product: Data
       variable: IFS
     name: netcdf20
     parameters: {}
@@ -253,7 +253,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_DJF.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -261,10 +261,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: netcdf21
     parameters: {}
@@ -272,7 +272,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_2t.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -280,10 +280,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf22
     parameters: {}
@@ -291,7 +291,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/Statistics_Data_2t_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -299,10 +299,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: Data
+      diagnostic: Statistics
       duration: control-1950-devcon
       experiment: 2t
-      product: Statistics
+      product: Data
       variable: IFS
     name: netcdf23
     parameters: {}
@@ -310,7 +310,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_msl.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -318,10 +318,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf24
     parameters: {}
@@ -329,7 +329,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/Statistics_Data_tprate_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -337,10 +337,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: Data
+      diagnostic: Statistics
       duration: control-1950-devcon
       experiment: tprate
-      product: Statistics
+      product: Data
       variable: IFS
     name: netcdf25
     parameters: {}
@@ -348,7 +348,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_index.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -356,10 +356,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: netcdf26
     parameters: {}
@@ -367,7 +367,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_JJA.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -375,10 +375,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: netcdf27
     parameters: {}
@@ -386,7 +386,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tcc.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -394,10 +394,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf28
     parameters: {}
@@ -405,7 +405,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -413,10 +413,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: netcdf29
     parameters: {}
@@ -424,7 +424,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/netcdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_JJA.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -432,10 +432,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: netcdf3
     parameters: {}
@@ -443,7 +443,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_hcc.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -451,10 +451,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf30
     parameters: {}
@@ -462,7 +462,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_mcc.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -470,10 +470,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf31
     parameters: {}
@@ -481,7 +481,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/Statistics_Data_msl_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -489,10 +489,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: Data
+      diagnostic: Statistics
       duration: control-1950-devcon
       experiment: msl
-      product: Statistics
+      product: Data
       variable: IFS
     name: netcdf32
     parameters: {}
@@ -500,7 +500,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_tprate.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -508,10 +508,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf33
     parameters: {}
@@ -519,7 +519,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/global_time_series_IFS_control-1950-devcon_lra-r100-monthly_lcc.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -527,10 +527,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: time
+      diagnostic: global
       duration: control-1950-devcon
       experiment: series
-      product: global
+      product: time
       variable: IFS
     name: netcdf34
     parameters: {}
@@ -538,17 +538,17 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/netcdf/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_JJA.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver: intake_xarray.netcdf.NetCDFSource
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: netcdf35
     parameters: {}
@@ -556,7 +556,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/netcdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_correlation_DJF.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -564,10 +564,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: netcdf4
     parameters: {}
@@ -575,7 +575,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/teleconnections/netcdf/NAO/teleconnections_IFS_control-1950-devcon_lra-r100-monthly_NAO_regression_JJA.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -583,10 +583,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: IFS
+      diagnostic: teleconnections
       duration: NAO
       experiment: control-1950-devcon
-      product: teleconnections
+      product: IFS
       variable: lra-r100-monthly
     name: netcdf5
     parameters: {}
@@ -594,7 +594,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/tropical_rainfall/netcdf/IFS_control-1950-devcon_lra-r100-monthly/histograms/trop_rainfall_IFS_control-1950-devcon_lra-r100-monthly_histogram_0_1000_1000_1950-01-01T00_1959-12-01T00_M.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -602,10 +602,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: rainfall
+      diagnostic: trop
       duration: lra-r100-monthly
       experiment: IFS
-      product: trop
+      product: rainfall
       variable: control-1950-devcon
     name: netcdf6
     parameters: {}
@@ -613,7 +613,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/netcdf/Statistics_Data_2t_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -621,10 +621,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: Data
+      diagnostic: Statistics
       duration: control-1950-devcon
       experiment: 2t
-      product: Statistics
+      product: Data
       variable: IFS
     name: netcdf7
     parameters: {}
@@ -632,7 +632,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/netcdf/Statistics_Data_tprate_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -640,10 +640,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: Data
+      diagnostic: Statistics
       duration: control-1950-devcon
       experiment: tprate
-      product: Statistics
+      product: Data
       variable: IFS
     name: netcdf8
     parameters: {}
@@ -651,7 +651,7 @@ sources:
     args:
       urlpath: /work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/atmglobalmean/netcdf/Statistics_Data_msl_IFS_control-1950-devcon_1950-1-1_1959-12-1.nc
     cache: []
-    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/FROM_GIT/DataDiscoveryAndManagementTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
+    catalog_dir: /work/bm0146/k204247/DestinE/destinE_DDTool/examples/../output/intakeCatalog/MareNostrum/AQUA/IFS/netcdf/
     description: ''
     direct_access: forbid
     driver:
@@ -659,10 +659,10 @@ sources:
     getenv: true
     getshell: true
     metadata:
-      diagnostic: Data
+      diagnostic: Statistics
       duration: control-1950-devcon
       experiment: msl
-      product: Statistics
+      product: Data
       variable: IFS
     name: netcdf9
     parameters: {}

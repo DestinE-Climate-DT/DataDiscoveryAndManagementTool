@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>config module &mdash; Data discovery and management tool - &#39;datadiscoverer&#39; 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="intakeCuration module" href="intakeCuration.html" />
+    <link rel="prev" title="datadiscoverer" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Data discovery and management tool - 'datadiscoverer'
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">datadiscoverer</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">config module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#config.configDatadiscoverer"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.activeConfig"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.activeConfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.appDataSrcNameFileExt"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.appDataSrcNameFileExt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.appDataSrcNames"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.appDataSrcNames</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.appDescriptionInfo"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.appDescriptionInfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.appNames"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.appNames</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.dataPath"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.dataPath</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.esmNames"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.esmNames</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getDataPath"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getDataPath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getESMs"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getESMs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getHPCCenters"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getHPCCenters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getInstallationPath"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getInstallationPath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getOutputPath"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getOutputPath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getappDataSrcNameFileExt"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getappDataSrcNameFileExt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getappDataSrcNames"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getappDataSrcNames()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getappDataSrcs"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getappDataSrcs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getappDescription"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getappDescription()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getappDescriptionInfo"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getappDescriptionInfo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getappMetadataKeys"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getappMetadataKeys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getappNames"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getappNames()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.getappProvider"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.getappProvider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.hpcCenters"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.hpcCenters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.installationPath"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.installationPath</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.outputPath"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.outputPath</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.setConfigfromJSON"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.setConfigfromJSON()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.setDataPath"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.setDataPath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.setESMs"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.setESMs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.setHPCCenters"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.setHPCCenters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.setInstallationPath"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.setInstallationPath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.setOutputPath"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.setOutputPath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.setappDataSrcNameFileExt"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.setappDataSrcNameFileExt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.setappDataSrcNames"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.setappDataSrcNames()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.setappDescriptionInfo"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.setappDescriptionInfo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config.configDatadiscoverer.setappNames"><code class="docutils literal notranslate"><span class="pre">configDatadiscoverer.setappNames()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#config.initializeDataDiscoverer"><code class="docutils literal notranslate"><span class="pre">initializeDataDiscoverer()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="intakeCuration.html">intakeCuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stacCuration.html">stacCuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Data discovery and management tool - 'datadiscoverer'</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">datadiscoverer</a></li>
+      <li class="breadcrumb-item active">config module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/config.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-config">
+<span id="config-module"></span><h1>config module<a class="headerlink" href="#module-config" title="Link to this heading"></a></h1>
+<p>This module contains the core structural elements of the data discovery tool.
+The core structural elements consists of the names of applications, HPC centers,
+ESMs etc.The names of the file types produced by each application and their
+extensions.Apart from that certain data structures to hold these infos.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="config.configDatadiscoverer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">config.</span></span><span class="sig-name descname"><span class="pre">configDatadiscoverer</span></span><a class="headerlink" href="#config.configDatadiscoverer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to hold the various paramters to drive the datadiscoverer.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.activeConfig">
+<span class="sig-name descname"><span class="pre">activeConfig</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#config.configDatadiscoverer.activeConfig" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.appDataSrcNameFileExt">
+<span class="sig-name descname"><span class="pre">appDataSrcNameFileExt</span></span><a class="headerlink" href="#config.configDatadiscoverer.appDataSrcNameFileExt" title="Link to this definition"></a></dt>
+<dd><p>List of the file extensions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.appDataSrcNames">
+<span class="sig-name descname"><span class="pre">appDataSrcNames</span></span><a class="headerlink" href="#config.configDatadiscoverer.appDataSrcNames" title="Link to this definition"></a></dt>
+<dd><p>List of the file types.
+Names of the different types of data sources / files the applications can produce.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.appDescriptionInfo">
+<span class="sig-name descname"><span class="pre">appDescriptionInfo</span></span><a class="headerlink" href="#config.configDatadiscoverer.appDescriptionInfo" title="Link to this definition"></a></dt>
+<dd><p>Dictionary of the description for each of the apps.
+Data structure to store the description, provider etc corresponding to each app.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.appNames">
+<span class="sig-name descname"><span class="pre">appNames</span></span><a class="headerlink" href="#config.configDatadiscoverer.appNames" title="Link to this definition"></a></dt>
+<dd><p>List of the application names.
+Names of the applications using the GSV data and producing respective application specific data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.dataPath">
+<span class="sig-name descname"><span class="pre">dataPath</span></span><a class="headerlink" href="#config.configDatadiscoverer.dataPath" title="Link to this definition"></a></dt>
+<dd><p>Path to location of the data produced by the applications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.esmNames">
+<span class="sig-name descname"><span class="pre">esmNames</span></span><a class="headerlink" href="#config.configDatadiscoverer.esmNames" title="Link to this definition"></a></dt>
+<dd><p>List of the ESMs.
+Names of the Earth System Models used performing the simulations and producing the GSV data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getDataPath">
+<span class="sig-name descname"><span class="pre">getDataPath</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getDataPath" title="Link to this definition"></a></dt>
+<dd><p>Get the application data path.</p>
+<p>For setting the location where the apps store the data that is to be cataloged by the datadiscoverer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to location of the data produced by the apps.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getESMs">
+<span class="sig-name descname"><span class="pre">getESMs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getESMs" title="Link to this definition"></a></dt>
+<dd><p>Set the ESM names.</p>
+<p>For getting the ESM names from the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of the ESM names.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getHPCCenters">
+<span class="sig-name descname"><span class="pre">getHPCCenters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getHPCCenters" title="Link to this definition"></a></dt>
+<dd><p>Get the HPC centers names.</p>
+<p>For getting the HPC center names from the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of the HPC center names.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getInstallationPath">
+<span class="sig-name descname"><span class="pre">getInstallationPath</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getInstallationPath" title="Link to this definition"></a></dt>
+<dd><p>Get the datadiscoverer installation path.</p>
+<p>For getting the location where the datadiscoverer is intalled on the disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to datadiscoverer.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getOutputPath">
+<span class="sig-name descname"><span class="pre">getOutputPath</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getOutputPath" title="Link to this definition"></a></dt>
+<dd><p>Get the output path.</p>
+<p>For getting the location where the catalogs produced by datadiscoverer will be stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to location of the catalogs produced by the datadiscoverer.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getappDataSrcNameFileExt">
+<span class="sig-name descname"><span class="pre">getappDataSrcNameFileExt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getappDataSrcNameFileExt" title="Link to this definition"></a></dt>
+<dd><p>Get the file name extension for the data sources.</p>
+<p>For getting the file name extensions,for the various types of data sources that the data produced by the apps belongs to, from the the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary of the data source names and the corresponding file name extensions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>appDataSrcNameFileExt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getappDataSrcNames">
+<span class="sig-name descname"><span class="pre">getappDataSrcNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getappDataSrcNames" title="Link to this definition"></a></dt>
+<dd><p>Get the data source names.</p>
+<p>For getting the data source names like ‘netcdf’, ‘image’, ‘text’ from the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of the data source names.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getappDataSrcs">
+<span class="sig-name descname"><span class="pre">getappDataSrcs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getappDataSrcs" title="Link to this definition"></a></dt>
+<dd><p>Get the data sources produced by  a given application.</p>
+<p>For getting the data sources to which the data produced by a given application belongs to, from the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of data source names.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>appDescInfo</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getappDescription">
+<span class="sig-name descname"><span class="pre">getappDescription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getappDescription" title="Link to this definition"></a></dt>
+<dd><p>Get the description of a given application.</p>
+<p>For getting the description about a given application from the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>app</strong> – Application name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Application description.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getappDescriptionInfo">
+<span class="sig-name descname"><span class="pre">getappDescriptionInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getappDescriptionInfo" title="Link to this definition"></a></dt>
+<dd><p>Get the application description from the configuration.</p>
+<p>For getting the application description info, provider etc from the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary of the various parameters that describe the various apps.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>appDescInfo</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getappMetadataKeys">
+<span class="sig-name descname"><span class="pre">getappMetadataKeys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getappMetadataKeys" title="Link to this definition"></a></dt>
+<dd><p>Get the metadata keys for a given application.</p>
+<p>For getting the metadata keys for the data produced by a given application from the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>app</strong> – Application name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of metadata keys.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getappNames">
+<span class="sig-name descname"><span class="pre">getappNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getappNames" title="Link to this definition"></a></dt>
+<dd><p>Get the application names.</p>
+<p>For getting the application names from the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of the application names.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.getappProvider">
+<span class="sig-name descname"><span class="pre">getappProvider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.getappProvider" title="Link to this definition"></a></dt>
+<dd><p>Get the provider of a given application.</p>
+<p>For getting the details about the provider of a given application from the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>app</strong> – Application name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Details of the application provider.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.hpcCenters">
+<span class="sig-name descname"><span class="pre">hpcCenters</span></span><a class="headerlink" href="#config.configDatadiscoverer.hpcCenters" title="Link to this definition"></a></dt>
+<dd><p>List of the HPC centers.
+Names of the HPC centers producing the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.installationPath">
+<span class="sig-name descname"><span class="pre">installationPath</span></span><a class="headerlink" href="#config.configDatadiscoverer.installationPath" title="Link to this definition"></a></dt>
+<dd><p>Path to location of the data discovery and management tool on disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.outputPath">
+<span class="sig-name descname"><span class="pre">outputPath</span></span><a class="headerlink" href="#config.configDatadiscoverer.outputPath" title="Link to this definition"></a></dt>
+<dd><p>Path to location of the catalog prouced by data discovery and management tool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.setConfigfromJSON">
+<span class="sig-name descname"><span class="pre">setConfigfromJSON</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jsonDict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.setConfigfromJSON" title="Link to this definition"></a></dt>
+<dd><p>Set the datadiscoverer configuration to the input JSON dictionary.</p>
+<p>For setting the configuration parameters of the datadiscoverer from the input JSON dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jsonDict</strong> – A JSON dictionary.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.setDataPath">
+<span class="sig-name descname"><span class="pre">setDataPath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.setDataPath" title="Link to this definition"></a></dt>
+<dd><p>Set the application data path.</p>
+<p>For setting the location where the apps store the data that is to be cataloged by the datadiscoverer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – Path to location of the data produced by the apps.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.setESMs">
+<span class="sig-name descname"><span class="pre">setESMs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">esmNames</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.setESMs" title="Link to this definition"></a></dt>
+<dd><p>Set the ESM names.</p>
+<p>For updating the configuration with the ESM names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>list</strong><strong>[</strong><strong>str</strong><strong>]</strong> – List of the ESM names.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.setHPCCenters">
+<span class="sig-name descname"><span class="pre">setHPCCenters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hpcCenters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.setHPCCenters" title="Link to this definition"></a></dt>
+<dd><p>Set the HPC centers names.</p>
+<p>For updating the configuration with the HPC center names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>list</strong><strong>[</strong><strong>str</strong><strong>]</strong> – List of the HPC center names.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.setInstallationPath">
+<span class="sig-name descname"><span class="pre">setInstallationPath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.setInstallationPath" title="Link to this definition"></a></dt>
+<dd><p>Set the datadiscoverer installation path.</p>
+<p>For setting the location where the datadiscoverer is intalled on the disk to the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – Path to datadiscoverer.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.setOutputPath">
+<span class="sig-name descname"><span class="pre">setOutputPath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.setOutputPath" title="Link to this definition"></a></dt>
+<dd><p>Set the output path.</p>
+<p>For setting the location where the catalogs produced by datadiscoverer will be stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – Path to location of the catalogs produced by the datadiscoverer.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.setappDataSrcNameFileExt">
+<span class="sig-name descname"><span class="pre">setappDataSrcNameFileExt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">appDataSrcNameFileExt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.setappDataSrcNameFileExt" title="Link to this definition"></a></dt>
+<dd><p>Set the file name extension for the data sources.</p>
+<p>For updating the configuration with the file name extensions for the various types of data sources that the data produced by the apps belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>appDataSrcNameFileExt</strong> – Dictionary of the data source names and the corresponding file name extensions.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.setappDataSrcNames">
+<span class="sig-name descname"><span class="pre">setappDataSrcNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">appDataSrcNames</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.setappDataSrcNames" title="Link to this definition"></a></dt>
+<dd><p>Set the data source names.</p>
+<p>For updating the configuration with the data source names like ‘netcdf’, ‘image’, ‘text’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>list</strong><strong>[</strong><strong>str</strong><strong>]</strong> – List of the data source names.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.setappDescriptionInfo">
+<span class="sig-name descname"><span class="pre">setappDescriptionInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">appDescInfo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.setappDescriptionInfo" title="Link to this definition"></a></dt>
+<dd><p>Set the application description info to the configuration.</p>
+<p>For updating the configuration with the application description info, provider etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>appDescInfo</strong> – Dictionary of the various parameters that describe the various apps.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config.configDatadiscoverer.setappNames">
+<span class="sig-name descname"><span class="pre">setappNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">appNamesList</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.configDatadiscoverer.setappNames" title="Link to this definition"></a></dt>
+<dd><p>Set the application names.</p>
+<p>For updating the configuration with the application names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>list</strong><strong>[</strong><strong>str</strong><strong>]</strong> – List of the application names.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="config.initializeDataDiscoverer">
+<span class="sig-prename descclassname"><span class="pre">config.</span></span><span class="sig-name descname"><span class="pre">initializeDataDiscoverer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configFile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#config.initializeDataDiscoverer" title="Link to this definition"></a></dt>
+<dd><p>Initializing the datadiscoverer.</p>
+<p>Initialize the datadiscoverer library configuration with the parameters provided in
+the input json file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>configFile</strong> – <p>JSON file with configuration parameters.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>curconfig - current configuration object.</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="datadiscoverer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="intakeCuration.html" class="btn btn-neutral float-right" title="intakeCuration module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kameswar Rao Modali,Karsten Peters-von,Gehlen Stephan Kindermann.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -3,12 +3,12 @@
   "stac_version": "1.0.0",
   "id": "image22",
   "properties": {
-    "diagnostic": "time",
-    "product": "global",
+    "diagnostic": "global",
+    "product": "time",
     "experiment": "series",
     "variable": "IFS",
     "duration": "historical-1990-devcon",
-    "datetime": "2024-02-20T17:49:42.373358Z"
+    "datetime": "2024-02-21T15:56:51.313771Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -52,7 +52,7 @@
   "assets": {
     "imagefile22": {
       "href": "/work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/historical-1990-devcon/global_time_series/pdf/global_time_series_IFS_historical-1990-devcon_lra-r100-monthly_gregory.pdf",
-      "type": "text/plain"
+      "type": "application/pdf"
     }
   },
   "bbox": [

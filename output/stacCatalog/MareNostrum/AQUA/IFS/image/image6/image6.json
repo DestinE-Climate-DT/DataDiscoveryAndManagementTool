@@ -3,12 +3,12 @@
   "stac_version": "1.0.0",
   "id": "image6",
   "properties": {
-    "diagnostic": "rainfall",
-    "product": "trop",
+    "diagnostic": "trop",
+    "product": "rainfall",
     "experiment": "IFS",
     "variable": "control-1950-devcon",
     "duration": "lra-r100-monthly",
-    "datetime": "2024-02-20T17:49:43.773733Z"
+    "datetime": "2024-02-21T15:56:51.906501Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -52,7 +52,7 @@
   "assets": {
     "imagefile6": {
       "href": "/work/bm0146/k204247/DestinE/destinE_DDTool/destinE_AppData/AQUA/IFS/control-1950-devcon/tropical_rainfall/pdf/IFS_control-1950-devcon_lra-r100-monthly/trop_rainfall_IFS_control-1950-devcon_lra-r100-monthly_histogram.pdf",
-      "type": "text/plain"
+      "type": "application/pdf"
     }
   },
   "bbox": [

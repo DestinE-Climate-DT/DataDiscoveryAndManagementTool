@@ -1,7 +1,0 @@
-AQUA module
-===========
-
-.. automodule:: AQUA
-   :members:
-   :undoc-members:
-   :show-inheritance:

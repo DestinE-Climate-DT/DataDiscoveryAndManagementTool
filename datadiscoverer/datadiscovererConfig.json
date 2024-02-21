@@ -8,7 +8,7 @@
         "appDataSrcNames":["netcdf","image","text"],
 	"appDataSrcNameFileExt":{
                 "netcdf"   :["*.nc"],
-                "image"   :["*.jpg","*.pdf","*.png","*.gif"],
+                "image"   :["*.jpg","*.pdf","*.png","*.tiff"],
                 "text"     :["*.txt","*.csv"]
                 },
 	"appDescriptionInfo":{

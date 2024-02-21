@@ -1,7 +1,0 @@
-HydroMet module
-===============
-
-.. automodule:: HydroMet
-   :members:
-   :undoc-members:
-   :show-inheritance:

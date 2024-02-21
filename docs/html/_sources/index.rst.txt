@@ -1,10 +1,10 @@
-.. Destination Earth - Data discovery and Management Tool documentation master file, created by
-   sphinx-quickstart on Tue Jan 23 15:44:04 2024.
+.. Data discovery and management tool - 'datadiscoverer' documentation master file, created by
+   sphinx-quickstart on Wed Feb 21 17:10:17 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Destination Earth - Data discovery and Management Tool's documentation!
-==================================================================================
+Welcome to Data discovery and management tool - 'datadiscoverer''s documentation!
+=================================================================================
 
 .. toctree::
    :maxdepth: 2

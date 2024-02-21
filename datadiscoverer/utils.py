@@ -46,7 +46,6 @@ def getAppSrcFileList(app,src,esm,srcExtList):
     for srcExt in srcExtList:
         print(f"\t\t{srcExt}")
         globArg = os.path.join(appDataSrcPath,"**",f"{srcExt}")
-
         srcFileList += glob.glob(globArg,recursive=True)
     
     esmList = list(filter(lambda k: esm in k, srcFileList))

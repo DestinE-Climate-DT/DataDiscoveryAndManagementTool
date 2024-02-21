@@ -34,34 +34,24 @@ except:
     print(f"Module 'utils' import error in {__file__}")
 
 
-def createAppDataSrcNamesSTACAPImap():
-    """Create a mapping between the file types and the associated STAC API for handling it.
+sourceMediaTypeMap =  {
+    'netcdf':{
+                '.nc' : pystac.MediaType.HDF5,
+    },
+    'image':{
+                '.pdf' : pystac.MediaType.PDF,
+                '.jpg' : pystac.MediaType.JPEG,
+                '.png' : pystac.MediaType.PNG,
+                '.tiff': pystac.MediaType.TIFF
+    },
+    'text':{
+                '.csv' : pystac.MediaType.TEXT, # to check if any other driver exists.
+                '.txt' : pystac.MediaType.TEXT,
+    }
+}
 
-    Mapper to club the file types and the corresponding access methods for handling netcdf, jpeg etc.
-
-    Args:
-            None.
-
-    Returns: 
-            None
-    """
-    localconfig = configDatadiscoverer.activeConfig
-    appDataSrcNames = localconfig.getappDataSrcNames()
-    appDataSrcNamesAPImap = localconfig.getappDataSrcNamesAPImap()
     
-    for src in appDataSrcNames:
-        if src == 'netcdf':
-            appDataSrcNamesAPImap[src]=createNetcdfSrcListForSTAC
-        elif src == 'image':
-            appDataSrcNamesAPImap[src]=createImageSrcListForSTAC
-        elif src == 'text':
-            appDataSrcNamesAPImap[src]=createTextSrcListForSTAC
-        else:
-            raise f'Unknown source type {src} encountered!'
-    return
-
-
-def createDDTMasterSTACCatalog():
+def createMasterSTACCatalog():
     """Create master STAC catalog file for the HPC centers.
 
     Create the top level master STAC catalog containing the links to the STAC catalogs for the HPC centers.
@@ -72,7 +62,6 @@ def createDDTMasterSTACCatalog():
             None.
     """
 
-    createAppDataSrcNamesSTACAPImap()
     localconfig = configDatadiscoverer.activeConfig
     outputPath = localconfig.getOutputPath()
 
@@ -89,10 +78,12 @@ def createDDTMasterSTACCatalog():
         os.path.exists(outputPath)
     except:
         print(sys.exc_info())
+        return
         
     catalog.normalize_and_save(root_href = outputPath, 
                          catalog_type=pystac.CatalogType.SELF_CONTAINED)
-    return
+    
+    createHPCSTACCatalog()
 
 
 def createHPCSTACCatalog():
@@ -124,7 +115,7 @@ def createHPCSTACCatalog():
         hpcCatalog.add_child(appCatalog,f'{app}')
         hpcCatalog.normalize_and_save(root_href = hpcCatalogPath, 
                          catalog_type=pystac.CatalogType.SELF_CONTAINED)
-    return
+    createAppSTACCatalog()
 
 
 def createAppSTACCatalog():
@@ -153,7 +144,8 @@ def createAppSTACCatalog():
         appCatalog.add_child(esmCatalog,f'{esm}')
         appCatalog.normalize_and_save(root_href = appCatalogPath, 
                 catalog_type=pystac.CatalogType.SELF_CONTAINED)
-    return
+    
+    createESMSTACCatalog()
 
 
 def createESMSTACCatalog():
@@ -172,7 +164,6 @@ def createESMSTACCatalog():
 
     
     appDataSrcNames = localconfig.getappDataSrcNames()
-    appDataSrcNamesAPImap = localconfig.getappDataSrcNamesAPImap()
     appDataSrcNameFileExt = localconfig.getappDataSrcNameFileExt()
     
     for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
@@ -197,7 +188,7 @@ def createESMSTACCatalog():
             #  Fetch the 'metadata' keys for this 'app' from 'appDescInfo'.
             appMetadataKeys = localconfig.getappMetadataKeys(app)
             
-            (appDataSrcNamesAPImap[src])(app,srcCatalog,getAppSrcFileList(app,src,esm,srcExt),appMetadataKeys)
+            createSTACSourcesForFileList(app,src,srcCatalog,getAppSrcFileList(app,src,esm,srcExt))
 
             esmCatalog.add_child(srcCatalog,f'{src}')
                     
@@ -206,199 +197,105 @@ def createESMSTACCatalog():
     return
 
 
-def createNetcdfSrcListForSTAC(app,srcCatalog,srcFileList,appMetadataKeys):
+def createSTACSourcesForFileList(app,src,srcCatalog,srcFileList):
     """Create STAC items for the netcdf files in the input
        file list of files.
 
     For each of the netcdf files in the input file list, create the STAC item and save in the input catalog file.
 
     Args:
-            app : application Name
+            app : Application Name.
+            src : Source Name.
             catFile : Catalog File Name.
             srcFileList : List of netcdf files.
-            appMetadataKeys : List of metadata keys.
     Returns: 
             None
     """
-
-    count=1
-    for srcFile in srcFileList:
-        if not os.path.isfile(srcFile):
-            print(f"File {srcFile} doesn't exist!")
-            return
-        
-        datetime_utc = datetime.now(tz=timezone.utc)
-        bbox_global=[-180,-90,180,90]
-        
-        footprint_polygon = Polygon([ [-180, -90],  [-180, 90],
-                                      [180, 90],    [180, -90] ])
-        footprint=mapping(footprint_polygon)
-        
-        
-        #create metadata for item
-        itemMetadata = {}
-        
-        #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
-        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
-        print(f"{appMetadataKeys}")
-        print(f"{metadataValues}")
-        
-        for key in appMetadataKeys:
-            if app == 'AQUA':
-                if key == 'product':
-                    itemMetadata[key] = metadataValues[0]
-                elif key == 'diagnostic':
-                    itemMetadata[key] = metadataValues[1]
-                elif key == 'experiment':
-                    itemMetadata[key] = metadataValues[2]
-                elif key == 'variable':
-                    itemMetadata[key] = metadataValues[3]
-                elif key == 'duration':
-                    itemMetadata[key] = metadataValues[4]
-            # TODO for other apps
-            else:
-                print('Metadata not available')
-        
-        item = pystac.Item(id=f'netcdf{count}',
-                 geometry=footprint,
-                 bbox=bbox_global,
-                 datetime=datetime_utc,
-                 properties=itemMetadata)
-        
-        item.add_asset(key=f'netcdffile{count}',
-                       asset=pystac.Asset(href=srcFile,media_type=pystac.MediaType.HDF5))
-        
-        srcCatalog.add_item(item)
-        count += 1
-    return
-
-
-def createImageSrcListForSTAC(app,srcCatalog,srcFileList,appMetadataKeys):
-    """Create STAC items for the image files in the input
-       file list of files.
-
-    For each of the image files in the input file list, create the STAC item and save in the input catalog file.
-
-    Args:
-            app : application Name
-            catFile : Catalog File Name.
-            srcFileList : List of image files.
-            appMetadataKeys : List of metadata keys.
-    Returns: 
-            None
-    """
+    global sourceMediaTypeMap
     
-    count=1
-    for srcFile in srcFileList:
-        if not os.path.isfile(srcFile):
-            print(f"File {srcFile} doesn't exist!")
-            return
+    localconfig = configDatadiscoverer.activeConfig
+    #  Fetch the 'metadata' keys for this 'app' from 'appDescInfo'.
+    appMetadataKeys = localconfig.getappMetadataKeys(app)
+    
+    if appMetadataKeys is None or len(appMetadataKeys) == 0:
+        print(f'Application  {app} does not have metadata! Ignoring {app}.')
+        return
 
-        datetime_utc = datetime.now(tz=timezone.utc)
-        bbox_global=[-180,-90,180,90]
-        
-        footprint_polygon = Polygon([ [-180, -90],  [-180, 90],
-                                      [180, 90],    [180, -90] ])
-        footprint=mapping(footprint_polygon)
-        
-        #create metadata for item
-        itemMetadata = {}
-        
-        #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
-        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
-        print(f"{appMetadataKeys}")
-        print(f"{metadataValues}")
-        
-        for key in appMetadataKeys:
-            if app == 'AQUA':
-                if key == 'product':
-                    itemMetadata[key] = metadataValues[0]
-                elif key == 'diagnostic':
-                    itemMetadata[key] = metadataValues[1]
-                elif key == 'experiment':
-                    itemMetadata[key] = metadataValues[2]
-                elif key == 'variable':
-                    itemMetadata[key] = metadataValues[3]
-                elif key == 'duration':
-                    itemMetadata[key] = metadataValues[4]
-            # TODO for other apps
-            else:
-                print('Metadata not available')
-        
-        item = pystac.Item(id=f'image{count}',
-                 geometry=footprint,
-                 bbox=bbox_global,
-                 datetime=datetime_utc,
-                 properties=itemMetadata)
-        
-        item.add_asset(key=f'imagefile{count}',
-                       asset=pystac.Asset(href=srcFile,media_type=pystac.MediaType.TEXT))
-        
-        srcCatalog.add_item(item)
-        count += 1
+    if src not in sourceMediaTypeMap.keys():
+        print(f'Source type {src} not handled! \n Ignoring {srcFile} in createSTACSourcesForFileList.')
+        return
+
+    stacItemList = []
+    count = 1
+    
+    stacItemList = map(stacItemCreator, itertools.repeat(app,len(srcFileList)), itertools.repeat(src,len(srcFileList)),
+                       srcFileList, itertools.repeat(appMetadataKeys,len(srcFileList)), range(1,len(srcFileList)+1))
+    
+    # Add the items to the catalog.
+    for stacItem in stacItemList:
+        #intakeSrc.name = f"{src}{count}"
+        srcCatalog.add_item(stacItem)
+    
     return
 
 
-def createTextSrcListForSTAC(app,srcCatalog,srcFileList,appMetadataKeys):
-    """Create STAC items for the text files in the input
-       file list of files.
+def stacItemCreator(app,src,srcFile,appMetadataKeys,itemId):
+    """Create stac item for the input source file.
 
-    For each of the text files in the input file list, create the STAC item and save in the input catalog file.
+    For the input file of given source and app and metadata keys, prepare the STAC item.
 
     Args:
             app : application Name
+            src : source Name
             catFile : Catalog File Name.
-            srcFileList : List of text files.
-            appMetadataKeys : List of metadata keys.
+            srcFileList : List of netcdf files.
     Returns:
-            None
+            intakeSrc : intake catalog object.
     """
-    count=1
-    for srcFile in srcFileList:
-        if not os.path.isfile(srcFile):
-            print(f"File {srcFile} doesn't exist!")
-            return
+    global sourceMediaTypeMap
+    
+    if src not in sourceMediaTypeMap.keys():
+        print(f'Source type {src} not handled! \n Ignoring {srcFile} in stacItemCreator.')
+        return None
 
-        datetime_utc = datetime.now(tz=timezone.utc)
-        bbox_global=[-180,-90,180,90]
-        
-        footprint_polygon = Polygon([ [-180, -90],  [-180, 90],
-                                      [180, 90],    [180, -90] ])
-        footprint=mapping(footprint_polygon)
-        
-        #create metadata for item
-        itemMetadata = {}
-        
-        #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
-        metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
-        print(f"{appMetadataKeys}")
-        print(f"{metadataValues}")
-        
-        for key in appMetadataKeys:
-            if app == 'AQUA':
-                if key == 'product':
-                    itemMetadata[key] = metadataValues[0]
-                elif key == 'diagnostic':
-                    itemMetadata[key] = metadataValues[1]
-                elif key == 'experiment':
-                    itemMetadata[key] = metadataValues[2]
-                elif key == 'variable':
-                    itemMetadata[key] = metadataValues[3]
-                elif key == 'duration':
-                    itemMetadata[key] = metadataValues[4]
-            # TODO for other apps
-            else:
-                print('Metadata not available')
-        
-        item = pystac.Item(id=f'text{count}',
-                 geometry=footprint,
-                 bbox=bbox_global,
-                 datetime=datetime_utc,
-                 properties=itemMetadata)
-        
-        item.add_asset(key=f'textfile{count}',
-                       asset=pystac.Asset(href=srcFile,media_type=pystac.MediaType.TEXT))
-        
-        srcCatalog.add_item(item)
-        count += 1
-    return
+    
+    if not os.path.isfile(srcFile):
+        print(f"File {srcFile} doesn't exist!")
+        return None
+
+    datetime_utc = datetime.now(tz=timezone.utc)
+    bbox_global=[-180,-90,180,90]
+
+    footprint_polygon = Polygon([ [-180, -90],  [-180, 90],
+                                  [180, 90],    [180, -90] ])
+    footprint=mapping(footprint_polygon)
+
+    #create metadata for item
+    itemMetadata = {}
+
+    #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
+    fileName,fileExt = os.path.splitext( os.path.basename(srcFile) )
+    metadataValues = fileName.split('_')
+
+    # NOTE: The metadata keys have fixed order as the file name parts seperated by '_'
+    if len(metadataValues) < len(appMetadataKeys) :
+        for i in range(len(metadataValues),len(appMetadataKeys)):
+            metadataValues.append('-')
+
+    for key in appMetadataKeys:
+        if app == 'AQUA':
+            itemMetadata[key] =  metadataValues[appMetadataKeys.index(key)]
+        # TODO for other apps
+        else:
+            print('Metadata not available')
+
+    item = pystac.Item(id=f'{src}{itemId}',
+             geometry=footprint,
+             bbox=bbox_global,
+             datetime=datetime_utc,
+             properties=itemMetadata)
+
+    item.add_asset(key=f'{src}file{itemId}',
+                   asset=pystac.Asset(href=srcFile,media_type=sourceMediaTypeMap[src][fileExt]))
+    
+    return item
