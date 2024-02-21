@@ -2,10 +2,7 @@
 This is the repository for the Data discovery and management tool '*datadiscoverer*' for the data produced by the applications(Apps) based on the GSV available from the ESM simulations done  at different HPC centers.
 Please find below the instructions for installation and usage.
 
-* Accessing the repository:
-  +   Create SSH key based access for the repository as outlined in :
-        https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent 
-  +  Clone the repository:
++  Clone the repository:
         ```git clone git@github.com:DestinE-Climate-DT/DataDiscoveryAndManagementTool.git``` 
         
 * Create a conda environment (here named as 'datadiscovererenv') with the dependencies using the conda_datadiscoverer.txt file in the repository.
