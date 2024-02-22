@@ -16,24 +16,24 @@ try:
     import intake
     import yaml
 except:
-    print(sys.exc_info())
-    print(f"Module 'intake/yaml' import error in {__file__}")
+    print( sys.exc_info() )
+    print( f"Module 'intake/yaml' import error in {__file__}" )
 
 #Local modules
 try:
     from .config import configDatadiscoverer
 except:
-    print(sys.exc_info())
-    print(f"Module 'config' import error in {__file__}")
+    print( sys.exc_info() )
+    print( f"Module 'config' import error in {__file__}" )
 
 try:
     from .utils import getAppSrcFileList
 except:
-    print(sys.exc_info())
-    print(f"Module 'utils' import error in {__file__}")
+    print( sys.exc_info() )
+    print( f"Module 'utils' import error in {__file__}" )
 
 
-def createMasterIntakeCatalog(catalogFileName):
+def createMasterIntakeCatalog( catalogFileName ):
     """Create master catalog file for the HPC centers.
 
     Create the top level master catalog containing the links to the yaml files for the HPC centers.
@@ -47,39 +47,39 @@ def createMasterIntakeCatalog(catalogFileName):
     outputPath = localconfig.getOutputPath()
     
     sources={}
-    sources.setdefault("sources",{})
+    sources.setdefault( "sources", {} )
     
     for hpc in localconfig.getHPCCenters():
-        sources["sources"].setdefault(hpc,{})
+        sources[ "sources" ].setdefault( hpc, {} )
         argsdict={
               "description": f"{hpc} data catalog",
               "driver":"yaml_file_cat",
               "args":
                     {
-                      "path":"{{CATALOG_DIR}}/"+f"{hpc}/"+f"{hpc}.yaml"
+                        "path":os.path.join( "{{CATALOG_DIR}}", f"{hpc}", f"{hpc}.yaml" )
                     }
                 }
-        sources["sources"][hpc]=argsdict
+        sources[ "sources" ][ hpc ]=argsdict
         
-    if not os.path.exists(f"{outputPath}"):
-        Path(f"{outputPath}").mkdir(parents=True, exist_ok=True) 
+    if not os.path.exists( f"{outputPath}" ):
+        Path( f"{outputPath}" ).mkdir( parents=True, exist_ok=True ) 
     else:
-        if os.path.isfile(f"{outputPath}/{catalogFileName}.yaml"):
+        if os.path.isfile( os.path.join( f"{outputPath}", f"{catalogFileName}.yaml" ) ):
             # TODO: If update then read the exisitng yaml file and compare with the 'sources'
             #       created above based on the 'config.json' parameters. Update if any missing 
             #       items into the existing yaml tree and dump this updated 'sources' to file.
             # If update is 'false' , i.e., create fresh catalog, then delete the existing yaml
             #       file and create a new one.
-            Path(f"{outputPath}/{catalogFileName}.yaml").unlink(missing_ok=True)
+            Path( os.path.join( f"{outputPath}", f"{catalogFileName}.yaml" ) ).unlink( missing_ok = True ) 
 
     try:
-        with open(f"{outputPath}/{catalogFileName}.yaml", "w") as f:
+        with open( os.path.join( f"{outputPath}", f"{catalogFileName}.yaml" ), "w"  ) as f:
             f.write(
-                "description: 'DestinE data discovery tool -'datadiscoverer' intake catalog for the data produced at various HPC centers.'\n")
-            yaml.dump(sources,f,sort_keys=False)
+                "description: 'DestinE data discovery tool-datadiscoverer, intake catalog for the data produced at various HPC centers.'\n")
+            yaml.dump( sources, f, sort_keys=False )
             f.close()
     except OSError as err:
-        print(f"Error {err} while writing {outputPath}/{catalogFileName}.yaml!")
+        print( f"Error {err} while writing {os.path.join( {outputPath}, {catalogFileName}.yaml )}!" )
         return
         
     createHPCIntakeCatalog()
@@ -101,46 +101,46 @@ def createHPCIntakeCatalog():
     sources={}
     sources.setdefault("sources",{})
 
-    for hpc, app  in itertools.product(localconfig.getHPCCenters(),
-                                       localconfig.getappNames()):
+    for hpc, app  in itertools.product( localconfig.getHPCCenters(),
+                                        localconfig.getappNames() ):
 
-        sources["sources"].setdefault(app,{})
+        sources["sources"].setdefault( app, {} )
+        pathValue = os.path.join( r"{{CATALOG_DIR}}", f"{app}", f"{app}.yaml" )
         argsdict={
               "description": f"{app} application data catalog",
               "driver":"yaml_file_cat",
               "args":
                     {
-                      "path":"{{CATALOG_DIR}}/"+f"{app}/"+f"{app}.yaml"
+                      "path": os.path.join(  r"{{CATALOG_DIR}}", f"{app}", f"{app}.yaml" )
+                        
                     }
                 }
 
         sources["sources"][app]=argsdict
 
-        hpcCatalogPath = os.path.join(outputPath,f"{hpc}")
-        if not os.path.exists(hpcCatalogPath):
-            os.makedirs(hpcCatalogPath,exist_ok=True)
+        hpcCatalogPath = os.path.join( outputPath, f"{hpc}" )
+        if not os.path.exists( hpcCatalogPath ):
+            os.makedirs( hpcCatalogPath, exist_ok=True )
 
         hpcCatalog = os.path.join(hpcCatalogPath,f"{hpc}.yaml")
         
-        if os.path.isfile(hpcCatalog):
+        if os.path.isfile( hpcCatalog ):
             # TODO: If update then read the exisitng yaml file and compare with the 'sources'
             #       created above based on the 'config.json' parameters. Update if any missing 
             #       items into the existing yaml tree and dump this updated 'sources' to file.
             # If update is 'false' , i.e., create fresh catalog, then delete the existing yaml
             #       file and create a new one.
-            Path(hpcCatalog).unlink(missing_ok=True)
+            Path( hpcCatalog ).unlink( missing_ok=True )
 
         try:
-            with open(f"{hpcCatalog}", "w") as f:
-                f.write(
-                    "description: "+ f"\'Catalog for application data produced by the desitnation earth twin engine simulations performed on {hpc}.\'\n")
-                yaml.dump(sources,f,sort_keys=False)
+            with open( f"{hpcCatalog}", "w" ) as f:
+                f.write("description: "+ f"\'Catalog for application data produced by the desitnation earth twin engine simulations performed on {hpc}.\'\n" )
+                yaml.dump( sources, f, sort_keys=False )
                 f.close()
         except OSError as err:
-            print(f"Error {err} while writing {hpcCatalog}!")
+            print( f"Error {err} while writing {hpcCatalog}!" )
             return
 
-    print('calling createAppIntakeCatalog()')        
     createAppIntakeCatalog()
 
 
@@ -160,42 +160,42 @@ def createAppIntakeCatalog():
     sources={}
     sources.setdefault("sources",{})
 
-    for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
-                                            localconfig.getappNames(),
-                                            localconfig.getESMs()):
+    for hpc, app, esm  in itertools.product( localconfig.getHPCCenters(),
+                                             localconfig.getappNames(),
+                                             localconfig.getESMs() ):
 
-        sources["sources"].setdefault(esm,{})
+        sources["sources"].setdefault( esm, {}) 
         argsdict={
               "description": f" \'{esm} GSV data catalog \' ",
               "driver":"yaml_file_cat",
               "args":
                     {
-                      "path":"{{CATALOG_DIR}}/"+f"{esm}/"+f"{esm}.yaml"
+                      "path":os.path.join( "{{CATALOG_DIR}}", f"{esm}", f"{esm}.yaml" )
                     }
                 }
         sources["sources"][esm]=argsdict
             
-        appCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}")
-        if not os.path.exists(appCatalogPath):
-            os.makedirs(appCatalogPath,exist_ok=True)
+        appCatalogPath = os.path.join( outputPath, f"{hpc}", f"{app}")
+        if not os.path.exists( appCatalogPath ):
+            os.makedirs( appCatalogPath, exist_ok=True )
 
-        appCatalog = os.path.join(appCatalogPath,f"{app}.yaml")
+        appCatalog = os.path.join( appCatalogPath, f"{app}.yaml" )
 
-        if os.path.isfile(appCatalog):
+        if os.path.isfile( appCatalog ):
             # TODO: If update then read the exisitng yaml file and compare with the 'sources'
             #       created above based on the 'config.json' parameters. Update if any missing 
             #       items into the existing yaml tree and dump this updated 'sources' to file.
             # If update is 'false' , i.e., create fresh catalog, then delete the existing yaml
             #       file and create a new one.
-            Path(appCatalog).unlink(missing_ok=True)
+            Path( appCatalog ).unlink( missing_ok=True )
 
         try:
             with open( appCatalog, "w" ) as f:
-                f.write(f"description: {app} application data catalog\n")
-                yaml.dump(sources,f,sort_keys=False)
+                f.write( f"description: {app} application data catalog\n" )
+                yaml.dump( sources, f, sort_keys=False )
                 f.close()
         except OSError as err:
-            print(f"Error {err} while writing {appCatalog}!")
+            print( f" Error {err} while writing {appCatalog}!" )
             return
 
         
@@ -217,54 +217,54 @@ def createESMIntakeCatalog():
     outputPath = localconfig.getOutputPath()
        
     sources={}
-    sources.setdefault("sources",{})
+    sources.setdefault( "sources", {} )
     
     
-    for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
-                                            localconfig.getappNames(),
-                                            localconfig.getESMs()):
+    for hpc, app, esm  in itertools.product( localconfig.getHPCCenters(),
+                                             localconfig.getappNames(),
+                                             localconfig.getESMs() ):
         currentAppSrcDict = {}
-        currentAppDataSrcs = localconfig.getappDataSrcs(app)
+        currentAppDataSrcs = localconfig.getappDataSrcs( app )
 
         sources={}
-        sources.setdefault("sources",{})
+        sources.setdefault( "sources", {} )
     
         for src in currentAppDataSrcs:
 
-            sources["sources"].setdefault(src,{})
+            sources["sources"].setdefault( src, {} )
             argsdict={
                   "description": f"{src} files data catalog",
                   "driver":"yaml_file_cat",
                   "args":
                         {
-                          "path":"{{CATALOG_DIR}}/"+f"{src}/"+f"{src}.yaml"
+                          "path":os.path.join( "{{CATALOG_DIR}}", f"{src}", f"{src}.yaml")
                         }
                     }
 
             sources["sources"][src]=argsdict
 
-        esmCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}")
+        esmCatalogPath = os.path.join( outputPath, f"{hpc}", f"{app}", f"{esm}" )
                 
-        if not os.path.exists(esmCatalogPath):
-            os.makedirs(esmCatalogPath,exist_ok=True)
+        if not os.path.exists( esmCatalogPath ):
+            os.makedirs( esmCatalogPath, exist_ok=True )
 
-        esmCatalog = os.path.join(esmCatalogPath,f"{esm}.yaml")
+        esmCatalog = os.path.join( esmCatalogPath, f"{esm}.yaml" )
 
-        if os.path.isfile(esmCatalog):
+        if os.path.isfile( esmCatalog ):
             # TODO: If update then read the exisitng yaml file and compare with the 'sources'
             #       created above based on the 'config.json' parameters. Update if any missing 
             #       items into the existing yaml tree and dump this updated 'sources' to file.
             # If update is 'false' , i.e., create fresh catalog, then delete the existing yaml
             #       file and create a new one.
-            Path(esmCatalog).unlink(missing_ok=True)
+            Path( esmCatalog ).unlink( missing_ok=True )
         
         try:
             with open( esmCatalog, "w" ) as f:
                 f.write(f"description: 'Catalog for files generated from {esm} GSV.  '\n")
-                yaml.dump(sources,f,sort_keys=False)
+                yaml.dump( sources, f, sort_keys=False )
                 f.close()
         except OSError as err:
-            print(f"Error {err} while writing {esmCatalog}!")
+            print( f"Error {err} while writing {esmCatalog}!" )
             return
 
     print('calling createESMIntakeCatalog()')        
@@ -286,24 +286,25 @@ def createSrcIntakeCatalog():
 
     appDataSrcNameFileExt = localconfig.getappDataSrcNameFileExt()
 
-    for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
-                                            localconfig.getappNames(),
-                                            localconfig.getESMs()):
+    for hpc, app, esm  in itertools.product( localconfig.getHPCCenters(),
+                                             localconfig.getappNames(),
+                                             localconfig.getESMs()):
 
         currentAppDataSrcs = localconfig.getappDataSrcs(app)
-        print(f"Ingesting '{app}' data produced using GSV from {esm} simulations performed on {hpc}")
+        print( f"Ingesting '{app}' data produced using GSV from {esm} simulations performed on {hpc}" )
+        
         for src in currentAppDataSrcs:
-            srcCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}",f"{src}")
+            srcCatalogPath = os.path.join( outputPath, f"{hpc}", f"{app}", f"{esm}", f"{src}" )
 
-            if not os.path.exists(srcCatalogPath):
-                os.makedirs(srcCatalogPath,exist_ok=True)
-            srcCatalog = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}",f"{src}",f"{src}.yaml")
+            if not os.path.exists( srcCatalogPath ):
+                os.makedirs( srcCatalogPath, exist_ok=True )
+            srcCatalog = os.path.join( outputPath, f"{hpc}", f"{app}", f"{esm}", f"{src}", f"{src}.yaml" )
 
             srcExtList = appDataSrcNameFileExt[src]
-            createIntakeCatalogSourcesForFileList(app,src,srcCatalog,getAppSrcFileList(app,src,esm,srcExtList))
+            createIntakeCatalogSourcesForFileList( app, src, srcCatalog, getAppSrcFileList( app, src, esm, srcExtList ) )
 
             
-def createIntakeCatalogSourcesForFileList(app,src,catFile,srcFileList):
+def createIntakeCatalogSourcesForFileList( app, src, catFile, srcFileList ):
     """Create catalog for the sources for the inout file list.
 
     For all the source files, create the intake counterparts and write out to the catalog file.
@@ -322,16 +323,16 @@ def createIntakeCatalogSourcesForFileList(app,src,catFile,srcFileList):
     appMetadataKeys = localconfig.getappMetadataKeys(app)
     
     #intakeSrcList = map(intakeSrcCreator,srcFileList)
-    if os.path.isfile(catFile):
+    if os.path.isfile( catFile ):
     # TODO: If update then read the exisitng yaml file and compare with the 'sources'
     #       created above based on the 'config.json' parameters. Update if any missing 
     #       items into the existing yaml tree and dump this updated 'sources' to file.
     # If update is 'false' , i.e., create fresh catalog, then delete the existing yaml
     #       file and create a new one.
-        Path(catFile).unlink(missing_ok=True)
+        Path( catFile ).unlink( missing_ok = True )
         
     sources={}
-    sources.setdefault("sources",{})
+    sources.setdefault( "sources", {} )
 
     try:
         srcCatalogFile = open( catFile, "w" )
@@ -339,32 +340,33 @@ def createIntakeCatalogSourcesForFileList(app,src,catFile,srcFileList):
         print(f"Error {err} while opening {catFile}!")
         return
     
-    srcCatalogFile.write(f"description: 'Catalog for {src} files.'\n")
-    yaml.dump(sources,srcCatalogFile,sort_keys=False)
+    srcCatalogFile.write( f"description: 'Catalog for {src} files.'\n" )
+    yaml.dump( sources, srcCatalogFile, sort_keys = False )
     srcCatalogFile.close()
     
-    srcCatalog = intake.open_catalog(catFile)
+    srcCatalog = intake.open_catalog( catFile )
 
-    intakeSrcList=[]
-    count=1
+    intakeSrcList = []
+    count = 1
     
-    intakeSrcList = map(intakeSrcCreator,itertools.repeat(app,len(srcFileList)),
-                    itertools.repeat(src,len(srcFileList)),srcFileList,
-                    itertools.repeat(appMetadataKeys,len(srcFileList)))
+    intakeSrcList = map( intakeSrcCreator, itertools.repeat( app,len( srcFileList ) ),
+                    itertools.repeat( src, len(srcFileList)), srcFileList,
+                    itertools.repeat( appMetadataKeys, len( srcFileList ) ) )
     
     
     # Add the sources to the catalog.
     for intakeSrc in intakeSrcList:
-        intakeSrc.name = f"{src}{count}"
-        srcCatalog = srcCatalog.add(intakeSrc)
-        count += 1
+        if intakeSrc is not None:
+            intakeSrc.name = f"{src}{count}"
+            srcCatalog = srcCatalog.add( intakeSrc )
+            count += 1
 
-    srcCatalog.save(catFile)
+    srcCatalog.save( catFile )
         
     return
 
 
-def intakeSrcCreator(app,src,srcFile,appMetadataKeys):
+def intakeSrcCreator( app, src, srcFile, appMetadataKeys ):
     """Create yaml resource for the input source file.
 
     For the input file of given source and app and metadata keys, prepare the intake object.
@@ -378,34 +380,34 @@ def intakeSrcCreator(app,src,srcFile,appMetadataKeys):
             intakeSrc : intake catalog object.
     """
     
-    if not os.path.isfile(srcFile):
-        print(f"File {srcFile} doesn't exist!")
+    if not os.path.isfile( srcFile ):
+        print( f"File {srcFile} doesn't exist!" )
         return None
 
     # Create source.
     if src == 'netcdf':
-        intakeSrc = intake.open_netcdf(srcFile)
+        intakeSrc = intake.open_netcdf( srcFile )
     elif src == 'image':
-        intakeSrc = intake.open_rasterio(srcFile)
+        intakeSrc = intake.open_rasterio( srcFile )
     elif src == 'text':
-        intakeSrc = intake.open_textfiles(srcFile)
+        intakeSrc = intake.open_textfiles( srcFile )
     else:
-        print(f'Source type {src} not handled! \n Ignoring {srcFile} in intakeSrcCreator.')
+        print( f'Source type {src} not handled! \n Ignoring {srcFile} in intakeSrcCreator.' )
 
     #create metadata for source.
     intakeSrc.metadata = {}
 
     #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
-    metadataValues = os.path.basename(srcFile).split('.')[0].split('_')
+    metadataValues = os.path.basename( srcFile ).split('.')[0].split('_')
 
     # NOTE: The metadata keys have fixed order as the file name parts seperated by '_'.
-    if len(metadataValues) < len(appMetadataKeys) :
-        for i in range(len(metadataValues),len(appMetadataKeys)):
+    if len( metadataValues ) < len( appMetadataKeys ) :
+        for i in range( len( metadataValues ),len( appMetadataKeys ) ):
             metadataValues.append('-')
 
     for key in appMetadataKeys:
         if app == 'AQUA':
-            intakeSrc.metadata[key] =  metadataValues[appMetadataKeys.index(key)]
+            intakeSrc.metadata[key] =  metadataValues[ appMetadataKeys.index( key ) ]
         # TODO for other apps once the data is available.
         else:
             print('Metadata not available')

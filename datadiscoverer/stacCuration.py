@@ -17,21 +17,21 @@ try:
     import pystac
     from shapely.geometry import Polygon, mapping
 except:
-    print(sys.exc_info())
-    print(f"Module 'raterio/pystac/shapely' import error in {__file__}")
+    print( sys.exc_info() )
+    print( f"Module 'raterio/pystac/shapely' import error in {__file__}" )
 
 #Local modules
 try:
     from .config import configDatadiscoverer
 except:
-    print(sys.exc_info())
-    print(f"Module 'config' import error in {__file__}")
+    print( sys.exc_info() )
+    print( f"Module 'config' import error in {__file__}" )
 
 try:
     from .utils import getAppSrcFileList
 except:
-    print(sys.exc_info())
-    print(f"Module 'utils' import error in {__file__}")
+    print( sys.exc_info() )
+    print( f"Module 'utils' import error in {__file__}" )
 
 
 sourceMediaTypeMap =  {
@@ -70,18 +70,17 @@ def createMasterSTACCatalog():
     
     for hpc in localconfig.getHPCCenters():
     
-        hpcCatalog = pystac.Catalog(id=f'{hpc}', 
-                         description=f"{hpc} data catalog")
-        catalog.add_child(hpcCatalog,f'{hpc}')
+        hpcCatalog = pystac.Catalog( id = f'{hpc}', description = f"{hpc} data catalog" )
+        catalog.add_child( hpcCatalog, f'{hpc}' )
     
     try:
-        os.path.exists(outputPath)
+        os.path.exists( outputPath )
     except:
-        print(sys.exc_info())
+        print( sys.exc_info() )
         return
         
-    catalog.normalize_and_save(root_href = outputPath, 
-                         catalog_type=pystac.CatalogType.SELF_CONTAINED)
+    catalog.normalize_and_save( root_href = outputPath, 
+                                catalog_type = pystac.CatalogType.SELF_CONTAINED )
     
     createHPCSTACCatalog()
 
@@ -99,22 +98,19 @@ def createHPCSTACCatalog():
     localconfig = configDatadiscoverer.activeConfig
     outputPath = localconfig.getOutputPath()
 
-    for hpc, app  in itertools.product(localconfig.getHPCCenters(),
-                                       localconfig.getappNames()):
+    for hpc, app  in itertools.product( localconfig.getHPCCenters(),
+                                        localconfig.getappNames() ):
         
-        hpcCatalogPath = os.path.join(outputPath,f"{hpc}")
-        hpcCatalogFile = os.path.join(hpcCatalogPath,"catalog.json")
-        hpcCatalog=pystac.Catalog.from_file(hpcCatalogFile)
+        hpcCatalogPath = os.path.join( outputPath, f"{hpc}" )
+        hpcCatalogFile = os.path.join( hpcCatalogPath, "catalog.json" )
+        hpcCatalog = pystac.Catalog.from_file( hpcCatalogFile )
         
-        appDescription = localconfig.getappDescription(app)
+        appDescription = localconfig.getappDescription( app )
         
-        appCatalog = pystac.Catalog( id=f'{app}', 
-                        description = appDescription
-                        #,providers = appInfoDict['provider']
-                        )
-        hpcCatalog.add_child(appCatalog,f'{app}')
-        hpcCatalog.normalize_and_save(root_href = hpcCatalogPath, 
-                         catalog_type=pystac.CatalogType.SELF_CONTAINED)
+        appCatalog = pystac.Catalog( id=f'{app}', description = appDescription )
+        hpcCatalog.add_child( appCatalog, f'{app}' )
+        hpcCatalog.normalize_and_save( root_href = hpcCatalogPath, 
+                                       catalog_type=pystac.CatalogType.SELF_CONTAINED )
     createAppSTACCatalog()
 
 
@@ -131,19 +127,18 @@ def createAppSTACCatalog():
     localconfig = configDatadiscoverer.activeConfig
     outputPath = localconfig.getOutputPath()
 
-    for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
-                                        localconfig.getappNames(),
-                                        localconfig.getESMs()):
+    for hpc, app, esm  in itertools.product( localconfig.getHPCCenters(),
+                                             localconfig.getappNames(),
+                                             localconfig.getESMs() ):
 
-        appCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}")
-        appCatalogFile = os.path.join(outputPath,f"{hpc}",f"{app}","catalog.json")
-        appCatalog=pystac.Catalog.from_file(appCatalogFile)
+        appCatalogPath = os.path.join( outputPath, f"{hpc}", f"{app}" )
+        appCatalogFile = os.path.join( outputPath, f"{hpc}", f"{app}", "catalog.json" )
+        appCatalog=pystac.Catalog.from_file( appCatalogFile )
         
-        esmCatalog = pystac.Catalog(id=f'{esm}', 
-                    description=f"{esm} GSV data catalog")
-        appCatalog.add_child(esmCatalog,f'{esm}')
-        appCatalog.normalize_and_save(root_href = appCatalogPath, 
-                catalog_type=pystac.CatalogType.SELF_CONTAINED)
+        esmCatalog = pystac.Catalog( id=f'{esm}', description=f"{esm} GSV data catalog" )
+        appCatalog.add_child( esmCatalog, f'{esm}' )
+        appCatalog.normalize_and_save( root_href = appCatalogPath, 
+                                       catalog_type=pystac.CatalogType.SELF_CONTAINED )
     
     createESMSTACCatalog()
 
@@ -161,43 +156,40 @@ def createESMSTACCatalog():
 
     localconfig = configDatadiscoverer.activeConfig
     outputPath = localconfig.getOutputPath()
-
-    
     appDataSrcNames = localconfig.getappDataSrcNames()
     appDataSrcNameFileExt = localconfig.getappDataSrcNameFileExt()
     
-    for hpc, app, esm  in itertools.product(localconfig.getHPCCenters(),
-                                            localconfig.getappNames(),
-                                            localconfig.getESMs()):
+    for hpc, app, esm  in itertools.product( localconfig.getHPCCenters(),
+                                             localconfig.getappNames(),
+                                             localconfig.getESMs() ):
     
-        currentAppDataSrcs = localconfig.getappDataSrcs(app)
+        currentAppDataSrcs = localconfig.getappDataSrcs( app )
         
-        esmCatalogPath = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}")
-        esmCatalogFile = os.path.join(outputPath,f"{hpc}",f"{app}",f"{esm}","catalog.json")
-        esmCatalog = pystac.Catalog.from_file(esmCatalogFile)
+        esmCatalogPath = os.path.join( outputPath, f"{hpc}", f"{app}", f"{esm}" )
+        esmCatalogFile = os.path.join( outputPath, f"{hpc}", f"{app}", f"{esm}", "catalog.json" )
+        esmCatalog = pystac.Catalog.from_file( esmCatalogFile )
         
-        print(f"Ingesting '{app}' data produced using GSV from {esm} simulations performed on {hpc}")
+        print( f"Ingesting '{app}' data produced using GSV from {esm} simulations performed on {hpc}" )
         
         for src in currentAppDataSrcs:
             
-            srcCatalog = pystac.Catalog(id=f'{src}', 
-                        description=f"{src} files data catalog")
+            srcCatalog = pystac.Catalog( id=f'{src}', description=f"{src} files data catalog" )
 
-            srcExt=appDataSrcNameFileExt[src]
+            srcExt=appDataSrcNameFileExt[ src ]
             
             #  Fetch the 'metadata' keys for this 'app' from 'appDescInfo'.
-            appMetadataKeys = localconfig.getappMetadataKeys(app)
+            appMetadataKeys = localconfig.getappMetadataKeys( app )
             
-            createSTACSourcesForFileList(app,src,srcCatalog,getAppSrcFileList(app,src,esm,srcExt))
+            createSTACSourcesForFileList( app,src,srcCatalog,getAppSrcFileList( app, src, esm, srcExt ) )
 
-            esmCatalog.add_child(srcCatalog,f'{src}')
+            esmCatalog.add_child( srcCatalog, f'{src}' )
                     
-        esmCatalog.normalize_and_save(root_href = esmCatalogPath, 
-                catalog_type=pystac.CatalogType.SELF_CONTAINED)
+        esmCatalog.normalize_and_save( root_href = esmCatalogPath, 
+                                       catalog_type=pystac.CatalogType.SELF_CONTAINED )
     return
 
 
-def createSTACSourcesForFileList(app,src,srcCatalog,srcFileList):
+def createSTACSourcesForFileList( app, src, srcCatalog, srcFileList ):
     """Create STAC items for the netcdf files in the input
        file list of files.
 
@@ -215,31 +207,30 @@ def createSTACSourcesForFileList(app,src,srcCatalog,srcFileList):
     
     localconfig = configDatadiscoverer.activeConfig
     #  Fetch the 'metadata' keys for this 'app' from 'appDescInfo'.
-    appMetadataKeys = localconfig.getappMetadataKeys(app)
+    appMetadataKeys = localconfig.getappMetadataKeys( app )
     
-    if appMetadataKeys is None or len(appMetadataKeys) == 0:
-        print(f'Application  {app} does not have metadata! Ignoring {app}.')
+    if appMetadataKeys is None or len( appMetadataKeys ) == 0:
+        print( f'Application  {app} does not have metadata! Ignoring {app}.' )
         return
 
     if src not in sourceMediaTypeMap.keys():
-        print(f'Source type {src} not handled! \n Ignoring {srcFile} in createSTACSourcesForFileList.')
+        print( f'Source type {src} not handled! \n Ignoring {srcFile} in createSTACSourcesForFileList.' )
         return
 
     stacItemList = []
-    count = 1
-    
-    stacItemList = map(stacItemCreator, itertools.repeat(app,len(srcFileList)), itertools.repeat(src,len(srcFileList)),
-                       srcFileList, itertools.repeat(appMetadataKeys,len(srcFileList)), range(1,len(srcFileList)+1))
+        
+    stacItemList = map( stacItemCreator, itertools.repeat( app, len( srcFileList ) ), itertools.repeat( src, len( srcFileList ) ),
+                        srcFileList, itertools.repeat( appMetadataKeys, len( srcFileList ) ), range( 1, len( srcFileList ) + 1 ) )
     
     # Add the items to the catalog.
     for stacItem in stacItemList:
-        #intakeSrc.name = f"{src}{count}"
-        srcCatalog.add_item(stacItem)
+        if stacItem is not None:
+            srcCatalog.add_item( stacItem )
     
     return
 
 
-def stacItemCreator(app,src,srcFile,appMetadataKeys,itemId):
+def stacItemCreator( app, src, srcFile, appMetadataKeys, itemId ):
     """Create stac item for the input source file.
 
     For the input file of given source and app and metadata keys, prepare the STAC item.
@@ -255,47 +246,47 @@ def stacItemCreator(app,src,srcFile,appMetadataKeys,itemId):
     global sourceMediaTypeMap
     
     if src not in sourceMediaTypeMap.keys():
-        print(f'Source type {src} not handled! \n Ignoring {srcFile} in stacItemCreator.')
+        print( f'Source type {src} not handled! \n Ignoring {srcFile} in stacItemCreator.' )
         return None
 
     
-    if not os.path.isfile(srcFile):
-        print(f"File {srcFile} doesn't exist!")
+    if not os.path.isfile( srcFile ):
+        print( f"File {srcFile} doesn't exist!" )
         return None
 
-    datetime_utc = datetime.now(tz=timezone.utc)
-    bbox_global=[-180,-90,180,90]
+    datetime_utc = datetime.now( tz=timezone.utc )
+    bbox_global = [-180,-90,180,90]
 
-    footprint_polygon = Polygon([ [-180, -90],  [-180, 90],
-                                  [180, 90],    [180, -90] ])
-    footprint=mapping(footprint_polygon)
+    footprint_polygon = Polygon( [ [-180, -90],  [-180, 90],
+                                   [180, 90],    [180, -90] ] )
+    footprint = mapping( footprint_polygon )
 
     #create metadata for item
     itemMetadata = {}
 
     #  Fetch the 'metadata' values from the 'srcFile' by removing file suffix and splitting with '_'.
-    fileName,fileExt = os.path.splitext( os.path.basename(srcFile) )
-    metadataValues = fileName.split('_')
+    fileName, fileExt = os.path.splitext( os.path.basename( srcFile ) )
+    metadataValues = fileName.split( '_' )
 
     # NOTE: The metadata keys have fixed order as the file name parts seperated by '_'
-    if len(metadataValues) < len(appMetadataKeys) :
-        for i in range(len(metadataValues),len(appMetadataKeys)):
-            metadataValues.append('-')
+    if len( metadataValues ) < len( appMetadataKeys ) :
+        for i in range( len( metadataValues ), len( appMetadataKeys ) ):
+            metadataValues.append( '-' )
 
     for key in appMetadataKeys:
         if app == 'AQUA':
-            itemMetadata[key] =  metadataValues[appMetadataKeys.index(key)]
+            itemMetadata[ key ] =  metadataValues[ appMetadataKeys.index( key ) ]
         # TODO for other apps
         else:
             print('Metadata not available')
 
-    item = pystac.Item(id=f'{src}{itemId}',
-             geometry=footprint,
-             bbox=bbox_global,
-             datetime=datetime_utc,
-             properties=itemMetadata)
+    item = pystac.Item( id = f'{src}{itemId}',
+                        geometry = footprint,
+                        bbox = bbox_global,
+                        datetime = datetime_utc,
+                        properties = itemMetadata )
 
-    item.add_asset(key=f'{src}file{itemId}',
-                   asset=pystac.Asset(href=srcFile,media_type=sourceMediaTypeMap[src][fileExt]))
+    item.add_asset( key = f'{src}file{itemId}',
+                  asset = pystac.Asset( href = srcFile, media_type = sourceMediaTypeMap[ src ][ fileExt ] ) )
     
     return item
