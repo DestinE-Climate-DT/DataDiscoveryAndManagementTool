@@ -95,10 +95,10 @@ configSchema = {
                }
 
 
-def initializeDataDiscoverer( configFile ):
-    """Initializing the datadiscoverer.
+def initializeAppdataexplorer( configFile ):
+    """Initializing the appdataexplorer.
 
-    Initialize the datadiscoverer library configuration with the parameters provided in 
+    Initialize the appdataexplorer library configuration with the parameters provided in 
     the input json file.
 
     Args:
@@ -135,8 +135,8 @@ def initializeDataDiscoverer( configFile ):
     
     print( "Input data format validation checks done!" )
     
-    curconfig = configDatadiscoverer()
-    configDatadiscoverer.activeConfig = curconfig
+    curconfig = configAppdataexplorer()
+    configAppdataexplorer.activeConfig = curconfig
     curconfig.setConfigfromJSON( userConfig )
     
     # TODO: Input data - additional checks for the input data.
@@ -168,8 +168,8 @@ def initializeDataDiscoverer( configFile ):
     return curconfig
         
         
-class configDatadiscoverer():
-    """Class to hold the various paramters to drive the datadiscoverer.
+class configAppdataexplorer():
+    """Class to hold the various paramters to drive the appdataexplorer.
     """
 
     activeConfig = None # static to be set once the instance is created from JSON,
@@ -228,9 +228,9 @@ class configDatadiscoverer():
     
     
     def setConfigfromJSON( self, jsonDict ):
-        """Set the datadiscoverer configuration to the input JSON dictionary.
+        """Set the appdataexplorer configuration to the input JSON dictionary.
 
-        For setting the configuration parameters of the datadiscoverer from the input JSON dictionary.
+        For setting the configuration parameters of the appdataexplorer from the input JSON dictionary.
 
         Args:
                 jsonDict: A JSON dictionary.
@@ -243,12 +243,12 @@ class configDatadiscoverer():
 
         
     def setInstallationPath( self, path ):
-        """Set the datadiscoverer installation path.
+        """Set the appdataexplorer installation path.
 
-        For setting the location where the datadiscoverer is intalled on the disk to the configuration.
+        For setting the location where the appdataexplorer is intalled on the disk to the configuration.
 
         Args:
-                path: Path to datadiscoverer.
+                path: Path to appdataexplorer.
         Returns:
                 None.
         """
@@ -257,14 +257,14 @@ class configDatadiscoverer():
     
     
     def getInstallationPath( self ):
-        """Get the datadiscoverer installation path.
+        """Get the appdataexplorer installation path.
 
-        For getting the location where the datadiscoverer is intalled on the disk.
+        For getting the location where the appdataexplorer is intalled on the disk.
 
         Args:
                 None.
         Returns:
-                str: Path to datadiscoverer.
+                str: Path to appdataexplorer.
         """
 
         return self.installationPath
@@ -273,7 +273,7 @@ class configDatadiscoverer():
     def setDataPath( self, path ):
         """Set the application data path.
 
-        For setting the location where the apps store the data that is to be cataloged by the datadiscoverer.
+        For setting the location where the apps store the data that is to be cataloged by the appdataexplorer.
 
         Args:
                 path: Path to location of the data produced by the apps.
@@ -287,7 +287,7 @@ class configDatadiscoverer():
     def getDataPath( self ):
         """Get the application data path.
 
-        For setting the location where the apps store the data that is to be cataloged by the datadiscoverer.
+        For setting the location where the apps store the data that is to be cataloged by the appdataexplorer.
 
         Args:
                 None.
@@ -301,10 +301,10 @@ class configDatadiscoverer():
     def setOutputPath( self, path ):
         """Set the output path.
 
-        For setting the location where the catalogs produced by datadiscoverer will be stored.
+        For setting the location where the catalogs produced by appdataexplorer will be stored.
 
         Args:
-                path: Path to location of the catalogs produced by the datadiscoverer.
+                path: Path to location of the catalogs produced by the appdataexplorer.
         Returns:
                 None.
         """
@@ -315,12 +315,12 @@ class configDatadiscoverer():
     def getOutputPath( self ):
         """Get the output path.
 
-        For getting the location where the catalogs produced by datadiscoverer will be stored.
+        For getting the location where the catalogs produced by appdataexplorer will be stored.
 
         Args:
                 None.
         Returns:
-                path: Path to location of the catalogs produced by the datadiscoverer.
+                path: Path to location of the catalogs produced by the appdataexplorer.
         """
 
         return self.outputPath

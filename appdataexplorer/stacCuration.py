@@ -22,7 +22,7 @@ except:
 
 #Local modules
 try:
-    from .config import configDatadiscoverer
+    from .config import configAppdataexplorer
 except:
     print( sys.exc_info() )
     print( f"Module 'config' import error in {__file__}" )
@@ -62,10 +62,10 @@ def createMasterSTACCatalog():
             None.
     """
 
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     outputPath = localconfig.getOutputPath()
 
-    catalog = pystac.Catalog(id='datadiscovererSTACCatalog', 
+    catalog = pystac.Catalog(id='appdataexplorerSTACCatalog', 
                          description='DestinE data discovery tool master STAC catalog for the data produced at various HPC centers.')
     
     for hpc in localconfig.getHPCCenters():
@@ -95,7 +95,7 @@ def createHPCSTACCatalog():
     Returns: 
             None.
     """
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     outputPath = localconfig.getOutputPath()
 
     for hpc, app  in itertools.product( localconfig.getHPCCenters(),
@@ -124,7 +124,7 @@ def createAppSTACCatalog():
     Returns: 
             None.
     """
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     outputPath = localconfig.getOutputPath()
 
     for hpc, app, esm  in itertools.product( localconfig.getHPCCenters(),
@@ -154,7 +154,7 @@ def createESMSTACCatalog():
             None.
     """
 
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     outputPath = localconfig.getOutputPath()
     appDataSrcNames = localconfig.getappDataSrcNames()
     appDataSrcNameFileExt = localconfig.getappDataSrcNameFileExt()
@@ -205,7 +205,7 @@ def createSTACSourcesForFileList( app, src, srcCatalog, srcFileList ):
     """
     global sourceMediaTypeMap
     
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     #  Fetch the 'metadata' keys for this 'app' from 'appDescInfo'.
     appMetadataKeys = localconfig.getappMetadataKeys( app )
     

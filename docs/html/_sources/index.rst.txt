@@ -1,9 +1,9 @@
-.. Data discovery and management tool - 'datadiscoverer' documentation master file, created by
+.. Data discovery and management tool - 'appdataexplorer' documentation master file, created by
    sphinx-quickstart on Wed Feb 21 17:10:17 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Data discovery and management tool - 'datadiscoverer''s documentation!
+Welcome to Data discovery and management tool - 'appdataexplorer''s documentation!
 =================================================================================
 
 .. toctree::

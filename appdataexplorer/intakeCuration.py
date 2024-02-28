@@ -21,7 +21,7 @@ except:
 
 #Local modules
 try:
-    from .config import configDatadiscoverer
+    from .config import configAppdataexplorer
 except:
     print( sys.exc_info() )
     print( f"Module 'config' import error in {__file__}" )
@@ -43,7 +43,7 @@ def createMasterIntakeCatalog( catalogFileName ):
     Returns: 
             None
     """
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     outputPath = localconfig.getOutputPath()
     
     sources={}
@@ -75,7 +75,7 @@ def createMasterIntakeCatalog( catalogFileName ):
     try:
         with open( os.path.join( f"{outputPath}", f"{catalogFileName}.yaml" ), "w"  ) as f:
             f.write(
-                "description: 'DestinE data discovery tool-datadiscoverer, intake catalog for the data produced at various HPC centers.'\n")
+                "description: 'DestinE data discovery tool-appdataexplorer, intake catalog for the data produced at various HPC centers.'\n")
             yaml.dump( sources, f, sort_keys=False )
             f.close()
     except OSError as err:
@@ -95,7 +95,7 @@ def createHPCIntakeCatalog():
     Returns: 
             None
     """
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     outputPath = localconfig.getOutputPath()
 
     sources={}
@@ -154,7 +154,7 @@ def createAppIntakeCatalog():
     Returns: 
             None
     """
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     outputPath = localconfig.getOutputPath()
     
     sources={}
@@ -213,7 +213,7 @@ def createESMIntakeCatalog():
     Returns: 
             None
     """
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     outputPath = localconfig.getOutputPath()
        
     sources={}
@@ -281,7 +281,7 @@ def createSrcIntakeCatalog():
     Returns: 
             None
     """
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     outputPath = localconfig.getOutputPath()
 
     appDataSrcNameFileExt = localconfig.getappDataSrcNameFileExt()
@@ -318,7 +318,7 @@ def createIntakeCatalogSourcesForFileList( app, src, catFile, srcFileList ):
             None
     """
     
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     #  Fetch the 'metadata' keys for this 'app' from 'appDescInfo'.
     appMetadataKeys = localconfig.getappMetadataKeys(app)
     

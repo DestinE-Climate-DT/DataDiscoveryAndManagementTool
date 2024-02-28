@@ -11,7 +11,7 @@ import importlib
     
 #Local modules
 try:
-    from .config import configDatadiscoverer
+    from .config import configAppdataexplorer
 except:
     print( sys.exc_info() )
     print( f"Module 'config' import error in {__file__}" )
@@ -33,7 +33,7 @@ def getAppSrcFileList( app, src, esm, srcExtList ):
     
     srcFileList = []
     
-    localconfig = configDatadiscoverer.activeConfig
+    localconfig = configAppdataexplorer.activeConfig
     appDataPath = localconfig.getDataPath()
     appDataSrcPath = Path( os.path.join( appDataPath, app ))
     
